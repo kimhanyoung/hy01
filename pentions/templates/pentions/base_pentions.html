@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/form02.css" %}{% endblock %}
+
+{% load humanize %}   # 세자리 콤마 찍기위해 로드함- settings.py에 앱추가함
+{% load pentions_filter %}   <!-- 내가 만든 사용자정의필터 아래 사용--->
+
+
+{% block content %}
+
+
+<div id="content">
+    <br>
+    <div class="container">     <!--버튼구룹 그리드  -->
+        <div class="row">
+            <div class="col-lg-10 col-md-11 col-xs-4>
+
+            </div>
+
+            <div class="col-lg-2 col-md-1 col-xs-8 col-sm-12 >
+
+            </div>
+        </div>        <!--  low 끝  -->
+    </div>     <!--  버튼구룹그리드 끝  -->
+
+</div>    <!-- content -->
+
+
+
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}ma100in_form.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/form01.css" %}{% endblock %}
+
+{% load humanize %}   # 세자리 콤마 찍기위해 로드함- settings.py에 앱추가함
+
+
+
+{% block content %}
+<div id="content">
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-xs-10 col-sm-6 col-xs-offset-1 col-sm-offset-1" style="padding:10px 60px 0px 0px;">
+                <h3 style="padding: 0px 0px 0px 0px;">
+                <span class="glyphicon glyphicon-object-align-bottom" style="color:blue;"></span> 펀드명 검색
+                </h3>
+                <h5 style="padding: 0px 0px 0px 30px;">....</h5>
+                <br>
+
+                <form action="." method="post">{% csrf_token %}
+                {% if form.errors %}
+                    <p class="errornote">아래 항목을 빠짐없이 입력하셔야 합니다</p>
+                    {% endif %}
+
+                    <fieldset class="aligned">
+                         <div class="form-row">
+                             <label class="radio-inline" for="fund_type" style="font-weight: bold;font-size: 15px;">펀드유형 : </label>
+                             <lable><input  id="fund_type" type="radio" name="fund_type" value="전체"> 전체</lable>
+                             <lable><input  id="fund_type" type="radio" name="fund_type" value="주식형"> 주식형</lable>
+                             <lable><input  id="fund_type" type="radio" name="fund_type" value="채권형"> 채권형</lable>
+                             <lable><input  id="fund_type" type="radio" name="fund_type" value="혼합채권형"> 혼합채권형</lable>
+                             <lable><input  id="fund_type" type="radio" name="fund_type" value="혼합주식형"> 혼합주식형</lable>
+                        </div>
+                        <div class="form-row" >
+                            <label for="com">운용사 : </label>
+                            <input id="com" name="company" size="4" list="per"><small></small>
+                            <datalist id="per">
+                                <option value="전체"></option>
+                                <option value="미래에셋"></option>
+                                <option value="한국"></option>
+                                <option value="하나"></option>
+                                <option value="신한"></option>
+                                <option value="프랭클린"></option>
+                                <option value="얼라이언스"></option>
+
+                            </datalist>
+                        </div>
+                        <div class="form-row" >
+                            <label for="sec">국내/해외 : </label>
+                            <input id="sec" name="area_section" size="4" list="pany"><small></small>
+                            <datalist id="pany">
+                                <option value="전체"></option>
+                                <option value="국내"></option>
+                                <option value="해외"></option>
+                                <option value="국내외"></option>
+                            </datalist>
+                        </div>
+                         <div class="form-row" >
+                            <label for="fund">펀드명 : </label>
+                            <input id="fund" name="fund_name" type="text">&nbsp;
+                        </div>
+
+                    </fieldset>
+
+                    <div class="submit-row">
+
+                        <input type="submit" class="btn btn-primary btn-sm"  value="계산 ">
+                    </div>
+
+                </form>
+
+
+
+                <H6>가입시기 외 사업비 등은 동일한 조건을 적용하여 산출하였습니다</H6>
+            </div>   <!--그리드 -->
+
+
+        </div>   <!-- low -->
+    </div>    <!-- container-fluid -->
+    <br>
+    <hr>
+</div>    <!-- content -->
+
+
+
+{% endblock %}

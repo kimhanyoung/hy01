@@ -1,0 +1,20 @@
+
+
+<form action="." method="post"> {% csrf_token %}
+    {{ form.as_table }}
+    <input type="submit" value="Submit" />
+</form>
+
+<br/><br/>
+
+{% if object_list %}
+{% for result in object_list %}
+
+    {{ result.total_premium }}
+
+{% endfor %}
+
+{% elif search_term %}
+<b><i>Search Word({{ search_term }}) Not Found !</i></b>
+{% endif %}
+

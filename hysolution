@@ -1,0 +1,13 @@
+upstream django {
+	server unix:/var/www/hysolution/run/uwsgi.sock;
+}
+server {
+	listen 80;
+	server_name ec2-13-209-65-56.ap-northeast-2.compute.amazonaws.com;
+	charset      utf-8;
+
+	location / {
+		includ	/etc/nginx/uwsgi_params;
+		uwsgi_pass	django;
+	}
+}

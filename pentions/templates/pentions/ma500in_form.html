@@ -1,0 +1,322 @@
+{% extends "base.html" %}
+
+{% block title %}ma100in_form.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/form02.css" %}{% endblock %}
+
+{% load humanize %}   # 세자리 콤마 찍기위해 로드함- settings.py에 앱추가함
+
+
+
+{% block content %}
+<div id="content">
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-xs-10 col-sm-6 col-xs-offset-1 col-sm-offset-1" style="padding:10px 60px 0px 0px;">
+                <h3 style="padding: 0px 0px 0px 0px;">
+                <span class="glyphicon glyphicon-object-align-bottom" style="color:blue;"></span> 경험생명표별 연금액
+                </h3>
+                <h5 style="padding: 0px 0px 0px 30px;">동일한 투자수익률에서 경험생명표의 차이에 따라 달라지는 연금액을 보실 수 있습니다 </h5>
+                <br>
+
+
+                <form action="." method="post">{% csrf_token %}
+                {% if form.errors %}
+                    <p class="errornote">아래 항목을 빠짐없이 입력하셔야 합니다</p>
+                {% endif %}
+
+                    <fieldset class="aligned">
+                        <div class="form-row">
+                            <label class="radio-inline" for="gen" style="font-weight: bold;font-size: 15px;">성 별 : </label>
+                            <lable><input  id="gen" type="radio" name="gender" value="남자"> 남자</lable>
+                            <lable><input  id="gen" type="radio" name="gender" value="여자"> 여자</lable>
+                        </div>
+
+
+                        <div class="form-row" >
+                            <label for="money">월 보 험 료 : </label>
+                            <input id="money" name="premium" type="number" min="0" max="99999999999" step="100000" value={{ form.premium.value}} >&nbsp;원
+                        </div>
+                        <div class="form-row" >
+                            <label for="period02">납 입 기 간 : </label>
+                            <input id="period02" name="paying_period" size="4" value={{ form.paying_period.value}}> 년납 <small> &nbsp;&nbsp;(선택 : 5,7,10,12,15,20년)</small>
+                        </div>
+                        <div class="form-row" >
+                            <label for="age">현재 / 연금개시연령 : </label>
+                            <input id="age" name="present_age" type="number" min="45" max="80"  value={{ form.present_age.value}}>&nbsp;세 /
+
+
+                            <input id="age02" name="pention_start_age" type="number" min="45" max="80" value={{ form.pention_start_age.value}}>&nbsp;세
+                        </div>
+
+                        <div class="form-row" >
+                            <label for="variable">변액수익률 : </label>
+                            <input id="variable" name="earning_rate" type="number" step="0.1" min="0" max=999 value={{ form.earning_rate.value}}>&nbsp;&nbsp;%
+
+                        </div>
+
+                        <div class="form-row" style="border-bottom :0.5px solid #9B959C;" >
+                            <label for="rate">연금개시후 이자 : </label>
+                            <input id="rate" name="pention_start_rate" type="number" step="0.1" min="0" max=999 value={{ form.pention_start_rate.value}}>&nbsp;%
+                        </div>
+
+
+                    </fieldset>
+
+                    <div class="submit-row">
+
+                        <input type="submit" class="btn btn-primary btn-sm"  value="계산 ">
+                    </div>
+
+                </form>
+ <br>
+                <br>
+                <br>
+                <h5>※ 평균연령 증가추이</h5>
+
+                <div>
+                    <img src={% static "img/bt/pentions_004.jpg" %} alt="...">
+                </div>
+                <br>
+
+                <!-- 경험생명표 적용기간 아코디언 안에 패널 넣음-->
+                    <div class="panel-group" id="accordion">
+                        <div class="panel">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                <h5>경험생명표 적용기간 ▼ </h5>
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="collapseOne" class="panel-collapse collapse">
+                              <div class="panel-body" style="color:#70A6B8; border-top :0.5px solid #9B959C; ">
+                                  <div class="panel panel-default" style="margin-right:40px;">
+                                      <div class="panel-heading">
+                                          <h5 class="panel-title"><small>경험생명표 적용기간</small></h5>
+                                      </div>
+                                      <div class="panel-body">
+                                          3회 : 1997년 1월 ~ 2002년 12월<br>
+                                          4회 : 2003년 1월 ~ 2006년 3월<br>
+                                          5회 : 2006년 4월 ~ 2009년 9월<br>
+                                          6회 : 2009년 10월 ~ 2012년 6월<br>
+                                          7회 : 2012년 7월 ~ 2015년 3월<br>
+                                          8회 : 2015년 5월 ~
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>   <!-- 아코디언 끝 -->
+
+
+
+
+            </div>
+
+
+            <div class="col-md-4 col-xs-10 col-sm-6">
+                 <div class="btn-toolbar" style="float:right;">                      <!--버튼구룹 시작  -->
+                    <div class="btn-group">
+                        <div class="btn-group btn-group-sm">
+                           <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"> 투자의 원칙 <span class="caret"> </span>
+                           </button>
+                           <ul class="dropdown-menu">
+                               <li><a tabindex="-1" href="{% url 'pentions:ma100' %}">투자의 원칙 (1)시간</a></li>
+                               <li><a tabindex="-1" href="{% url 'pentions:ma200' %}">투자의 원칙 (2)수익률</a></li>
+                               <li><a tabindex="-1" href="{% url 'pentions:ma300' %}">투자의 원칙 (3)세금</a></li>
+                           </ul>
+                        </div>
+                        <div class="btn-group btn-group-sm">
+                           <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"> 연금예상액 <span class="caret"> </span>
+                           </button>
+                           <ul class="dropdown-menu">
+                               <li><a tabindex="-1" href="{% url 'pentions:ma400' %}">연금예상액</a></li>
+                               <li><a tabindex="-1" href="{% url 'pentions:mc100' %}">연금예상액(즉시연금)</a></li>
+                               <li><a tabindex="-1" href="#">수익률별 연금예상액</a></li>
+                               <li><a tabindex="-1" href="#">내 변액 연금예상액</a></li>
+
+                           </ul>
+                        </div>
+                        <div class="btn-group btn-group-sm">
+                           <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle"> 연금 운영전략 <span class="caret"> </span>
+                           </button>
+                           <ul class="dropdown-menu">
+                               <li><a tabindex="-1" href="{% url 'pentions:mc200' %}">연금목표 월납입액</a></li>
+                               <li><a tabindex="-1" href="{% url 'pentions:ma500' %}">경험생명표별 연금액</a></li>
+                               <li><a tabindex="-1" href="{% url 'pentions:mc300' %}">연금개시 공시이율</a></li>
+                               <li><a tabindex="-1" href="{% url 'pentions:md100' %}">변액연금비용</a></li>
+                               <li role="presentation" class="divider"></li>
+                               <li><a tabindex="-1" href="{% url 'pentions:mh100' %}">채권형수익률</a></li>
+                               <li><a tabindex="-1" href="#">변액 vs 공시이율 vs 적금</a></li>
+                               <li><a tabindex="-1" href="{% url 'pentions:md300' %}">흥부와 놀부</a></li>
+                               <li><a tabindex="-1" href="#">추가납입의 효과</a></li>
+                           </ul>
+                        </div>
+                        <div class="btn-group btn-group-sm">
+                           <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"> 재무설계플랜 <spa class="caret"> </span>
+                           </button>
+                           <ul class="dropdown-menu">
+                               <li><a tabindex="-1" href="{% url 'pentions:mf100' %}">해약환급금계산(변액)</a></li>
+                               <li><a tabindex="-1" href="{% url 'pentions:mf200' %}">해약환급금계산(공시이율)</a></li>
+                               <li role="presentation" class="divider"></li>
+                               <li><a tabindex="-1" href="{% url 'pentions:mg100' %}">적금의 비밀</a></li>
+                               <li><a tabindex="-1" href="{% url 'pentions:md200' %}">위험보험료</a></li>
+                               <li><a tabindex="-1" href="#">평생재무설계플랜</a></li>
+
+                          </ul>
+                        </div>
+                    </div>
+                </div>        <!--버튼구룹 끝  -->
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h4>
+                    <span class="glyphicon glyphicon glyphicon-star" style="color:#A54BC9;"></span>
+                    경험생명표별 연금액 차이 <small>(연금연액)</small>
+                </h4>
+                <br>
+                <table class="table table-bordered table-hover table-condensed" style="font-size:1.1em;">
+                    <thead style="border-top:2px solid #9B959C;">
+                        <tr class="active">
+                            <th class = "text-center" rowspan="2" style="vertical-align:middle;">경험생명표</th>
+                            <th class = "text-center" colspan="2">확정 10년형</th>
+                            <th class = "text-center" colspan="2">종신연금(20년보증)</th>
+                        </tr>
+                        <tr class="active">
+                            <th class = "text-center">연금액</th>
+                            <th class = "text-center">3회대비</th>
+                            <th class = "text-center">연금액</th>
+                            <th class = "text-center">3회대비</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class = "text-center">
+                        <tr>
+                            <td>3회</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>4회</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>5회</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+
+                        <tr>
+                           <td>6회</td>
+                           <td>0</td>
+                           <td>0</td>
+                           <td>0</td>
+                           <td>0</td>
+                        </tr>
+                        <tr>
+                           <td>7회</td>
+                           <td>0</td>
+                           <td>0</td>
+                           <td>0</td>
+                           <td>0</td>
+                        </tr>
+                        <tr>
+                           <td>8회</td>
+                           <td>0</td>
+                           <td>0</td>
+                           <td>0</td>
+                           <td>0</td>
+                        </tr>
+                    </tbody>
+
+
+                </table>
+
+                <br>
+
+                <!-- 챠트 시작-->
+               <div id="container2" style="margin: 0px 0px 0px 0px; auto">
+                    <script>
+                        var chart02 = new Highcharts.chart('container2', {
+                            chart: {
+                                type: 'column',
+                                height: 288,
+                                margin : 80
+
+                            },
+                            title: {
+                                text: '평균연령 증가로 인한 연금액 감소'
+                            },
+                            subtitle: {
+                                text: '3회 vs 8회 경험생명표 총수령액 비교'
+                            },
+                            xAxis: {
+                                categories: ['3회','8회']
+                            },
+                            yAxis: {
+                                title: {
+                                        text: ''
+                                }
+                            },
+                            plotOptions: {
+                                column: {
+                                    dataLabels: {
+                                        enabled: true
+                                    },
+                                    enableMouseTracking: true
+                                }
+
+                             },
+
+                            series: [{
+                                name: '3회',
+                                data: [800000000]
+                                },
+                                {
+
+                                name: '8회',
+                                data: [600000000]
+
+
+                            }]
+                        });
+                   </script>
+                </div>        <!-- 챠트 끝 -->
+
+                </h4>
+                {% for result in object_list %}
+
+
+                <h5 style="text-align:left;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;납입금액 : {{ result.total_premium|floatformat:"0"|intcomma}}
+                &emsp;책임준비금 : {{ result.reserve_money|floatformat:"0"|intcomma}}</h5>
+                {% endfor %}
+
+            </div>   <!--그리드 -->
+
+      </div>  <!-- row -->
+    </div>       <!--    container-fluid  --->
+
+</div>    <!-- content -->
+
+
+
+{% endblock %}

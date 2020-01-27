@@ -1,0 +1,409 @@
+{% extends "pentions/base_pentions.html" %}
+
+
+{% block title %}mg100_result.html{% endblock %}
+{% block content %}
+{{ block.super }}
+
+{% load humanize %}   <!-- 세자리 콤마 찍기위해 로드함- settings.py에 앱추가함  -->
+{% load pentions_filter %}   <!-- 내가 만든 사용자정의필터 아래 사용--->
+
+{% load staticfiles %}
+
+
+<style>
+
+
+.ab {
+    color:#AEAEAF;
+    float:right;
+    padding: 4px 15px 0px 0px;
+    vertical-align:middle;
+}
+
+.panel {
+    border-color:#767879;
+}
+.panel-title{
+    text-align:center;
+}
+
+
+
+</style>
+
+<div id="content">
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-xs-12 col-sm-12">
+
+                <h5 style="color:#EF9365; text-align:right; padding:0px 40px 0px 0px;">One-Stop</h5>
+
+            </div>   <!--그리드 -->
+
+            <div class="col-lg-12 col-lg-offset-1 col-md-12 col-xs-12 col-sm-12">
+                <div class="col-lg-2 col-md-3 col-xs-4 col-sm-4" style="padding:0px 10px 0px 40px;">
+
+                    <img src={% static "img/book/pen502.jpg" %} class="sideToSide" width="40px" />
+                    <div class="panel-group" id="accordion" >
+                        <div class="panel">
+                          <div class="panel-heading" >
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+
+                                 <img src={% static "img/book/pen100.jpg" %} alt="..." style="padding :10px 0px 10px 0px;">
+                                 <p><b>투자의 원칙</b></p>
+                                  <i class="fas fa-chevron-down"></i>
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="collapseOne" class="panel-collapse collapse" style="background-color:#FDFEFD;">
+                            <div class="panel-body">
+                                <h5>
+                                    <a href="{% url 'pentions01:ma100' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 투자의 원칙 (1) 시간</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentions01:ma200' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 투자의 원칙 (2) 수익률</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentions01:ma300' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 투자의 원칙 (3) 세금</b>
+                                    </a>
+                                </h5>
+                            </div>  <!-- fanal-body -->
+                          </div>  <!-- collapseOne -->
+                        </div>  <!-- fanal -->
+                        <div class="panel">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                  <img src={% static "img/book/pen120.jpg" %} alt="..." style="padding :10px 0px 10px 0px;">
+                                  <p><b>연금예상액</b></p>
+                                  <i class="fas fa-chevron-down"></i>
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="collapseTwo" class="panel-collapse collapse" style="background-color:#F8FBFF;">
+                            <div class="panel-body">
+                                <h5>
+                                    <a href="{% url 'pentionsto:ma400' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 변액 연금예상액</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentionsto:ma600' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 공시이율 연금예상액</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentions01:mc100' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 즉시연금 연금예상액</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentions01:mh200' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 수익률별 연금예상액</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentions01:mc300' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 연금개시후 공시이율별</b>
+                                    </a>
+                                </h5>
+
+                            </div>
+                          </div> <!-- collapsetwo -->
+                        </div>    <!-- fanal -->
+                        <div class="panel">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                      <img src={% static "img/book/pen130.jpg" %} alt="..." style="padding :10px 0px 10px 0px;">
+                                      <p><b>재무설계 PLAN</b></p>
+                                      <i class="fas fa-chevron-down"></i>
+                                  </a>
+                                </h4>
+                              </div>
+                              <div id="collapseThree" class="panel-collapse collapse in" style="background-color:#FCFAF9;">
+                                <div class="panel-body">
+                                    <h5>
+                                        <a style="color:#6D6C6B;" href="{% url 'pentions01:mc200' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 연금목표 월납입액</b></a>
+                                    </h5>
+                                    <h5>
+                                        <a style="color:#6D6C6B;" href="{% url 'pentions01:md100' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 변액연금비용</b></a>
+                                    </h5>
+                                    <h5>
+                                        <a style="color:#6D6C6B;" href="{% url 'pentions01:md200' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 위험보험료</b></a>
+                                    </h5>
+                                    <h5>
+                                        <a style="color:#DE781F;" href="{% url 'pentions01:mg100' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#DE781F'"> - 적금의 비밀</b></a>
+                                    </h5>
+                                </div>
+                              </div> <!-- collapsethree -->
+                        </div>    <!-- fanal -->
+                    </div>  <!-- fanal-group -->
+
+
+                </div>
+                <div class="col-lg-7 col-lg-offset-0 col-md-9 col-md-offset-0 col-sm-8 col-sm-offset-0" style="padding:15px 0px 0px 40px;">
+                    <h4>적금 금리의 숨겨진 비밀&emsp;&emsp;
+                        <small>1년만기 적금가입시 실제 적용되는 이자 </small>
+                        <i class='fas fa-feather-alt' style='font-size:22px;color:red'></i>
+                    </h4>
+
+                    <hr style=" border: 0; height:1.5px; background:#333332;">
+                </div>
+                <div class="col-lg-7 col-lg-offset-0 col-md-9 col-md-offset-0 col-sm-8 col-sm-offset-0" style="padding:0px 20px 0px 40px;">
+                    <b style="float:right; padding: 0px 15px 20px 0px;"><a href="{% url 'pentions01:mg100' %}" class="badge badge-secondary badge-sm" >다시입력</a></b>
+
+                    <table class="table table-bordered table-responsive" style="font-size:1.2em; border-spacing: 2px; border-collapse: separate;">
+                        {% for result in object_list01 %}
+                        {% if forloop.first %}
+                        <th class = "text-center" width="13%" style="border-color:#AEAEAF; vertical-align:middle; color:#5E5F5F;">
+                            검증조건
+                        </th>
+                        <th class = "text-left" style="border-color:#AEAEAF; vertical-align:middle; color:#5E5F5F; padding:10px 0px 10px 30px;">
+                            <h5 style="text-size:18px; text-align:center; border-bottom: 0px solid #eee;">
+                                <b>적금 이자 (%) : <mark>{{ result.deposit_rate|floatformat:"1"}}</mark> % &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 월 적금액 : {{ result.premium|floatformat:"0"|intcomma}} &nbsp;원
+                                </b>
+                            </h5>
+                        </th>
+                        <th class = "text-center" width="10%" style="vertical-align:middle; border-color:#AEAEAF; padding:0px;">
+                            <img src={% static "img/bt/pee01.jpg" %} alt="..." style="max-width: 85%; height: auto;">
+                        </th>
+                        {% else %}
+                         {% endif %}
+                         {% endfor %}
+                    </table>
+                    <br><br>
+                    <h4 style="font-size:17px;  text-align:center;">
+                         <b>실제이자율 및 이자소득세 적용후 이자율</b>
+
+                     </h4>
+                    <div class="thumbnail text-left" style="padding : 10px 55px 10px 40px; border-color:#C0C1C2; border-radius: 1px; border-style:groove; box-shadow: 1px 1px 0px 0px rgba(163, 174, 184, 0.7);">
+                        <h5 style="font-size:16px;  text-align:center;">
+                            {% for result in object_list01 %}
+                            {% if forloop.first %}
+                             ● 실제이자율 : <b>{{ result.total_real_rate|floatformat:"2"}} %</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             ● 이자소득세 적용시 : <B style="color:red;">{{result.after_real_rate|floatformat:"2"}} %</B>
+                            {% else %}
+                            {% endif %}
+                            {% endfor %}
+
+                        </h5>
+                    </div>   <!-- thumbnail  -->
+
+                    <div class="col-lg-7 col-lg-offset-0 col-md-7">
+                        <br>
+                        <br>
+                        <h5>
+                        ※ 납입회차별 실질이자율 (월별)
+                        </h5>
+                        <br>
+                        <div class="thumbnail text-left" style="padding : 0px; border-color:white; border-radius: 3px;">
+                            <div id="container2" style="margin: 0px 0px 0px 0px; auto ">                 <!-- 챠트시작  -->
+                                <script>
+                                    var chart02 = new Highcharts.chart('container2', {
+                                       "chart": {
+                                            "type": "line",
+                                            "margin": 55,
+                                            "options3d": {
+                                              "enabled": true,
+                                              "alpha": 15,
+                                              "beta": 15,
+                                              "depth": 50,
+                                              "viewDistance": 15
+                                            },
+                                            "borderRadius": 1,
+                                            "borderWidth": 0.5,
+                                            "backgroundColor": "#fafafa",
+                                            "polar": false,
+                                            "width": 480,
+                                            "height": 450,
+
+
+                                            "zoomType": "x"
+                                          },
+                                          "plotOptions": {
+                                            "column": {
+                                              "depth": 25
+                                            },
+                                            "series": {
+                                              "animation": true,
+                                              "dataLabels": {
+                                                "enabled": true,
+                                                "style": {
+                                                  "color": "contrast",
+                                                  "fontSize": "13px",
+                                                  "fontWeight": "bold",
+                                                  "textOutline": "1px 1px contrast"
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "title": {
+                                            "text": ""
+                                          },
+                                          "subtitle": {
+                                            "text": ""
+                                          },
+                                          "exporting": {},
+                                          "series": [
+
+                                           {
+                                              "name": "납입회차별 실질이자율",
+                                              data: [{% for entry in object_list01 %}{{ entry.real_rate|floatformat:"2" }}{% if not forloop.last %}, {% endif %}{% endfor %}],
+                                              "turboThreshold": 0,
+                                              "_colorIndex": 1,
+                                              "_symbolIndex": 1,
+                                              "marker": {
+                                                "enabled": true,
+                                                "symbol": "circle",        //--점모양
+                                                "fillColor": '#8CB0ED',      //---   점색깔
+                                                "radius":7,              //---   점크기
+                                              },
+                                              "colorByPoint": false,
+                                              "dashStyle": "Solid"
+                                            }
+                                          ],
+                                          "data": {
+
+                                            "googleSpreadsheetKey": false,
+                                            "googleSpreadsheetWorksheet": false
+                                          },
+                                          "colors": [
+                                            "#f44336",
+                                            "#536CF5",
+                                            "#90ed7d",
+                                            "#f7a35c",
+                                            "#8085e9",
+                                            "#4527a0",
+                                            "#e4d354",
+                                            "#2b908f",
+                                            "#f45b5b",
+                                            "#91e8e1"
+                                          ],
+                                          "legend": {
+                                            "verticalAlign": "top"
+                                          },
+                                          "tooltip": {
+                                            "shared": true,
+                                            "borderWidth": 3,
+                                            "enabled": false
+                                          },
+                                          "lang": {},
+                                          "credits": {
+                                            "enabled": true
+                                          },
+                                          "yAxis": {
+                                            "title": '이자율(%)',
+                                            "labels": {},
+                                            "reversed": false,
+                                            "opposite": false
+                                          },
+                                          "xAxis": {
+                                            categories: [{% for entry in object_list01 %}'{{ entry.pass_month }}'{% if not forloop.last %}, {% endif %}{% endfor %}],
+                                            "title": {
+                                              "text": "",
+                                              "style": {
+                                                "fontFamily": "\"Lucida Grande\", \"Lucida Sans Unicode\", Verdana, Arial, Helvetica, sans-serif",
+                                                "color": "#666666",
+                                                "fontSize": "14px",
+                                                "fontWeight": "normal",
+                                                "fontStyle": "normal"
+                                              }
+                                            },
+                                            "labels": {
+                                              "format": ""
+                                            },
+                                            "opposite": false,
+                                            "reversed": false,
+                                            "type": "linear"
+                                          }
+
+                                     });
+
+                                </script>
+                            </div> <!-- 챠트 끝  -->
+                        <br>
+                        </div>
+
+                        <br>
+                        <br>
+
+                    </div>             <!--  좌측 그리드 끝  -->
+
+                    <div class="col-md-5 col-xs-10 col-sm-6" >
+
+                        <h5 style="text-align:right;">
+                           (단위 : 원)
+                        </h5>
+
+                        <table class="table table-bordered table-hover table-condensed" style="font-size:1.1em;">
+                            <thead style="border-top:2px solid #9B959C;">
+
+                                <tr class="active">
+                                    <th class = "text-center" style="width:130px">회차</th>
+                                    <th class = "text-center" style="width:130px">이자 (원)</th>
+                                    <th class = "text-center" style="width:130px">실이자</th>
+                                </tr>
+                            </thead>
+                            {% for pention in object_list01 %}
+                            <tbody class = "text-center">
+                                <tr>
+                                    <td style="width:130px">{{ pention.pass_month}}</td>
+                                    <td style="width:130px">{{ pention.rate_money|floatformat:"0"|intcomma }}</td>
+                                    <td style="width:130px">{{ pention.real_rate|floatformat:"2"}}%</td>
+                                </tr>
+
+                            </tbody>
+                            {% endfor %}
+                        </table>
+                        <table class="table table-bordered table-hover table-condensed" style="font-size:1.1em;">
+
+                            {% for pention in object_list01 %}
+                            {% if forloop.first %}
+                            <tbody class = "text-center" style="border-bottom :2px solid #9B959C;">
+                                <tr>
+                                    <td style="width:130px">합계</td>
+                                    <td style="width:130px">{{ pention.total_rate_money|floatformat:"0"|intcomma }}</td>
+                                    <td style="width:130px">{{ pention.total_real_rate|floatformat:"2"}}%</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:130px">세금<small>(15.4%)</small></td>
+                                    <td style="width:130px">{{ pention.tax|floatformat:"0"|intcomma }}</td>
+                                    <td style="width:130px"></td>
+                                </tr>
+                                <tr >
+                                    <td style="width:130px">세후</td>
+                                    <td style="width:130px">{{ pention.after_money|floatformat:"0"|intcomma }}</td>
+                                    <td style="width:130px">{{ pention.after_real_rate|floatformat:"2"}}%</td>
+                                </tr>
+
+                            </tbody>
+                            {% else %}
+                            {% endif %}
+                            {% endfor %}
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+
+{% endblock %}
+

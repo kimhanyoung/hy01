@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block title %}metfund_form.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/form03.css" %}{% endblock %}
+
+{% load humanize %}   <!-- 세자리 콤마 찍기위해 로드함- settings.py에 앱추가함  -->
+
+{% block content %}
+
+
+<div id="content">
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-lg-10 col-md-12 col-xs-12 col-sm-12">
+
+                <h5 style="color:#EF9365; text-align:right; padding:0px 40px 0px 0px;">Variable Insurance</h5>
+
+            </div>   <!--그리드 -->
+
+
+
+            <div class="col-lg-12 col-lg-offset-1 col-md-12 col-xs-12 col-sm-12">
+                <div class="col-lg-2 col-md-3 col-xs-2 col-sm-3" style="padding:0px 10px 0px 0px;">
+                    <br>
+                    <table class="table table-bordered">
+                          <thead>
+                           <tr>
+                             <th>
+                                <div class="panel-group" id="accordion" >
+                                    <div class="panel" style="border-color:white;">
+                                      <div class="panel-heading" >
+                                        <h4 class="panel-title">
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                             <p><b>Ⅰ. 변액수익률 확인</b></p>
+                                          </a>
+                                        </h4>
+                                      </div>
+                                      <div id="collapseOne" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                             <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp; <b>보험명 입력</b>
+                                                <a style="color:#529599; font-size:11px;" href="{% url 'shop:product_all' %}">&ensp; &ensp; >>다시 입력</a>
+                                            </h5>
+                                            <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp; <b>펀드 편입비율 입력</b>
+                                            </h5>
+                                            <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp;
+                                                <b>보험 가입정보 입력</b>
+                                            </h5>
+                                            <h5 style="color:#565656; padding:0px 0px 3px 0px;">
+                                                <span class="badge" style="background-color:#D46658; padding:6px 20px 6px 15px; font-size:12px;">
+                                                    <span class="fas fa-caret-right"></span>&ensp;&nbsp;<b>투자현황 확인</b>
+                                                </span>
+                                            </h5>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="panel">
+                                      <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                            <p><b>Ⅱ. 변액관리</b></p>
+                                          </a>
+                                        </h4>
+                                      </div>
+                                      <div id="collapseTwo" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders03:input' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 펀드변경</b></a>
+                                            </h5>
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders06:hungbu' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 흥부와 놀부</b></a>
+                                            </h5>
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders:fund' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 일반 적립식펀드</b></a>
+                                            </h5>
+                                            <span class="badge" style="background-color:white; color:white; padding:5px 20px 5px 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이것은 안나타남</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                             </th>
+                           </tr>
+                       </thead>
+                    </table>
+                    <br><br><br><br><br><br><br><br><br><br><br>
+                </div>   <!--그리드 -->
+
+                <div class="col-lg-6 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-8 col-sm-offset-0" style="padding:0px 0px 0px 40px;">
+                     <br>
+                    <h4>
+                        <b style="color:#396A94;"><span class="fas fa-arrow-circle-right"></span></b><b>&nbsp;&nbsp;편입비율 변경</b>
+                    </h4>
+                    <br>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                         <div class="aligned">
+                             <div class="form-row">
+                                 <label for="fund_name">펀드명 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+                                 <input id="fund_name" name="fund_name" type="text" value={{ form.fund_name.value}} style="text-align:left; border-style:double; border-color:white;" readonly />&nbsp;
+                             </div>
+                             <div class="form-row">
+                                 <label for="count">편입비율 :&nbsp;&nbsp;&nbsp; </label>
+                                 <input id="count" name="count" type="number" min="0" max="999999" step="5" value={{ form.count.value}}>&nbsp;%
+                                 &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+                                 <input type="submit" class="btn btn-primary" value="변경" />
+                             </div>
+                         </div>
+
+                    </form>
+                    <br>
+                    <h5>&emsp; ※ 입력범위 : 0 ~100% (5% 단위로 입력해 주세요)</h5>
+
+                </div>
+            </div>
+        </div>  <!-- raw -->
+    </div>  <!-- container -->
+</div>
+
+{% endblock %}

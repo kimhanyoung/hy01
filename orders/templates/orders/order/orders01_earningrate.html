@@ -1,0 +1,264 @@
+{% extends "base.html" %}
+
+{% block title %}orders01_earningrate.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/form03.css" %}{% endblock %}
+
+{% load humanize %}   <!-- 세자리 콤마 찍기위해 로드함- settings.py에 앱추가함  -->
+
+{% block content %}
+
+
+<div id="content">
+    <br>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-xs-12 col-sm-12">
+
+                <h5 style="color:#EF9365; text-align:right; padding:0px 40px 0px 0px;">Variable Insurance</h5>
+
+            </div>   <!--그리드 -->
+
+
+            <div class="col-lg-12 col-lg-offset-1 col-md-12 col-xs-12 col-sm-12">
+                <div class="col-lg-2 col-md-3 col-xs-2 col-sm-3" style="padding:0px 10px 0px 0px;">
+                    <br>
+                    <table class="table table-bordered">
+                          <thead>
+                           <tr>
+                             <th>
+                                <div class="panel-group" id="accordion" >
+                                    <div class="panel" style="border-color:white;">
+                                      <div class="panel-heading" >
+                                        <h4 class="panel-title">
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                             <p><b>Ⅰ. 변액수익률 확인</b></p>
+                                          </a>
+                                        </h4>
+                                      </div>
+                                      <div id="collapseOne" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp; <b>보험명 입력</b>
+                                                <a style="color:#529599; font-size:11px;" href="{% url 'shop:product_all' %}">&ensp; &ensp; >>다시 입력</a>
+                                            </h5>
+                                            <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp; <b>펀드 편입비율 입력</b>
+                                            </h5>
+                                            <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp;
+                                                <b>보험 가입정보 입력</b>
+                                            </h5>
+                                            <h5 style="color:#565656; padding:0px 0px 3px 0px;">
+                                                <span class="badge" style="background-color:#D46658; padding:6px 20px 6px 15px; font-size:12px;">
+                                                    <span class="fas fa-caret-right"></span>&ensp;&nbsp;<b>투자현황 확인</b>
+                                                </span>
+                                            </h5>
+                                        </div>  <!-- fanal-body -->
+                                      </div>  <!-- collapseOne -->
+                                    </div>  <!-- fanal -->
+                                    <div class="panel">
+                                      <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                            <p><b>Ⅱ. 변액관리</b></p>
+                                          </a>
+                                        </h4>
+                                      </div>
+                                      <div id="collapseTwo" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders03:input' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 펀드변경</b></a>
+                                            </h5>
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders06:hungbu' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 흥부와 놀부</b></a>
+                                            </h5>
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders:fund' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 일반 적립식펀드</b></a>
+                                            </h5>
+                                            <span class="badge" style="background-color:white; color:white; padding:5px 20px 5px 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이것은 안나타남</span>
+                                        </div>
+                                      </div> <!-- collapsetwo -->
+                                    </div>    <!-- fanal -->
+                                  </div>  <!-- fanal-group -->
+
+                             </th>
+                           </tr>
+                       </thead>
+                    </table>
+                    <br><br><br><br><br><br><br><br><br><br><br>
+                </div>   <!--그리드 -->
+
+
+                <div class="col-lg-7 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-8 col-sm-offset-0" style="padding:0px 0px 0px 40px;">
+                    <br>
+                    <h4 style="padding:0px 0px 10px 0px; color:#343535;">
+                        <b><span class="fas fa-arrow-alt-circle-right"></span>&ensp; 투자현황  확인</b>
+                    </h4>
+                    <ul class="nav nav-tabs" style="font-size:14px;">
+                        <li ><a style="color:#0C2031;" href="{% url 'orders:basic' %}">가입 상세현황</a></li>
+                        <li class="active"><a style="color:#0C2031;" href="#" ><b>보유 펀드현황</b></a></li>
+                        <li><a style="color:#0C2031;" href="{% url 'orders:return' %}">예상 해지환급금</a></li>
+                        <li><a style="color:#0C2031;" href="{% url 'orders:pention' %}">예상 연금액</a></li>
+                        <li><a style="color:#0C2031;" href="{% url 'orders07:list' %}" %>펀드선택 (BM)</a></li>
+                     </ul>
+                     <br>
+                </div>  <!--그리드 -->
+
+
+            <div class="col-lg-7 col-md-9 col-sm-9" style="padding:0px 90px 20px 55px;">
+                <br>
+                <table class="table table-bordered table-responsive" style="font-size:1.4em;  box-shadow: 2px 2px 0px 0px rgba(163, 174, 184, 0.7);">
+                    <th class = "text-center" width="18%" style="vertical-align:middle; border-color:#AEAEAF;">
+                        <img src={% static "img/bt/pee20.jpg" %} alt="..." style="max-width: 85%; height: auto;">
+                        <h5>
+                            <b>가입현황 </b>
+                       </h5>
+                    </th>
+                    <th class = "text-left" style="border-color:#AEAEAF; vertical-align:middle; color:#5E5F5F; padding:10px 0px 10px 10px;">
+                        {% for result in object_list30 %}
+                        <h5>
+                             - 보험명 : {{ result.insu_name }}
+                        </h5>
+                        <h5>
+                             - 가입일 : {{ result.entry_date|date:'Y-m-d' }},&nbsp;납기 : {{ result.paying_period }}년
+                        </h5>
+                        <h5>
+                             - 이체일 : {{ result.transfer_date }},&nbsp;보험료 : {{ result.premium|intcomma }}만원
+                        </h5>
+                         <h5>
+                             - 납입방법 : {{ result.entry_method }},&nbsp;현재연령 : {{ result.present_age }}세,&nbsp;연금개시연령 : {{ result.pention_age }}세
+                        </h5>
+                        {% endfor %}
+
+                    </th>
+                </table>
+
+                <br>
+                <div style="background-color:#FBFCFE;">
+
+                    <h4 style="text-align:center; padding:10px 0px 0px 0px;">
+                        <b>현재 <span style="color:#E96437;">보유펀드</span> 현황</b>
+                        <i class='fas fa-feather' style='font-size:26px;color:red'></i>
+                    </h4>
+
+                    <h6 style="text-align:center; padding:0px 0px 0px 0px;">현재 보유하고 계신 펀드 현황 및  </h6>
+                    <h6 style="text-align:center; padding:0px 0px 0px 0px;">수익률입니다.  </h6>
+                    <h6 style="text-align:center; padding:0px 0px 0px 0px;"> </h6>
+                    <hr style=" border: 0; height:1px; background:#333332;">
+                </div>
+                <br>
+
+                <p style="text-align:right;">※ 펀드명을 클릭하시면 해당펀드 상세내용을 보실 수 있습니다</p>
+                <table class="table table-bordered table-hover table-condensed table-responsive" style="font-size:1.0em;">
+                    <thead style="border-top:2px solid #9B959C;">
+                        <tr class="active text-center">
+                            <th class = "text-center">구분</th>
+                            <th class = "text-center">펀드명</th>
+                            <th class = "text-center">편입비율</th>
+                            <th class = "text-center">생성일</th>
+                            <th class = "text-center">주식비중</th>
+
+                        </tr>
+                    </thead>
+
+                    {% for result in object_list02 %}
+                    <tbody class = "text-center">
+                        <tr>
+                            <td width="13%">{{ result.fund_no }}</td>
+                            <td><b><a href="{% url "orders:fund_new" result.id %}">
+                                {{ result.fund_name }}
+
+                            </a></b></td>
+                            <td width="17%">{{ result.quantity }}%</td>
+                            <td width="24%">{{ result.create_date|date:'Y-m-d' }}</td>
+                            <td width="17%">{{ result.stock_percent|floatformat:"0"}}%</td>
+
+                        </tr>
+                    </tbody>
+
+                    {% endfor %}
+                </table>
+
+                <br>
+                <table class="table table-bordered table-hover table-condensed table-responsive" style="font-size:1.0em;">
+                    <thead style="border-top:2px solid #9B959C;">
+                        <tr class="active text-center">
+                            <th class = "text-center">구분</th>
+                            <th class = "text-center">1년</th>
+                            <th class = "text-center">3년</th>
+                            <th class = "text-center">5년</th>
+                            <th class = "text-center">7년</th>
+                            <th class = "text-center">10년</th>
+                        </tr>
+                    </thead>
+                    {% for result in object_list32 %}
+                    <tbody class = "text-center">
+                        <tr>
+                            <td width="20%">펀드{{ result.fund }}</td>
+                            <td width="16%"> {{ result.one_year|floatformat:"1" }}%</td>
+                            <td width="16%"> {{ result.three_year|floatformat:"1" }}%</td>
+                            <td width="16%"> {{ result.five_year|floatformat:"1" }}%</td>
+                            <td width="16%"> {{ result.seven_year|floatformat:"1" }}%</td>
+                            <td width="16%"> {{ result.ten_year|floatformat:"1" }}%</td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+
+                </table>
+                <br>
+                <h5><b>♣ 변액전체펀드 유형별 평균수익률 </b></h5>
+
+                <table class="table table-hover table-condensed table-responsive" style="font-size:1.1em;">
+                    <thead style="border-top:2px solid #9B959C;">
+                        <tr class="active text-center">
+                            <th class = "text-center">유형</th>
+                            <th class = "text-center">지역</th>
+                            <th class = "text-center">펀드수</th>
+                            <th class = "text-center">1년</th>
+                            <th class = "text-center">3년</th>
+                            <th class = "text-center">5년</th>
+                            <th class = "text-center">10년</th>
+
+                        </tr>
+                    </thead>
+
+                    {% for result in object_list23 %}
+                    <tbody class = "text-center">
+                        <tr style="border-bottom :0.5px solid #9B959C;">
+                            <td>{{ result.type }}</td>
+                            <td>{{ result.area }}</td>
+                            <td>{{ result.count }}</td>
+                            <td>{{ result.one_year|floatformat:"1"}}%</td>
+                            <td>{{ result.three_year|floatformat:"1"}}%</td>
+                            <td>{{ result.five_year|floatformat:"1"}}%</td>
+                            <td>{{ result.ten_year|floatformat:"1"}}%</td>
+
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>
+
+                <p>※ 변액전체펀드 중 10년 이상된 순수 증권펀드의 평균수익률입니다. </p>
+
+
+                <h5>
+                    <i class="fa fa-warning" style="font-size:12px; color:#E96437; padding:20px 0px 0px 0px;">
+                        <b style="color:#C83219;">주의 : </b></i>
+                        <small>수익률 비교를 위한 것으로 사업비는 반영되어 있지 않습니다</small>
+
+                </h5>
+
+                <br>
+
+            </div>         <!-- 큰그리드 끝-->
+        </div>  <!-- raw -->
+    </div>  <!-- container -->
+</div>
+
+
+
+
+{% endblock %}

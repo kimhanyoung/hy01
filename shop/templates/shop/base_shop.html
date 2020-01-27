@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}base_shop.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/form02.css" %}{% endblock %}
+
+{% load humanize %}   # 세자리 콤마 찍기위해 로드함- settings.py에 앱추가함
+{% load pentions_filter %}   <!-- 내가 만든 사용자정의필터 아래 사용--->
+
+
+{% block content %}
+
+
+<div id="content">
+    <br>
+
+
+</div>    <!-- content -->
+
+
+
+{% endblock %}

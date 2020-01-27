@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}ma100in_form.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/form03.css" %}{% endblock %}
+
+{% load humanize %}   <!-- 세자리 콤마 찍기위해 로드함- settings.py에 앱추가함  -->
+
+{% block content %}
+
+
+<div id="content">
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12" style="padding:10px 0px 0px 0px;">
+
+                <h3 style="padding: 0px 0px 0px 0px;">
+                <span class="glyphicon glyphicon-object-align-bottom" style="color:blue;"></span> 변액
+                </h3>
+                <h5 style="padding: 0px 0px 0px 30px;">...............</h5>
+                <br>
+            </div>   <!--그리드 -->
+
+            <div class="col-lg-9 col-md-9 col-xs-12 col-sm-12" style="padding:0px 10px 0px 20px;">
+                <br><br>
+
+
+                {{ insu.insu_name}}
+
+                <table class="table table-bordered table-hover table-condensed" style="font-size:1.0em;"
+                    <thead style="border-top:2px solid #9B959C;">
+                        <tr class="active text-center">
+                            <th class = "text-center">펀드명</th>
+                            <th class = "text-center">설정일</th>
+                            <th class = "text-center">펀드코드</th>
+                            <th class = "text-center">펀드유형</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody class = "text-center">
+                        {% for fund in insu.ma001fund_list_set.all %}
+                        <tr>
+                            <td> {{ fund.fund_name}}</a></td>
+                            <td> {{ fund.create_date}} </td>
+                            <td> {{ fund.fund_code}} </td>
+                            <td> {{ fund.fund_type02}} </td>
+
+
+
+
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="col-md-6 col-xs-10 col-sm-6" >
+
+
+            </div>    <!--그리드 -->
+
+        </div>    <!--row -->
+    </div>    <!--container -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+
+{% endblock %}

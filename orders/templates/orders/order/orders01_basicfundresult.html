@@ -1,0 +1,583 @@
+{% extends "base.html" %}
+
+{% block title %}orders01_basicfundresultform.html{% endblock %}
+
+{% load staticfiles %}
+{% load mathfilters %}    /* 빼기 곱하기 나누기 를 위해 설치*/
+{% block extrastyle %}{% static "css/form03.css" %}{% endblock %}
+
+{% load humanize %}   <!-- 세자리 콤마 찍기위해 로드함- settings.py에 앱추가함  -->
+
+{% block content %}
+
+
+<div id="content">
+    <br>
+
+     <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-xs-12 col-sm-12">
+
+                <h5 style="color:#EF9365; text-align:right; padding:0px 40px 0px 0px;">Variable Insurance</h5>
+
+            </div>   <!--그리드 -->
+
+
+
+            <div class="col-lg-12 col-lg-offset-1 col-md-12 col-xs-12 col-sm-12">
+                <div class="col-lg-2 col-md-2 col-xs-2 col-sm-2 visible-lg" style="padding:0px 10px 0px 0px;">
+                    <br>
+                    <table class="table table-bordered">
+                          <thead>
+                           <tr>
+                             <th>
+                                <div class="panel-group" id="accordion" >
+                                    <div class="panel" style="border-color:white;">
+                                      <div class="panel-heading" >
+                                        <h4 class="panel-title">
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                             <p><b>Ⅰ. 변액수익률 확인</b></p>
+                                          </a>
+                                        </h4>
+                                      </div>
+                                      <div id="collapseOne" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp; <b>보험명 입력</b>
+                                                <a style="color:#529599; font-size:11px;" href="{% url 'shop:product_all' %}">&ensp; &ensp; >>다시 입력</a>
+                                            </h5>
+                                            <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp; <b>펀드 편입비율 입력</b>
+                                            </h5>
+                                            <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp;
+                                                <b>보험 가입정보 입력</b>
+                                            </h5>
+                                            <h5 style="color:#565656; padding:0px 0px 3px 0px;">
+                                                <span class="badge" style="background-color:#D46658; padding:6px 20px 6px 15px; font-size:12px;">
+                                                    <span class="fas fa-caret-right"></span>&ensp;&nbsp;<b>투자현황 확인</b>
+                                                </span>
+                                            </h5>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="panel">
+                                      <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                            <p><b>Ⅱ. 변액관리</b></p>
+                                          </a>
+                                        </h4>
+                                      </div>
+                                     <div id="collapseTwo" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders03:input' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 펀드변경</b></a>
+                                            </h5>
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders06:hungbu' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 흥부와 놀부</b></a>
+                                            </h5>
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders:fund' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 일반 적립식펀드</b></a>
+                                            </h5>
+                                            <span class="badge" style="background-color:white; color:white; padding:5px 20px 5px 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이것은 안나타남</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                             </th>
+                           </tr>
+                       </thead>
+                    </table>
+                    <br><br><br><br><br><br><br><br><br><br><br>
+                </div>   <!--그리드 -->
+
+            <div class="col-lg-4 col-lg-offset-0 col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0" style="padding:0px 0px 0px 40px;">
+                <br>
+                <h4>
+                    <b>펀드별 상세내역</b>
+                    <b style="float:right; padding: 0px 15px 0px 0px;"><a href="{% url 'orders:earning' %}" class="badge badge-secondary badge-sm" >돌아가기</a></b>
+                </h4>
+
+                <table class="table table-bordered">
+                  <thead>
+                   <tr>
+                     <th>
+                         <h5>
+                            {% for result in object_list02 %}
+                            &nbsp; - 펀드명 : {{ result.fund_name }}
+                            {% endfor %}
+                        </h5>
+                        <h5>
+                            {% for result in object_list02 %}
+                               &nbsp; - 생성일 : {{ result.create_date|date:'Y-m-d' }},&nbsp;대유형 : {{ result.fund_type01 }},&nbsp;소유형 : {{ result.fund_type02 }}
+                            {% endfor %}
+                        </h5>
+                        <h5>
+                            {% for result in object_list02 %}
+                               &nbsp; - 순자산액 : {{ result.asset_money|floatformat:"0"|intcomma }}백만원
+                            {% endfor %}
+                        </h5>
+                        <h5>
+                            {% for result in object_list02 %}
+                               &nbsp; - 운용사 : {{ result.manage_company }}
+                            {% endfor %}
+                        </h5>
+                     </th>
+                   </tr>
+                   </thead>
+                </table>
+                <div class="thumbnail text-left" style="padding : 20px; border-color:#C0C1C2; border-radius: 3px;">
+                    <div id="container2" style="padding: 0px 10px 0px 0px;">   <!-- 챠트 시작 -->
+                        <script>
+                            var chart02 = new Highcharts.chart('container2', {
+                                "chart": {
+
+                                    "zoomType": "x",
+
+                                    "polar": false,
+                                    "height": 393,
+
+                                    "marginBottom": 60,
+                                    "marginTop": 20,
+                                    "marginRight": 20,
+                                    "marginLeft": 55
+                                  },
+                                  "title": {
+                                    "text": ""
+                                  },
+                                  "subtitle": {
+                                    "text": ""
+                                  },
+                                   "plotOptions": {
+                                      "line": {                        <!-- 점의 크기 -->
+                                         "marker": {
+                                           "radius": 1
+                                         }
+                                      },
+                                      "series": {
+                                           "states": {
+                                           "inactive": {
+                                              "opacity": 0.5
+                                           }
+                                         },
+                                      "connectNulls":true
+                                      }
+                                  },
+                                  "xAxis": {
+                                    categories: [{% for result in object_list %}'{{ result.basic_date|date:'y-m-d'}}'{% if not forloop.last %}, {% endif %}{% endfor %}],
+                                    "index": 0,
+                                    "isX": true,
+
+                                    labels: {               <!--x축 글자-->
+                                        style: {
+                                           fontSize: '9'
+                                        }
+                                    },
+                                  },
+                                  "yAxis": {
+                                    title: {
+                                        text: "Kospi vs Funds of Your Insurance <br />period : 2002-02-02 ~",    <!--그래프중간에 글자넣기-->
+                                        align: "high",
+                                        rotation: 0,
+                                        x: 300,
+                                        y: 30,
+                                        useHTML: true,
+                                        style: {
+                                          align: "center",
+                                          fontWeight: "bold"
+                                        }
+                                    },
+                                    "index": 0,
+                                    crosshair: true,
+                                    labels: {
+                                        format: ''
+                                    }
+
+                                  },
+                                  "series": [
+                                    {
+                                      data: [ {% for result in object_list %}{{ result.entry_graph|floatformat:"2" }}{% if not forloop.last %}, {% endif %}{% endfor %}],
+                                      "turboThreshold": 0,
+                                      "type": "line",
+                                      "colorByPoint": false,
+                                      "color": "#462A1E",
+                                      "name": "가입일"
+                                    },
+                                    {
+                                      data: [ {% for result in object_list00 %}{{ result.fund_price|floatformat:"2" }}{% if not forloop.last %}, {% endif %}{% endfor %}],
+                                      "turboThreshold": 0,
+                                      "type": "line",
+                                      "colorByPoint": false,
+                                      "color": "#ff7043",
+                                      "name": "펀드기준가"
+                                    },
+                                    {
+                                      data: [ {% for result in object_list %}{{ result.kospi|floatformat:"2"}}{% if not forloop.last %}, {% endif %}{% endfor %}],
+                                      "turboThreshold": 0,
+                                      "type": "line",
+                                      "color": "#7cb5ec",
+                                      "name": "종합주가지수"
+                                    }
+
+
+                                  ],
+                                  "data": {
+                                    "googleSpreadsheetKey": false,
+                                    "googleSpreadsheetWorksheet": false
+                                  },
+                                  "mapNavigation": {
+                                    "enableDoubleClickZoom": true
+                                  },
+                                  "pane": {
+                                    "background": []
+                                  },
+                                  "responsive": {
+                                    "rules": []
+                                  },
+                                  "chartarea": {},
+                                  "plotarea": {},
+                                  "tooltip": {
+
+                                  },
+                                  "credits": {},
+                                  "legend": {
+                                    enabled: false
+
+                                  }
+                                });
+                       </script>
+                    </div>       <!-- 챠트 끝  -->
+                </div>
+            </div>   <!-- 그리드 -->
+
+            <div class="col-lg-3 col-md-5 col-xs-12 col-sm-12" style="padding:0px 0px 0px 40px;">
+                <br><br>
+                <h5><b>♣ 과거수익률 비교 (vs 종합주가지수)</b></h5>
+
+                <table class="table table-hover table-condensed table-responsive" style="font-size:1.0em;">
+                    <thead style="border-top:2px solid #9B959C;">
+                        <tr class="active text-center">
+                            <th class = "text-center">구분</th>
+                            <th class = "text-center">가입시기준가</th>
+                            <th class = "text-center">현재기준가</th>
+                            <th class = "text-center">수익률</th>
+                        </tr>
+                    </thead>
+
+                    {% for result in object_list04 %}
+                    <tbody class = "text-center">
+                        <tr>
+                            <td>펀드</td>
+                            <td>{{ result.entry_price|floatformat:"2" }}</td>
+                            <td>{{ result.present_price|floatformat:"2" }}</td>
+                            <td>{% if result.rate > 0 %}
+                                <b style="color:red;">▲{{ result.rate|floatformat:"1"|intcomma }}%</b>
+                                {% else %}
+                                <b style="color:blue;">▼{{ result.rate|mul:-1|floatformat:"1"|intcomma }}%</b>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    {% endfor %}
+                    {% for result in object_list05 %}
+                    <tbody class = "text-center">
+                        <tr style="border-bottom :0.5px solid #9B959C;">
+                            <td>kospi</td>
+                            <td>{{ result.entry_price|floatformat:"2" }}</td>
+                            <td>{{ result.present_price|floatformat:"2" }}</td>
+
+                            <td>{% if result.rate > 0 %}
+                                <b style="color:red;">▲{{ result.rate|floatformat:"1"|intcomma }}%</b>
+                                {% else %}
+                                <b style="color:blue;">▼{{ result.rate|mul:-1|floatformat:"1"|intcomma }}%</b>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    {% endfor %}
+                </table>
+
+                위 수익률은 거치식 수익률입니다 적립식수익률은 <a href="#myModal01" data-toggle="modal"><b>여기</b></a>를 클릭
+                <!-- Modal -->
+                <div class="modal fade" id="myModal01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                          <br>
+                          <h4 class="modal-title" id="myModalLabel"><b>&nbsp;&nbsp;종합주가지수 및 펀드 수익률 비교 (거치식, 적립식)</b></h4>
+
+                      </div>
+                      <div class="modal-body">
+                          <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-11 col-md-12 col-xs-12 col-sm-12">
+                                    <table class="table table-bordered">
+                                      <thead>
+                                       <tr>
+                                         <th>
+                                             <h5>
+                                                {% for result in object_list30 %}
+                                                &nbsp; - 보험명 : {{ result.insu_name }}
+                                                {% endfor %}
+                                            </h5>
+                                            <h5>
+                                                {% for result in object_list30 %}
+                                                   &nbsp; - 가입일 : {{ result.entry_date|date:'Y-m-d' }},&nbsp;&nbsp;&nbsp;&nbsp;보험료 : 거치식 100,000,000원 &nbsp;&nbsp; 적립식 매월 100만원으로 투자시
+                                                {% endfor %}
+                                            </h5>
+                                            <h5>
+                                                {% for result in object_list02 %}
+                                                &nbsp; - 펀드명 : {{ result.fund_name }}
+                                                {% endfor %}
+                                            </h5>
+                                         </th>
+                                       </tr>
+                                       </thead>
+                                    </table>
+
+                                    <br><br>
+
+
+                                     <table class="table table-bordered table-hover table-condensed table-responsive" style="font-size:1.0em;">
+                                        <thead style="border-top:2px solid #9B959C;">
+                                            <tr class="active text-center">
+                                                <th rowspan="2" class = "text-center" style="vertical-align:middle;" >구분</th>
+                                                <th colspan="3" class = "text-center">주가(기준가)</th>
+                                                <th colspan="3" class = "text-center">거치식</th>
+                                                <th colspan="3" class = "text-center">적립식</th>
+                                            </tr>
+                                            <tr class="active text-center">
+                                                <th class = "text-center">가입시</th>
+                                                <th class = "text-center">현 재</th>
+                                                <th class = "text-center">상승/하락</th>
+                                                <th rowspan="2" class = "text-center">납입금액</th>
+                                                <th class = "text-center">평가금액</th>
+                                                <th class = "text-center">수익률</th>
+                                                <th rowspan="2" class = "text-center">납입금액</th>
+                                                <th class = "text-center">평가금액</th>
+                                                <th class = "text-center">수익률</th>
+
+                                            </tr>
+                                        </thead>
+
+                                        <tbody class = "text-center">
+                                            <tr>
+                                                <td>kospi</td>
+                                                <td>{% for result in object_list05 %}{{ result.entry_price|floatformat:"2"}}{% endfor %}</td>
+                                                <td>{% for result in object_list05 %}{{ result.present_price|floatformat:"2"}}{% endfor %}</td>
+                                                <td>{% for result in object_list05 %}{{ result.rate|floatformat:"1" }}{% endfor %}%</td>
+                                                <td rowspan="2" style="vertical-align:middle;">100,000,000</td>
+                                                <td>{% for result in object_list05 %}{{ result.kospi_money|floatformat:"0"|intcomma }}{% endfor %}</td>
+                                                <td>{% for result in object_list05 %}{{ result.rate|floatformat:"1" }}{% endfor %}%</td>
+                                                <td rowspan="2" style="vertical-align:middle;">{% for result in object_list10 %}{{ result.total_premium|floatformat:"0"|intcomma }}{% endfor %}</td>
+                                                <td>{% for result in object_list10 %}{{ result.kospi_money|floatformat:"0"|intcomma }}{% endfor %}</td>
+                                                <td>{% for result in object_list10 %}{{ result.kospi_rate|floatformat:"1" }}{% endfor %}%</td>
+                                            </tr>
+                                            <tr style="border-bottom :0.5px solid #9B959C;">
+                                                <td>펀드</td>
+                                                <td>{% for result in object_list04 %}{{ result.entry_price|floatformat:"2"}}{% endfor %}</td>
+                                                <td>{% for result in object_list04 %}{{ result.present_price|floatformat:"2"}}{% endfor %}</td>
+                                                <td>{% for result in object_list04 %}{{ result.rate|floatformat:"1" }}{% endfor %}%</td>
+                                                <td>{% for result in object_list04 %}{{ result.fund_money|floatformat:"0"|intcomma }}{% endfor %}</td>
+                                                <td>{% for result in object_list04 %}{{ result.rate|floatformat:"1" }}{% endfor %}%</td>
+
+                                                <td>{% for result in object_list10 %}{{ result.fund_money|floatformat:"0"|intcomma }}{% endfor %}</td>
+                                                <td>{% for result in object_list10 %}{{ result.fund_rate|floatformat:"1" }}{% endfor %}%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+
+                                    <h4>1. Cost AveragIng Effect</h4>
+
+                                    <div>
+                                        <img src={% static "img/accum001.jpg" %} alt="...">
+                                    </div>
+                                    <br>
+                                    <h4><b>"적립식 펀드에 투자하면 무조건 코스트 에버리지 효과를 볼 수 있을까?"</b></h4>
+                                    <table class="table table-bordered">
+                                      <thead>
+                                       <tr>
+                                         <th>
+                                            <h5> 적립식 펀드에 투자를 한다고 해서 무조건 코스트 에버리지 효과를 볼 수는 없을 것입니다.<br>
+                                            주가가 오르지 않고 계속해서 떨어지는 경우도 물론 생길 수 있을 것이니까요. <br>
+                                            하지만, 적립식 펀드처럼 장기적으로 투자를 하다 보면, 어차피 주가는 내려갔다가 올라가기도 하기에,<br>
+                                            <b>코스트 에버리지 효과를 볼 가능성이 더 높다고</b> 할 수 있을 것이지요. 이는 특히, 단기적인 투자보다는 <br>
+                                            <b>3년 이상의 장기적인 투자에서 그 효과를 볼 수 있는 내용이라고</b> 할 수 있습니다.</h5>
+
+                                         </th>
+                                       </tr>
+                                       </thead>
+                                    </table>
+
+                                    <br><br>
+                                    <h4>2. Cost AveragIng Effect (장기상승시)</h4>
+
+                                    <div>
+                                        <img src={% static "img/accum002.jpg" %} alt="...">
+                                    </div>
+                                    <br>
+                                    <h4>3. Cost AveragIng Effect (장기 하락시)</h4>
+
+                                    <div>
+                                        <img src={% static "img/accum003.jpg" %} alt="...">
+                                    </div>
+
+                                  </div>
+
+                                </div>
+                            </div>   <!-- row  -->
+                          </div>    <!-- container-fluid  -->
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">닫기</button>
+                          </div>
+
+                    </div> <!-- 모달 콘텐츠 -->
+                  </div> <!-- 모달 다이얼로그 -->
+                </div> <!-- 모달 전체 윈도우 -->
+                <br><br>
+                <H5>※ 자산구성현황</H5>
+                <HR>
+                 <div id="carousel-generic" class="carousel2 slide">
+                  <div class="carousel-inner">
+                    <div class="item active">
+                       <div class="row"> <!-- 슬라이드 one -->
+                            <div class="col-lg-6 col-xs-3 col-md-6 col-sm-4">
+                                <div class="thumbnail text-left" style="padding :5px; border-color:#C0C1C2; border-radius: 3px;">
+                                     <br>
+                                     <div id="container3" style="margin: 0px 0px 0px 0px;">   <!-- 챠트 시작 -->
+                                        <script>
+                                            var chart03 = new Highcharts.chart('container3', {
+                                                 "chart": {
+                                                    "options3d": {
+                                                      "enabled": true,
+                                                      "alpha": 45,
+                                                      "beta": 0
+                                                    },
+                                                    "polar": false,
+
+                                                    "height": 180
+                                                  },
+
+                                                  "plotOptions": {
+                                                    "pie": {
+                                                      "allowPointSelect": true,
+                                                      "depth": 35,
+                                                      "cursor": "pointer",
+                                                      "showInLegend": true,
+                                                      "dataLabels": {
+                                                        "enabled": false
+                                                      }
+                                                    },
+                                                    "series": {
+                                                      "animation": false,
+                                                      "states": {
+                                                        "inactive": {}
+                                                      }
+                                                    }
+                                                  },
+                                                  "title": {
+                                                    "text": ""
+                                                  },
+                                                  "subtitle": {
+                                                    "text": ""
+                                                  },
+                                                  "xAxis": {
+                                                    categories: [{% for result in object_list01 %}'{{ result.classification}}'{% if not forloop.last %}, {% endif %}{% endfor %}],
+                                                    "index": 0,
+                                                    "isX": true
+                                                  },
+                                                  "yAxis": {
+
+                                                    "index": 0
+                                                  },
+                                                   "legend": {
+                                                    "enabled": false
+                                                  },
+                                                  "series": [
+                                                    {
+                                                      data: [ {% for result in object_list01 %}{{ result.asset|floatformat:"2"}}{% if not forloop.last %}, {% endif %}{% endfor %}],
+                                                      "turboThreshold": 0,
+                                                      "_colorIndex": 0,
+                                                      "_symbolIndex": 0,
+                                                      "type": "pie"
+                                                    }
+                                                  ],
+                                                });
+                                       </script>
+                                    </div>       <!-- 챠트 끝  -->
+                                </div>   <!-- thumnail -->
+                            </div>
+                            <div class="col-lg-6 col-xs-3 col-md-6 col-sm-3">
+
+                                <h6> 펀드 주식비중:
+                                    <b>
+                                    {% for result in object_list02 %}
+                                        {{ result.stock_percent|floatformat:"0"}}%
+                                    {% endfor %}
+                                    </b>
+                                </h6>
+
+                                <table class="table table-bordered table-hover table-condensed table-responsive" style="font-size:1.0em;">
+                                    <thead style="border-top:2px solid #9B959C;">
+                                        <tr class="active text-center">
+                                            <th class = "text-center">구분</th>
+                                            <th class = "text-center">비중</th>
+                                        </tr>
+                                    </thead>
+
+                                    {% for result in object_list01 %}
+                                    <tbody class = "text-center">
+                                        <tr>
+                                            <td>{{ result.classification }}</td>
+                                            <td>{{ result.asset|floatformat:"1" }}</td>
+                                        </tr>
+                                    </tbody>
+                                    {% endfor %}
+                                </table>
+
+                            </div>
+                          <div class="col-lg-12 col-xs-12 col-md-12 col-sm-5 hidden-sm">  <!-- 아이패드 세로제외 -->
+                            <table class="table table-bordered">
+                                  <thead>
+                                   <tr>
+                                     <th>
+                                        <h6>
+                                            <b>&nbsp;[펀드보수]</b>
+                                        </h6>
+                                        <h6>
+                                            {% for result in object_list02 %}
+                                               &nbsp; 운용보수 : {{ result.manage_pay|floatformat:"2" }},&nbsp;&nbsp;일임보수 : {{ result.sell_pay|floatformat:"2" }},&nbsp;&nbsp;수탁보수 : {{ result.bank_pay|floatformat:"2" }}
+                                            {% endfor %}
+                                        </h6>
+                                        <h6>
+                                            {% for result in object_list02 %}
+                                            &nbsp; 사무보수 : {{ result.office_pay|floatformat:"2"}} &nbsp;&nbsp;&nbsp;&nbsp;<b>보수합계 : {{ result.sum_pay|floatformat:"2"}}</b>
+                                            {% endfor %}
+                                        </h6>
+
+                                     </th>
+                                   </tr>
+                                   </thead>
+                                </table>
+                            </div>
+
+                       </div> <!-- 슬라이드 one end -->
+                    </div>
+
+                  </div>
+              </div>         <!--  carousel2 slide  -->
+
+            </div>         <!-- 큰그리드 -->
+        </div>  <!-- raw -->
+    </div>  <!-- container -->
+</div>
+<br><br>
+
+
+
+{% endblock %}

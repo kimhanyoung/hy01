@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block title %}post_change_list.html{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+
+<style>
+.ONE {
+
+    background-image: url('/static/img/book/basic24.png');
+}
+
+table > thead > tr > th {
+    text-align:center;
+    padding :0px 0px 20px 0px;
+}
+
+table > tbody > tr > td > a > b {
+    color:#303132;
+    text-align:left;
+    padding :0px 0px 0px 25px;
+    vertical-align:middle;
+}
+
+.ab {
+    color:#AEAEAF;
+    float:right;
+    padding: 4px 15px 0px 0px;
+    vertical-align:middle;
+}
+
+
+</style>
+
+
+
+<div id="content">
+    <div class="ONE container-fluid">
+        <div class="raw">
+
+            <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+                <br><br>
+                <h4 style="color:#F7F8F9; text-align:center;">Golden Rule!! Action to Sucess!</h4>
+                <h1 style="color:#F7F8F9; text-align:center;"><b>고객관리의 새로운 가치 창출</b></h1>
+                <br><br><br>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-9 col-lg-offset-1 col-md-12 col-xs-12 col-sm-12 " style="padding:40px 0px 0px 0px;">
+                <h3>게시판
+                <b style="float:right; padding: 0px 5px 0px 0px;"><a href="{% url "blog:post_list" %}" class="btn btn-primary btn-sm">목록으로</a></b>
+                </h3>
+                <hr style=" border: 0;height:2px; background:#333332;">
+                <div class="col-lg-8 col-md-8 col-xs-8 col-sm-8 ">
+                    <h4>게시글 수정/삭제 - <small><b>작성자 : {{user}}</b></small></h4>
+
+                    <table class="table table-hover" style="margin: 20px 0px 0px 0px;">
+                        <thead style="border-top:2px solid #9B959C;">
+                            <tr class = "text-center">
+                                <th>순번</th>
+                                <th>Title</th>
+                                <th>Owner</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+
+                        {% for item in object_list %}
+                        <tr style="border-bottom:0.1px solid #C6C5C5;">
+                            <td class = "text-center">{{ item.id }}</td>
+                            <td>&emsp;&emsp;&emsp;{{ item.title }}</td>
+                            <td class = "text-center">{{ item.owner }}</td>
+                            <td><a href="{% url 'blog:update' item.id %}"><b style="color:#3182C6;">수정</b></a></td>
+                            <td><a href="{% url 'blog:delete' item.id %}"><b style="color:#CE4236;">삭제</b></a></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                    <div>
+
+                    </div>
+                     <br><br><br>
+
+
+                    <br><br>
+
+                </div>  <!-- 작은그리드 -->
+
+                <div class="col-lg-3 col-lg-offset-1 col-md-3 col-xs-3 col-sm-3" style="padding:10px 10px 0px 60px;">
+                    <div class="thumbnail text-left" style="padding : 10px 5px 10px 5px; border-color:#C0C1C2; border-radius: 0px;">
+                        <img src={% static "img/book/pen60.jpg" %} class="sideToSide" width="250px" />
+
+                       <h5 style="padding:10px 0px 0px 10px;">
+                           <b style="color:#396A94;"><span class="fas fa-laptop"></span></b><b>&nbsp;&nbsp;게시글 작성, 수정/삭제</b>
+                       </h5>
+                        <h5 style="float:right; padding: 0px 25px 0px 0px;">
+                            <a href="{% url 'blog:add' %}" class="btn btn-default btn-xs" id="openBtn">
+                                작성
+                            </a>
+                            <a href="{% url 'blog:change' %}" class="btn btn-default btn-xs" id="openBtn02">
+                                수정/삭제
+                            </a>
+                        </h5>
+                        <br><br>
+
+                    </div>   <!-- thumbnail  -->
+
+                    <br><hr>
+                    <h6>
+                        <b style="color:#EF9141;">【주의】</b> 본 게시판은 사용자들이 상호 정보의 공유와 의견교환 및 프로그램 운영자에게 프로그램 개선, 사용 문의 등을 위한 공간이므로<br>
+                          상업적인 광고를 목적으로 한 게시물이나 상호비방 목적의 글 등은 사전 동의없이 삭제할 수 있음을 알려드립니다.
+                    </h6>
+                    <br><br><br><br>
+                    </div>
+
+            </div>             <!-- 그리드 -->
+        </div>            <!-- low -->
+    </div>   <!-- container -->
+</div>    <!-- content -->
+
+
+
+{% endblock %}

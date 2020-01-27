@@ -1,0 +1,266 @@
+{% extends "base.html" %}
+
+{% block title %}create.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/form03.css" %}{% endblock %}
+
+{% load humanize %}   <!-- 세자리 콤마 찍기위해 로드함- settings.py에 앱추가함  -->
+
+{% block content %}
+
+
+<div id="content">
+    <br>
+
+     <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-11 col-lg-offset-1 visible-lg">
+                <h3><span class="glyphicon glyphicon-stats" style="color:#3699EF; font-size:30px;"></span>&nbsp;&nbsp;Variable Insurance</h3>
+            </div>   <!--그리드 -->
+            <div class="col-lg-12 visible-lg">
+                <hr>
+            </div>
+            <div class="col-md-12 col-xs-12 col-sm-12 hidden-lg">
+
+                <h5 style="color:#E87949; text-align:right; padding:0px 40px 0px 0px;">Variable Insurance</h5>
+
+            </div>   <!--그리드 -->
+
+            <div class="col-lg-12 col-lg-offset-1 col-md-12 col-xs-12 col-sm-12">
+                <div class="col-lg-2 col-md-3 col-xs-2 col-sm-3" style="padding:0px 10px 0px 0px;">
+                    <br><br>
+
+                    <table class="table table-bordered">
+                          <thead>
+                           <tr>
+                             <th>
+                                <div class="panel-group" id="accordion" >
+                                    <div class="panel" style="border-color:white;">
+                                      <div class="panel-heading" >
+                                        <h4 class="panel-title">
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                            <p><b>Ⅰ. 변액수익률 확인</b></p>
+                                          </a>
+                                        </h4>
+                                      </div>
+                                      <div id="collapseOne" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp; <b>보험명 입력</b>
+                                            </h5>
+                                            <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp; <b>펀드 편입비율 입력</b>
+                                            </h5>
+                                            <h5 style="color:#565656; padding:0px 0px 3px 0px;">
+                                                <span class="badge" style="background-color:#D46658; padding:6px 20px 6px 15px; font-size:12px;">
+                                                    <span class="fas fa-caret-right"></span>&ensp;&nbsp;<b>보험 가입정보 입력</b>
+                                                </span>
+                                            </h5>
+                                            <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp;
+                                                <b>투자현황 확인</b>
+                                            </h5>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="panel">
+                                      <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                            <p><b>Ⅱ. 변액관리</b></p>
+                                          </a>
+                                        </h4>
+                                      </div>
+                                      <div id="collapseTwo" class="panel-collapse collapse in">
+                                       <div class="panel-body">
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders03:input' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 펀드변경</b></a>
+                                            </h5>
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders06:hungbu' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 흥부와 놀부</b></a>
+                                            </h5>
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders:fund' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 일반 적립식펀드</b></a>
+                                            </h5>
+                                            <span class="badge" style="background-color:white; color:white; padding:5px 20px 5px 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이것은 안나타남</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                             </th>
+                           </tr>
+                       </thead>
+                    </table>
+                    <br><br><br><br><br><br><br><br><br><br><br>
+                </div>   <!--그리드 -->
+
+
+            <div class="col-lg-6 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-8 col-sm-offset-0" style="padding:0px 0px 0px 40px;">
+
+                <h4 class="page-header"><b>보험 가입정보 입력</b></h4>
+                
+
+                <form action="." method="post">{% csrf_token %}
+                {% if form.errors %}
+                    <p class="errornote">아래 항목을 빠짐없이 입력하셔야 합니다</p>
+                {% endif %}
+
+                    <fieldset class="aligned">
+                        <div class="form-row">
+                            <label for="date">가 입 일 :&nbsp;&nbsp; </label>
+                            <input id="date" name="entry_date" type="date" value={{ form.entry_date.value}} >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span>
+                                <label for="money">월 보 험 료 :&nbsp;&nbsp; </label>
+                                <input id="money" name="premium" type="number" min="0" max="99999" step="0.01" value={{ form.premium.value}} >&nbsp;만원
+                            </span>
+                        </div>
+
+                        <div class="form-row" >
+                            <span>
+                                 <label for="period02">납입기간 :&nbsp; </label>
+                                <input id="period02" name="paying_period" size="4" value={{ form.paying_period.value}}> 년납&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;
+                            </span>
+                            <span>
+                                <label class="radio-inline" for="gen" style="font-weight: bold;font-size: 15px;">성 별 :&nbsp;&nbsp; </label>
+                                <lable><input  id="gen" type="radio" name="gender" checked="checked" value="남자"> 남자</lable>
+                                <lable><input  id="gen" type="radio" name="gender" value="여자"> 여자</lable>
+                            </span>
+                        </div>
+
+                         <div class="form-row">
+                             <span>
+                                 이 체 일 :&nbsp;&nbsp;
+                                 <input id="DAY" name="transfer_date" type="number" min="0" max="9999" step="1" value={{ form.transfer_date.value}} >&nbsp;일&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             </span>
+                             <span>
+                                 <label class="radio-inline" for="method" style="font-weight: bold;font-size: 15px;">납입방법 :&nbsp;&nbsp; </label>
+                                 <lable><input  id="method" type="radio" name="entry_method" checked="checked" value="적립"> 적립식</lable>
+                                 <lable><input  id="method" type="radio" name="entry_method" value="거치"> 거치식</lable>
+                             </span>
+                         </div>
+                        <div class="form-row" >
+                            <span>
+                                <label for="age">가입시연령 :&nbsp;&nbsp; </label>
+                                <input id="age" name="present_age" type="number" min="0" max="80000"  value={{ form.present_age.value}}>&nbsp;세
+                                <a style="color:#57A6B1; float:right; padding: 0px 15px 0px 0px;" href="{% url 'orders05:input' %}"> ☞ 보험나이구하기</a>
+                            </span>
+                        </div>
+                        <div class="form-row">
+                             <label for="risk">위험보험료 :&nbsp;&nbsp; </label>
+                             <input id="risk" name="risk_premium" type="number" min="0" max="999999" step="100" value={{ form.risk_premium.value}} >&nbsp;만원
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span>
+                                <label for="age02">연금개시연령 :&nbsp;&nbsp; </label>
+                                <input id="age02" name="pention_age" type="number" min="45" max="80000" value={{ form.pention_age.value}}>&nbsp;세
+                            </span>
+                        </div>
+                        <br>
+                        <h5 class="page-header">
+                            <span class="fas fa-arrow-alt-circle-right"></span>&ensp;
+                            <b>현재 계약자적립금</b> &emsp;&emsp;<small>☜ 현재 계약자적립금을 입력하시면 좀 더 정확한 예상 연금액을 확인하실 수 있습니다.</small>
+                        </h5>
+                        <div class="form-row" >
+                            <span>
+                                <label for="count">경과월 :&nbsp;&nbsp; </label>
+                                <input id="count" name="count" type="number" min="0" max="1000" value={{ form.count.value}}>&nbsp;월&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                <a style="color:#57A6B1; float:right; padding: 0px 15px 0px 0px;" href="{% url 'orders04:input' %}"> ☞ 경과월 구하기</a><br>
+                            </span>
+                        </div>
+                        <div class="form-row" >
+                            <span>
+                                <label for="payment">현재 계약자적립금 :&nbsp;&nbsp; </label>
+                                <input id="payment" name="payment" type="number" min="0" max="10000000000" value={{ form.payment.value}}>&nbsp;원
+                            </span>
+                        </div>
+                        <br>
+                         <h5 class="page-header">
+                            <a href="#myModal" data-toggle="modal"  id="openBtn">
+                                <span class="fas fa-arrow-alt-circle-right"></span>&ensp;
+                                <b>사업비&emsp;<span class="fas fa-chevron-down"></span></b>
+                            </a>
+                             &emsp;&emsp;<small>←  평균 사업비 적용 (필요시 수정하면 적용됩니다)</small>
+                        </h5>
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                  <br>
+                                  <h4 class="modal-title" id="myModalLabel"><b>&nbsp;&nbsp;사업비 수정 </b></h4>
+
+                              </div>
+                              <div class="modal-body" style="background-color:#B7BBBE">
+                                  <br>
+
+                                  <div class="container-fluid">
+                                   <div class="row">
+                                        <div class="col-lg-12 col-sm-12 col-md-12">
+                                            <div class="thumbnail" style="padding-top:30px; border-color:#779FC2; border-radius: 8px;" onMouseOver="this.style.backgroundColor='#DFEFFC'" onMouseOut="this.style.backgroundColor=''">
+                                                <h5 style="text-align:center; padding:0px; 10px 10px 0px;">현재 판매중인 변액보험의 평균사업비를 적용한 것으로 <br>필요시 항목을 변경하시면 적용이 됩니다.</h5>
+                                            </div>    <!-- thumbnail -->
+                                            <div class="thumbnail" style="padding:30px 0px 10px 20px; border-color:#779FC2; border-radius: 8px;" onMouseOver="this.style.backgroundColor='#DFEFFC'" onMouseOut="this.style.backgroundColor=''">
+                                                <br>
+                                                <h4>&ensp;▶ 적립식 </h4>
+
+                                                <div class="form-row" >
+                                                    <label for="sign_charge7">&emsp;  계약체결비용(7년 이내) : </label>
+                                                    <input id="sign_charge7" name="sign_charge7" type="number" step="0.01" min="0" max="99" value={{ form.sign_charge7.value}} >&nbsp;% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                </div>
+                                                <div class="form-row" >
+                                                    <label for="sign_charge810">&emsp;  계약체결비용(8년~10년) : </label>
+                                                    <input id="sign_charge810" name="sign_charge810" type="number" step="0.01" min="0" max="99999"  value={{ form.sign_charge810.value}} >&nbsp;%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                </div>
+                                                <div class="form-row" >
+
+                                                    <label for="management_charge7">&emsp;  관리/유지비용(7년 이내) : </label>
+                                                    <input id="management_charge7" name="management_charge7" type="number" step="0.01" min="0" max="99999"  value={{ form.management_charge7.value}} >&nbsp;%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                </div>
+                                                <div class="form-row" >
+
+                                                    <label for="management_charge810">&emsp;  관리/유지비용(7년~10년) : </label>
+                                                    <input id="management_charge810" name="management_charge810" type="number" step="0.01" min="0" max="99999" value={{ form.management_charge810.value}} >&nbsp;%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                </div>
+                                                <div class="form-row" >
+
+                                                    <label for="management_charge11">&emsp;  관리/유지비용(10년 초과) : </label>
+                                                    <input id="management_charge11" name="management_charge11" type="number" step="0.01" min="0" max="99999" value={{ form.management_charge11.value}} >&nbsp;%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                </div>
+                                                <br>
+                                                <h4>&ensp;▶ 거치식 </h4>
+                                                <div class="form-row" >
+                                                    <label for="sign_charge1">&emsp;  계약체결비용 : </label>
+                                                    <input id="sign_charge1" name="sign_charge1" type="number" step="0.01" min="0" max="99999" value={{ form.sign_charge1.value}} >&nbsp;% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                </div>
+                                                <br>
+
+                                            </div>    <!-- thumbnail -->
+                                        </div>   <!-- 그리드 -->
+                                        <br>
+                                    </div>   <!-- row -->
+                                  </div>    <!--모달 container-fluid -->
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">닫기</button>
+                                  </div>
+                              </div>
+                            </div> <!-- 모달 콘텐츠 -->
+                          </div> <!-- 모달 다이얼로그 -->
+                        </div> <!-- 모달 fade -->
+
+
+                    </fieldset>
+                    <div class="submit-row">
+
+                        <input type="submit" class="btn btn-primary btn-sm"  value="다음">
+
+                    </div>
+                </form>
+                <br><br><br><br>
+
+            </div>   <!-- 그리드 -->
+        </div>  <!-- raw -->
+    </div>  <!-- container -->
+</div>
+
+{% endblock %}

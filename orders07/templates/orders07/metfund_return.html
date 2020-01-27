@@ -1,0 +1,703 @@
+{% extends "base.html" %}
+
+{% block title %}metfund_return.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/form03.css" %}{% endblock %}
+
+{% load humanize %}      <!--- 세자리 콤마 찍기위해 로드함- settings.py에 앱추가함 -->
+{% load pentions_filter %}   <!-- 내가 만든 사용자정의필터 아래 monthly_pention사용--->
+
+
+{% block content %}
+
+<style>
+
+.active > th {
+    text-align:center;
+    padding :0px 0px 0px 0px;
+}
+
+</style>
+
+
+
+
+<div id="content">
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-lg-10 col-md-12 col-xs-12 col-sm-12">
+
+                <h5 style="color:#EF9365; text-align:right; padding:0px 40px 0px 0px;">Variable Insurance</h5>
+
+            </div>   <!--그리드 -->
+
+            <div class="col-lg-12 col-lg-offset-1 col-md-12 col-xs-12 col-sm-12">
+                <div class="col-lg-2 col-md-3 col-xs-2 col-sm-3" style="padding:0px 10px 0px 0px;">
+                    <br>
+                    <table class="table table-bordered">
+                          <thead>
+                           <tr>
+                             <th>
+                                <div class="panel-group" id="accordion" >
+                                    <div class="panel" style="border-color:white;">
+                                      <div class="panel-heading" >
+                                        <h4 class="panel-title">
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                             <p><b>Ⅰ. 변액수익률 확인</b></p>
+                                          </a>
+                                        </h4>
+                                      </div>
+                                      <div id="collapseOne" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                             <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp; <b>보험명 입력</b>
+                                                <a style="color:#529599; font-size:11px;" href="{% url 'shop:product_all' %}">&ensp; &ensp; >>다시 입력</a>
+                                            </h5>
+                                            <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp; <b>펀드 편입비율 입력</b>
+                                            </h5>
+                                            <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp;
+                                                <b>보험 가입정보 입력</b>
+                                            </h5>
+                                            <h5 style="color:#565656; padding:0px 0px 3px 0px;">
+                                                <span class="badge" style="background-color:#D46658; padding:6px 20px 6px 15px; font-size:12px;">
+                                                    <span class="fas fa-caret-right"></span>&ensp;&nbsp;<b>투자현황 확인</b>
+                                                </span>
+                                            </h5>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="panel">
+                                      <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                            <p><b>Ⅱ. 변액관리</b></p>
+                                          </a>
+                                        </h4>
+                                      </div>
+                                      <div id="collapseTwo" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders03:input' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 펀드변경</b></a>
+                                            </h5>
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders06:hungbu' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 흥부와 놀부</b></a>
+                                            </h5>
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders:fund' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 일반 적립식펀드</b></a>
+                                            </h5>
+                                            <span class="badge" style="background-color:white; color:white; padding:5px 20px 5px 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이것은 안나타남</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                             </th>
+                           </tr>
+                       </thead>
+                    </table>
+                    <br><br><br><br><br><br><br><br><br><br><br>
+                </div>   <!--그리드 -->
+
+                <div class="col-lg-7 col-lg-offset-0 col-md-9 col-md-offset-0 col-sm-8 col-sm-offset-0" style="padding:0px 0px 0px 40px;">
+                <br>
+                    <h4 style="padding:0px 0px 10px 0px; color:#343535;">
+                        <b><span class="fas fa-arrow-alt-circle-right"></span>&ensp; 투자현황  확인</b>
+                    </h4>
+                    <ul class="nav nav-tabs" style="font-size:14px;">
+                        <li><a style="color:#0C2031;" href="{% url 'orders:basic' %}">가입 상세현황</a></li>
+                        <li><a style="color:#0C2031;" href="{% url 'orders:earning' %}">보유 펀드현황</a></li>
+                        <li><a style="color:#0C2031;" href="{% url 'orders:return' %}">예상 해지환급금</a></li>
+                        <li><a style="color:#0C2031;" href="{% url 'orders:pention' %}" >예상 연금액</a></li>
+                        <li class="active"><a style="color:#0C2031;" href="{% url 'orders07:list' %}" %><b>펀드선택 (BM)</b></a></li>
+                     </ul>
+                    <br>
+                    <br>
+                    <div style="background-color:#FBFCFE;">
+
+                        <h4 style="text-align:center; padding:15px 0px 0px 0px;">
+                            <b><span style="color:#E96437;">현재 가입 VS 펀드선택(BM)</span> 비교</b>
+                            <i class='fas fa-feather' style='font-size:26px;color:red'></i>
+                        </h4>
+
+                        <h5 style="text-align:center; padding:0px 0px 0px 0px;">현재와 같은 조건으로 펀드선택(BM)으로 운영시를 비교한 것입니다.  </h5>
+                        <hr>
+                        <h5 style="text-align:center; padding:0px 0px 5px 0px;">
+                            <b>● 현재 투자결과 </b>
+                        </h5>
+                        <h5 style="text-align:center; padding:0px 0px 10px 0px;">
+                            총 납입금액 : {% for result in object_list20 %}
+                                     {{ result.total_premium|floatformat:"0"|intcomma }}원
+                                     {% endfor %}
+                        </h5>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6" style="background-color:#FBFCFE; padding:0px 30px 0px 30px;">
+                            <div style="border: 1px solid #565856; text-align:center; box-shadow: 2px 2px 0px 0px rgba(163, 174, 184, 0.7);">
+                                <h5>
+                                  <b>【현 재】 </b>
+                               </h5>
+                                <h5>
+                                   {% for result in object_list20 %}
+                                   계약자적립금 : {{ result.payment|floatformat:"0"|intcomma }}&nbsp;원
+                                   {% endfor %}
+                               </h5>
+                               <h5>
+                                   {% for result in object_list21 %}
+                                   {% if forloop.counter == 1 %}
+                                   현재 예상수익률 : <b style="color:#0A7EE3;"> {{ result.expect_rate|floatformat:"1" }}% </b>
+                                   {% endif %}
+                                   {% endfor %}
+                               </h5>
+                            </div>
+                            <br>
+
+                         </div>
+                         <div class="col-lg-6 col-md-6 col-sm-6" style="background-color:#FBFCFE; padding:0px 30px 0px 30px;">
+                             <div style="border: 1px solid #565856; text-align:center; box-shadow: 2px 2px 0px 0px rgba(163, 174, 184, 0.7);">
+                                 <h5>
+                                     <b>【펀드선택(BM)】 </b>
+                                 </h5>
+                                 <h5>
+                                    {% for result in object_list31 %}
+                                    계약자적립금 : {{ result.payment|floatformat:"0"|intcomma }}&nbsp;원
+                                    {% endfor %}
+                                 </h5>
+                                 <h5>
+                                    {% for result in object_list32 %}
+                                    현재 예상수익률 : <b style="color:#0A7EE3;"> {{ result.expect_rate|floatformat:"1" }}% </b>
+                                    {% endfor %}
+                                </h5>
+                             </div>
+                             <br>
+                         </div>
+                        <hr style=" border: 1; height:1px; background:#333332;">
+                    </div>
+                    <br>
+
+
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <br><br>
+                        <h5 style="padding:0px 0px 5px 0px;">
+                            <b>● 연금 개시시점 연금예상액 비교 </b>
+                        </h5>
+                        <table class="table table-bordered table-responsive" style="font-size:1.2em; border-spacing: 2px; border-collapse: separate;">
+                            <tr>
+                                <th class = "text-center" width="10%" style="vertical-align:middle; border-color:#AEAEAF; padding:3px;">
+                                    <img src={% static "img/bt/pee14.jpg" %} alt="..." style="max-width: 85%; height: auto;">
+                                </th>
+                                <th class = "text-center" width="30%" style="border-color:#AEAEAF; vertical-align:middle; color:#5E5F5F;">
+                                    납입금액
+                                </th>
+                                <th colspan="2" class = "text-center" style="border-color:#AEAEAF; vertical-align:middle; color:#5E5F5F;">
+                                    현재 가입상품과 펀드
+                                </th>
+                            </tr>
+                            <tr>
+                                <th colspan="2" width="40%" style="text-align:center; vertical-align:middle;">
+                                    <h6>
+                                        {% for result in object_list00 %}
+
+                                         <h5>{{ result.total_premium|floatformat:"0"|intcomma }}원</h5>
+                                        {% endfor %}
+                                    </h6>
+
+                                </th>
+                                <th style="text-align:center;">
+                                    {% for result in object_list00 %}
+                                    <h5>연금계약적립액 :{{ result.pention_money|floatformat:"0"|intcomma }}원</h5>
+                                    <h5><b style="color:#CE7E38;">(환급률 :{{ result.return_rate|floatformat:"1" }}%)</b></h5>
+                                    {% endfor %}
+                               </th>
+                            </tr>
+
+                        </table>
+
+                        <table class="table table-bordered table-hover" style="font-size:1.1em;">
+                            <thead style="border-top:2px solid #9B959C;">
+                                <tr class="active">
+                                    <th class = "text-center">연금형태</th>
+                                    <th class = "text-center">구분</th>
+                                    <th class = "text-center">연금연액</th>
+                                    <th class = "text-center">연금월액</th>
+                                </tr>
+                            </thead>
+
+                            {% for pention in object_list00 %}
+                            <tbody class = "text-center">
+                                <tr>
+                                    <td rowspan="3">확정연금형</td>      <!--monthly_pention: 사용자정의필터  -->
+                                    <td>10년</td>
+                                    <td>{{ pention.set_10|floatformat:"0"|intcomma }}</td>
+                                    <td>{{ pention.set_10|monthly_pention|floatformat:"0"|intcomma }}</td>
+                                </tr>
+                                <tr>
+                                    <td>15년</td>
+                                    <td>{{ pention.set_15|floatformat:"0"|intcomma }}</td>
+                                    <td>{{ pention.set_15|monthly_pention|floatformat:"0"|intcomma }}</td>
+                                </tr>
+                                <tr>
+                                    <td>20년</td>
+                                   <td>{{ pention.set_20|floatformat:"0"|intcomma }}</td>
+                                    <td>{{ pention.set_20|monthly_pention|floatformat:"0"|intcomma }}</td>
+
+                                </tr>
+
+                                <tr>
+                                   <td rowspan="3">종신연금형</td>
+                                   <td style="background-color:#F5FBFD;">10년 보증</td>
+                                   <td style="background-color:#F5FBFD;">{{ pention.whole_10|floatformat:"0"|intcomma }}</td>
+                                    <td style="background-color:#F5FBFD;">{{ pention.whole_10|monthly_pention|floatformat:"0"|intcomma }}</td>
+
+                                </tr>
+                                <tr>
+                                   <td>20년 보증</td>
+                                   <td>{{ pention.whole_20|floatformat:"0"|intcomma }}</td>
+                                    <td>{{ pention.whole_20|monthly_pention|floatformat:"0"|intcomma }}</td>
+
+                                </tr>
+                                <tr>
+                                   <td>80세 보증</td>
+                                   <td>{{ pention.whole_80|floatformat:"0"|intcomma }}</td>
+                                    <td>{{ pention.whole_80|monthly_pention|floatformat:"0"|intcomma }}</td>
+
+                                </tr>
+                                <tr>
+                                   <td rowspan="2">상속연금형</td>
+                                   <td>연금액</td>
+                                   <td>{{ pention.inherit_month|floatformat:"0"|intcomma }}</td>
+                                    <td>{{ pention.inherit_month|monthly_pention|floatformat:"0"|intcomma }}</td>
+
+                                </tr>
+                                <tr>
+
+                                   <td>사망일시금</td>
+                                   <td colspan="2">{{ pention.inherit_lumpsum|floatformat:"0"|intcomma }}</td>
+                                </tr>
+                            </tbody>
+                            {% endfor %}
+                        </table>
+
+
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <br><br>
+                        <h5 style="padding:0px 0px 20px 0px;">
+
+                        </h5>
+
+                        <table class="table table-bordered table-responsive" style="font-size:1.2em; border-spacing: 2px; border-collapse: separate;">
+                            <tr>
+                                <th class = "text-center" width="10%" style="vertical-align:middle; border-color:#AEAEAF; padding:3px;">
+                                    <img src={% static "img/bt/pee15.jpg" %} alt="..." style="max-width: 85%; height: auto;">
+                                </th>
+                                <th class = "text-center" width="30%" style="border-color:#AEAEAF; vertical-align:middle; color:#5E5F5F;">
+                                    납입금액
+                                </th>
+
+                                <th colspan="2" class = "text-center" style="border-color:#AEAEAF; vertical-align:middle; color:#5E5F5F;">
+                                    펀드선택(BM)으로 운영시
+                                </th>
+                            </tr>
+                            <tr>
+                                <th colspan="2" width="40%" style="text-align:center; vertical-align:middle;">
+                                    <h6>
+                                        {% for result in object_list00 %}
+
+                                         <h5>{{ result.total_premium|floatformat:"0"|intcomma }}원</h5>
+                                        {% endfor %}
+                                    </h6>
+
+                                </th>
+                                <th colspan="2" style="text-align:center;">
+                                    {% for result in object_list33 %}
+                                    <h5>연금계약적립액 :{{ result.pention_money|floatformat:"0"|intcomma }}원</h5>
+                                    <h5><b style="color:#CE7E38;">(환급률 :{{ result.return_rate|floatformat:"1" }}%)</b></h5>
+                                    {% endfor %}
+                                </th>
+                            </tr>
+                        </table>
+
+                        <table class="table table-bordered table-hover" style="font-size:1.1em;">
+                            <thead style="border-top:2px solid #9B959C;">
+                                <tr class="active">
+                                    <th class = "text-center">연금연액</th>
+                                    <th class = "text-center">연금월액</th>
+                                </tr>
+                            </thead>
+
+                            {% for pention in object_list33 %}
+                            <tbody class = "text-center">
+                                <tr>
+                                    <td>{{ pention.set_10|floatformat:"0"|intcomma }}</td>
+                                    <td>{{ pention.set_10|monthly_pention|floatformat:"0"|intcomma }}</td>
+
+                                </tr>
+                                <tr>
+                                    <td>{{ pention.set_15|floatformat:"0"|intcomma }}</td>
+                                    <td>{{ pention.set_15|monthly_pention|floatformat:"0"|intcomma }}</td>
+
+                                </tr>
+                                <tr>
+                                   <td>{{ pention.set_20|floatformat:"0"|intcomma }}</td>
+                                    <td>{{ pention.set_20|monthly_pention|floatformat:"0"|intcomma }}</td>
+
+                                </tr>
+
+                                <tr style="background-color:#F5FBFD;">
+                                   <td>{{ pention.whole_10|floatformat:"0"|intcomma }}</td>
+                                    <td>{{ pention.whole_10|monthly_pention|floatformat:"0"|intcomma }}</td>
+
+                                </tr>
+                                <tr>
+                                   <td>{{ pention.whole_20|floatformat:"0"|intcomma }}</td>
+                                    <td>{{ pention.whole_20|monthly_pention|floatformat:"0"|intcomma }}</td>
+
+                                </tr>
+                                <tr>
+                                   <td>{{ pention.whole_80|floatformat:"0"|intcomma }}</td>
+                                    <td>{{ pention.whole_80|monthly_pention|floatformat:"0"|intcomma }}</td>
+
+                                </tr>
+                                <tr>
+                                   <td>{{ pention.inherit_month|floatformat:"0"|intcomma }}</td>
+                                    <td>{{ pention.inherit_month|monthly_pention|floatformat:"0"|intcomma }}</td>
+
+                                </tr>
+                                <tr>
+                                   <td colspan="2">{{ pention.inherit_lumpsum|floatformat:"0"|intcomma }}</td>
+                                </tr>
+                            </tbody>
+                            {% endfor %}
+                        </table>
+
+                    </div>
+
+
+                    <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0" style="padding:0px 0px 0px 20px;">
+                        <br><br>
+                        <h5>
+                        <b>※ 내 보험의 펀드수익률</b>
+                        </h5>
+                        <h5>
+                            {% for result in object_list01 %}
+                            &nbsp; - 보험명 : {{ result.insu_name }}
+                            {% endfor %}
+                        </h5>
+
+
+                        <table class="table table-bordered table-hover table-condensed table-responsive" style="font-size:1.0em;">
+                            <thead style="border-top:2px solid #9B959C;">
+                                <tr class="active text-center">
+                                    <th class = "text-center">구분</th>
+                                    <th class = "text-center">가입시기준가</th>
+                                    <th class = "text-center">현재기준가</th>
+                                    <th class = "text-center">수익률</th>
+                                </tr>
+                            </thead>
+
+                            {% for result in object_list61 %}
+                            <tbody class = "text-center" style="background-color:white;">
+                                <tr>
+                                    <td>{{ result.fund_name}}</td>
+                                    <td>{{ result.entry_price|floatformat:"2" }}</td>
+                                    <td>{{ result.present_price|floatformat:"2" }}</td>
+                                    <td>{{ result.rate|floatformat:"1"}}%</td>
+                                </tr>
+                            </tbody>
+
+                            {% endfor %}
+                        </table>
+                        <br>
+
+                        <h5 style="padding:0px 0px 6px 0px;">
+                            <b>※ BM 펀드 수익률</b>
+                        </h5>
+                        <table class="table table-bordered table-hover table-condensed table-responsive" style="font-size:1.0em;">
+                            <thead style="border-top:2px solid #9B959C;">
+                                <tr class="active text-center">
+                                    <th class = "text-center" colspan='2'>구분</th>
+                                    <th class = "text-center">가입시</th>
+                                    <th class = "text-center">현 재</th>
+                                    <th class = "text-center">수익률</th>
+                                </tr>
+                            </thead>
+                            {% for result in object_list70 %}
+                            <tbody class = "text-center" >
+                                <tr style="background-color:#DFEFFC;">
+                                    <td colspan='2'>종합주가지수</td>
+                                    <td>{{ result.entry_kospi|floatformat:"2" }}</td>
+                                    <td>{{ result.present_kospi|floatformat:"2" }}</td>
+                                    <td>{{ result.kospi_rate|floatformat:"1"}}%</td>
+                                </tr>
+                            </tbody>
+                            {% endfor %}
+
+                            {% for result in object_list62 %}
+                            <tbody class = "text-center" style="background-color:white;">
+
+                                <tr>
+                                    <td>펀드 NO 0{{ result.fund_no|floatformat:"0" }}</td>
+                                    <td>{{ result.fund_name}}</td>
+                                    <td>{{ result.entry_price|floatformat:"2" }}</td>
+                                    <td>{{ result.present_price|floatformat:"2" }}</td>
+                                    <td>{{ result.rate|floatformat:"1"}}%</td>
+                                </tr>
+                            </tbody>
+                            {% endfor %}
+                        </table>
+                        <br>
+                         <h5 style="padding:0px 0px 6px 0px;">
+                            <b>※ BM 펀드 그래프  (VS 종합주가지수)</b>
+                        </h5>
+
+                        <div class="thumbnail text-left" style="padding : 20px; border-color:#C0C1C2; border-radius: 3px;">
+
+                            <div id="container" style=" padding: 0px 10px 0px 0px;">               <!-- 챠트시작  -->
+                                    <script>
+                                        var chart01 = new Highcharts.chart('container', {
+                                          "chart": {
+                                            "polar": false,
+                                            "zoomType": "x",
+
+                                            "backgroundColor": "",
+                                            "marginRight": 50,
+                                          },
+
+                                          "title": {
+                                            "text": ""
+                                          },
+                                          "subtitle": {
+                                            "text": "펀드선택(BM)"
+                                          },
+                                          "yAxis": {
+                                            "title": {
+                                              "text": "지수"
+                                            },
+                                            "alignTicks": true
+                                          },
+                                          "series": [
+                                            {
+                                              "name": "펀드 NO 01",
+                                              data: [ {% for result in object_list41 %}{{ result.price}}{% if not forloop.last %}, {% endif %}{% endfor %}],
+
+                                              "turboThreshold": 0,
+                                              "marker": {
+                                                "enabled": false,
+                                                "symbol": "circle"
+                                              },
+                                               "color": "#A3A3A3",
+                                              "colorByPoint": false,
+                                              "dashStyle": "Solid"
+                                            },
+                                            {
+                                              "name": "펀드 NO 02",
+                                              data: [ {% for result in object_list42 %}{{ result.price}}{% if not forloop.last %}, {% endif %}{% endfor %}],
+
+                                              "turboThreshold": 0,
+                                              "marker": {
+                                                "enabled": false,
+                                                "symbol": "circle"
+                                              },
+                                               "color": "#C28DC1",
+                                              "colorByPoint": false,
+                                              "dashStyle": "Solid"
+                                            },
+                                            {
+                                              "name": "펀드 NO 03",
+                                              data: [ {% for result in object_list43 %}{{ result.price}}{% if not forloop.last %}, {% endif %}{% endfor %}],
+
+                                              "turboThreshold": 0,
+                                              "marker": {
+                                                "enabled": false,
+                                                "symbol": "circle"
+                                              },
+                                               "color": "#ff8a80",
+                                              "colorByPoint": false,
+                                              "dashStyle": "Solid"
+                                            },
+                                            {
+                                              "name": "펀드 NO 04",
+                                              data: [ {% for result in object_list44 %}{{ result.price}}{% if not forloop.last %}, {% endif %}{% endfor %}],
+
+                                              "turboThreshold": 0,
+                                              "marker": {
+                                                "enabled": false,
+                                                "symbol": "circle"
+                                              },
+                                               "color": "#FB9D4A",
+                                              "colorByPoint": false,
+                                              "dashStyle": "Solid"
+                                            },
+                                            {
+                                              "name": "펀드 NO 05",
+                                              data: [ {% for result in object_list45 %}{{ result.price}}{% if not forloop.last %}, {% endif %}{% endfor %}],
+
+                                              "turboThreshold": 0,
+                                              "marker": {
+                                                "enabled": false,
+                                                "symbol": "circle"
+                                              },
+                                               "color": "#8BE866",
+                                              "colorByPoint": false,
+                                              "dashStyle": "Solid"
+                                            },
+                                            {
+                                              "name": "펀드 NO 06",
+                                              data: [ {% for result in object_list46 %}{{ result.price}}{% if not forloop.last %}, {% endif %}{% endfor %}],
+
+                                              "turboThreshold": 0,
+                                              "marker": {
+                                                "enabled": false,
+                                                "symbol": "circle"
+                                              },
+                                               "color": "#66C3E8",
+                                              "colorByPoint": false,
+                                              "dashStyle": "Solid"
+                                            },
+                                            {
+                                              "name": "펀드 NO 07",
+                                              data: [ {% for result in object_list47 %}{{ result.price}}{% if not forloop.last %}, {% endif %}{% endfor %}],
+
+                                              "turboThreshold": 0,
+                                              "marker": {
+                                                "enabled": false,
+                                                "symbol": "circle"
+                                              },
+                                               "color": "#5F87D0",
+                                              "colorByPoint": false,
+                                              "dashStyle": "Solid"
+                                            },
+                                            {
+                                              "name": "펀드 NO 08",
+                                              data: [ {% for result in object_list48 %}{{ result.price}}{% if not forloop.last %}, {% endif %}{% endfor %}],
+
+                                              "turboThreshold": 0,
+                                              "marker": {
+                                                "enabled": false,
+                                                "symbol": "circle"
+                                              },
+                                               "color": "#D0A85F",
+                                              "colorByPoint": false,
+                                              "dashStyle": "Solid"
+                                            },
+                                            {
+                                              "name": "펀드 NO 09",
+                                              data: [ {% for result in object_list49 %}{{ result.price}}{% if not forloop.last %}, {% endif %}{% endfor %}],
+
+                                              "turboThreshold": 0,
+                                              "marker": {
+                                                "enabled": false,
+                                                "symbol": "circle"
+                                              },
+                                               "color": "#D90AD2",
+                                              "colorByPoint": false,
+                                              "dashStyle": "Solid"
+                                            },
+
+                                            {
+                                              "name": "종합주가지수",
+                                              data: [ {% for result in object_list52 %}{{ result.price}}{% if not forloop.last %}, {% endif %}{% endfor %}],
+
+                                              "turboThreshold": 0,
+                                              "marker": {
+                                                "enabled": false,
+                                                "symbol": "circle"
+                                              },
+                                               "color": "#5BADF4",
+                                              "colorByPoint": false,
+                                              "dashStyle": "Solid"
+                                            },
+                                            {
+                                              "name": "가입일",
+                                              data: [ {% for result in object_list51 %}{{ result.price}}{% if not forloop.last %}, {% endif %}{% endfor %}],
+
+                                              "turboThreshold": 0,
+                                              "marker": {
+                                                "enabled": false,
+                                                "symbol": "circle"
+                                              },
+                                               "color": "#50535D",
+                                              "colorByPoint": false,
+                                              "dashStyle": "Solid"
+                                            }
+                                          ],
+                                          "plotOptions": {
+                                            "series": {
+                                              "dataLabels": {
+                                                "enabled": false
+                                              }
+                                            }
+                                          },
+                                          "data": {
+
+                                            "googleSpreadsheetKey": false,
+                                            "googleSpreadsheetWorksheet": false
+                                          },
+
+                                          "xAxis": {
+                                            categories: [{% for result in object_list52 %}'{{ result.date|date:'y-m-d'}}'{% if not forloop.last %}, {% endif %}{% endfor %}],
+                                            "labels": {
+                                              "style": {
+                                                "fontSize": "11px"
+                                               }
+                                            },
+                                            "dateTimeLabelFormats": {
+                                              "year": "%Y"
+                                            }
+                                          },
+                                          "legend": {
+                                            "enabled": false
+                                          },
+                                          "pane": {
+                                            "background": []
+                                          },
+                                          "responsive": {
+                                            "rules": []
+                                          }
+                                       });
+
+                                    </script>
+                                </div>            <!--  챠트 01 끝 -->
+                        </div>
+                    </div>   <!-- 그리드 -->
+
+                </div>
+            </div>   <!-- 큰그리드드 -->
+        </div>  <!-- raw -->
+    </div>  <!-- container -->
+
+</div>
+<hr>
+
+
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <script>
+        $(function () { $('#myModal').modal('hide')})});
+    </script>
+     <script>
+      // set focus when modal is opened
+        $('#modal-content').on('shown.bs.modal', function () {
+            $("#txtname").focus();
+        });
+
+        // show the modal onload
+        $('#modal-content').modal({
+            show: true
+        });
+
+        // everytime the button is pushed, open the modal, and trigger the shown.bs.modal event
+        $('#openBtn').click(function () {
+            $('#modal-content').modal({
+                show: true
+            });
+        });
+    </script>
+
+{% endblock %}

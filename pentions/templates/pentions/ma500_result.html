@@ -1,0 +1,317 @@
+{% extends "base.html" %}
+
+{% block title %}ma100in_form.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/form01.css" %}{% endblock %}
+
+{% load humanize %}   <!-- 세자리 콤마 찍기위해 로드함- settings.py에 앱추가함  -->
+{% load pentions_filter %}   <!-- 내가 만든 사용자정의필터 아래 사용--->
+
+{% block content %}
+
+<div id="content">
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-xs-10 col-sm-6 col-xs-offset-1 col-sm-offset-1" style="padding:10px 60px 0px 0px;">
+                <h3 style="padding: 0px 0px 0px 0px;">
+                <span class="glyphicon glyphicon-object-align-bottom" style="color:blue;"></span> 경험생명표별 연금액
+                </h3>
+                <h5 style="padding: 0px 0px 0px 30px;">동일한 투자수익률에서 경험생명표의 차이에 따라 달라지는 연금액을 보실 수 있습니다 </h5>
+                <br>
+
+                {% for result in object_list %}
+                {% if forloop.first %}
+                 <fieldset class="aligned">
+
+                     <div class="form-row" >
+                        성&emsp; 별 : &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{ result.gender}}
+                     </div>
+
+                     <div class="form-row" >
+                        월 보 험 료 :&emsp;&emsp;&emsp;&emsp; {{ result.premium|floatformat:"0"|intcomma}} &nbsp;원
+                    </div>
+                    <div class="form-row" >
+                        <label>납 입 기 간 : </label>
+                        {{ result.paying_period}} &nbsp;년납
+                    </div>
+                    <div class="form-row" >
+                        현재/연금개시연령 :&emsp;&emsp;{{ result.present_age}} &nbsp;세 /&nbsp;&nbsp;{{ result.pention_start_age}} 세
+                    </div>
+                    <div class="form-row" >
+                        변액수익률 : &emsp;&emsp;&emsp;&emsp;
+                        {{ result.earning_rate|floatformat:"1"}} %
+
+                    </div>
+                    <div class="form-row" style="border-bottom :0.5px solid #9B959C;">
+                        연금개시후 이자 : &emsp;&emsp;&emsp;{{ result.pention_start_rate|floatformat:"1"}}&nbsp;%
+                    </div>
+
+
+                 </fieldset>
+                 {% else %}
+                 {% endif %}
+                 {% endfor %}
+
+                 <div class="submit-row">
+                        <a href="{% url 'pentions:ma500' %}" class="btn btn-warning btn-sm" role="button">다시입력</a>
+                 </div>
+                </form>
+                <br>
+                <br>
+                <br>
+                <h5>※ 평균연령 증가추이</h5>
+
+                <div>
+                    <img src={% static "img/bt/pentions_004.jpg" %} alt="...">
+                </div>
+                <br>
+
+                <!-- 경험생명표 적용기간 아코디언 안에 패널 넣음-->
+                    <div class="panel-group" id="accordion">
+                        <div class="panel">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                <h5>경험생명표 적용기간 ▼ </h5>
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="collapseOne" class="panel-collapse collapse">
+                              <div class="panel-body" style="color:#70A6B8; border-top :0.5px solid #9B959C; ">
+                                  <div class="panel panel-default" style="margin-right:40px;">
+                                      <div class="panel-heading">
+                                          <h5 class="panel-title"><small>경험생명표 적용기간</small></h5>
+                                      </div>
+                                      <div class="panel-body">
+                                          3회 : 1997년 1월 ~ 2002년 12월<br>
+                                          4회 : 2003년 1월 ~ 2006년 3월<br>
+                                          5회 : 2006년 4월 ~ 2009년 9월<br>
+                                          6회 : 2009년 10월 ~ 2012년 6월<br>
+                                          7회 : 2012년 7월 ~ 2015년 3월<br>
+                                          8회 : 2015년 5월 ~
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>   <!-- 아코디언 끝 -->
+
+
+
+
+            </div>
+
+
+            <div class="col-md-4 col-xs-10 col-sm-6">
+                <div class="btn-toolbar" style="float:right;">                      <!--버튼구룹 시작  -->
+                    <div class="btn-group">
+                        <div class="btn-group btn-group-sm">
+                           <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"> 투자의 원칙 <span class="caret"> </span>
+                           </button>
+                           <ul class="dropdown-menu">
+                               <li><a tabindex="-1" href="{% url 'pentions:ma100' %}">투자의 원칙 (1)시간</a></li>
+                               <li><a tabindex="-1" href="{% url 'pentions:ma200' %}">투자의 원칙 (2)수익률</a></li>
+                               <li><a tabindex="-1" href="{% url 'pentions:ma300' %}">투자의 원칙 (3)세금</a></li>
+                           </ul>
+                        </div>
+                        <div class="btn-group btn-group-sm">
+                           <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"> 연금예상액 <span class="caret"> </span>
+                           </button>
+                           <ul class="dropdown-menu">
+                               <li><a tabindex="-1" href="{% url 'pentions:ma400' %}">연금예상액</a></li>
+                               <li><a tabindex="-1" href="{% url 'pentions:mc100' %}">연금예상액(즉시연금)</a></li>
+                               <li><a tabindex="-1" href="#">수익률별 연금예상액</a></li>
+                               <li><a tabindex="-1" href="#">내 변액 연금예상액</a></li>
+
+                           </ul>
+                        </div>
+                        <div class="btn-group btn-group-sm">
+                           <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle"> 연금 운영전략 <span class="caret"> </span>
+                           </button>
+                           <ul class="dropdown-menu">
+                               <li><a tabindex="-1" href="{% url 'pentions:mc200' %}">연금목표 월납입액</a></li>
+                               <li><a tabindex="-1" href="{% url 'pentions:ma500' %}">경험생명표별 연금액</a></li>
+                               <li><a tabindex="-1" href="{% url 'pentions:mc300' %}">연금개시 공시이율</a></li>
+                               <li><a tabindex="-1" href="{% url 'pentions:md100' %}">변액연금비용</a></li>
+                               <li role="presentation" class="divider"></li>
+                               <li><a tabindex="-1" href="{% url 'pentions:mh100' %}">채권형수익률</a></li>
+                               <li><a tabindex="-1" href="#">변액 vs 공시이율 vs 적금</a></li>
+                               <li><a tabindex="-1" href="{% url 'pentions:md300' %}">흥부와 놀부</a></li>
+                               <li><a tabindex="-1" href="#">추가납입의 효과</a></li>
+                           </ul>
+                        </div>
+                        <div class="btn-group btn-group-sm">
+                           <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"> 재무설계플랜 <spa class="caret"> </span>
+                           </button>
+                           <ul class="dropdown-menu">
+                               <li><a tabindex="-1" href="{% url 'pentions:mf100' %}">해약환급금계산(변액)</a></li>
+                               <li><a tabindex="-1" href="{% url 'pentions:mf200' %}">해약환급금계산(공시이율)</a></li>
+                               <li role="presentation" class="divider"></li>
+                               <li><a tabindex="-1" href="{% url 'pentions:mg100' %}">적금의 비밀</a></li>
+                               <li><a tabindex="-1" href="{% url 'pentions:md200' %}">위험보험료</a></li>
+                               <li><a tabindex="-1" href="#">평생재무설계플랜</a></li>
+
+                          </ul>
+                        </div>
+                    </div>
+                </div>        <!--버튼구룹 끝  -->
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h4>
+                    <span class="glyphicon glyphicon glyphicon-star" style="color:#A54BC9;"></span>
+                    경험생명표별 연금액 차이 <small>(연금연액)</small>
+                </h4>
+                <br>
+                {% for pention in object_list %}
+                <table class="table table-bordered table-hover table-condensed" style="font-size:1.1em;">
+                    <thead style="border-top:2px solid #9B959C;">
+                        <tr class="active">
+                            <th class = "text-center" rowspan="2" style="vertical-align:middle;">경험생명표</th>
+                            <th class = "text-center" colspan="2">확정 10년형</th>
+                            <th class = "text-center" colspan="2">종신연금(20년보증)</th>
+                        </tr>
+                        <tr class="active">
+                            <th class = "text-center">연금액</th>
+                            <th class = "text-center">3회대비</th>
+                            <th class = "text-center">연금액</th>
+                            <th class = "text-center">3회대비</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class = "text-center">
+                        <tr>
+                            <td>3회</td>
+                            <td>{{ pention.annuity_certain_10|floatformat:"0"|intcomma }}</td>
+                            <td>100%</td>
+                            <td>{{ pention.annuity_certain_10|floatformat:"0"|intcomma }}</td>
+                            <td>100.0%</td>
+                        </tr>
+                        <tr>
+                            <td>4회</td>
+                            <td>{{ pention.annuity_certain_10|floatformat:"0"|intcomma }}</td>
+                            <td>100%</td>
+                            <td>{{ pention.four_wholelife_annuity_20|floatformat:"0"|intcomma }}</td>
+                            <td>{{ pention.vs_four_wholelife_annuity_20|floatformat:"1"|intcomma }} %</td>
+                        </tr>
+                        <tr>
+                            <td>5회</td>
+                           <td>{{ pention.annuity_certain_10|floatformat:"0"|intcomma }}</td>
+                            <td>100%</td>
+                            <td>{{ pention.five_wholelife_annuity_20|floatformat:"0"|intcomma }}</td>
+                            <td>{{ pention.vs_five_wholelife_annuity_20|floatformat:"1"|intcomma }} %</td>
+                        </tr>
+
+                        <tr>
+                           <td>6회</td>
+                           <td>{{ pention.annuity_certain_10|floatformat:"0"|intcomma }}</td>
+                            <td>100%</td>
+                           <td>{{ pention.six_wholelife_annuity_20|floatformat:"0"|intcomma }}</td>
+                            <td>{{ pention.vs_six_wholelife_annuity_20|floatformat:"1"|intcomma }} %</td>
+                        </tr>
+                        <tr>
+                           <td>7회</td>
+                           <td>{{ pention.annuity_certain_10|floatformat:"0"|intcomma }}</td>
+                            <td>100%</td>
+                           <td>{{ pention.seven_wholelife_annuity_20|floatformat:"0"|intcomma }}</td>
+                            <td>{{ pention.vs_seven_wholelife_annuity_20|floatformat:"1"|intcomma }} %</td>
+                        </tr>
+                        <tr>
+                           <td>8회</td>
+                           <td>{{ pention.annuity_certain_10|floatformat:"0"|intcomma }}</td>
+                           <td>100%</td>
+                           <td>{{ pention.eight_wholelife_annuity_20|floatformat:"0"|intcomma }}</td>
+                           <td>{{ pention.vs_eight_wholelife_annuity_20|floatformat:"1"|intcomma }} %</td>
+                        </tr>
+                    </tbody>
+
+
+                </table>
+                {% endfor %}
+                <br>
+
+                <!-- 챠트 시작-->
+               <div id="container2" style="margin: 0px 0px 0px 0px; auto">
+                    <script>
+                        var chart02 = new Highcharts.chart('container2', {
+                            chart: {
+                                type: 'column',
+                                height: 288,
+                                margin : 80
+
+                            },
+                            title: {
+                                text: '평균연령 증가로 인한 연금액 감소'
+                            },
+                            subtitle: {
+                                text: '3회 vs 8회 경험생명표 총수령액 비교'
+                            },
+                            xAxis: {
+                                categories: ['3회','8회']
+                            },
+                            yAxis: {
+                                title: {
+                                        text: ''
+                                }
+                            },
+                            plotOptions: {
+                                column: {
+                                    dataLabels: {
+                                        enabled: true
+                                    },
+                                    enableMouseTracking: true
+                                }
+
+                             },
+
+                            series: [{
+                                name: '3회',
+                                data: [{% for result in object_list %}
+                                             {{ result.total_three_wholelife_annuity_20|floatformat:"0" }}{% if not forloop.last %}, {% endif %}
+                                         {% endfor %}]
+                                },
+                                {
+
+                                name: '8회',
+                                data: [{% for result in object_list %}
+                                             {{ result.total_eight_wholelife_annuity_20|floatformat:"0" }}{% if not forloop.last %}, {% endif %}
+                                         {% endfor %}]
+
+
+                            }]
+                        });
+                   </script>
+                </div>        <!-- 챠트 끝 -->
+
+                </h4>
+                {% for result in object_list %}
+
+
+                <h5 style="text-align:left;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;납입금액 : {{ result.total_premium|floatformat:"0"|intcomma}}
+                &emsp;책임준비금 : {{ result.reserve_money|floatformat:"0"|intcomma}}</h5>
+                {% endfor %}
+
+
+
+            </div>   <!--그리드 -->
+
+      </div>  <!-- row -->
+    </div>       <!--    container-fluid  --->
+
+</div>
+
+
+
+{% endblock %}
+

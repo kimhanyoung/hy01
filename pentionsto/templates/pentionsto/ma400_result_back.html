@@ -1,0 +1,336 @@
+{{% extends "pentions/base_pentions.html" %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/form02.css" %}{% endblock %}
+
+{% load humanize %}   # 세자리 콤마 찍기위해 로드함- settings.py에 앱추가함
+{% load pentions_filter %}   <!-- 내가 만든 사용자정의필터 아래 사용--->
+
+
+{% block content %}
+{{ block.super }}
+
+
+<div id="content">
+   <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-xs-10 col-sm-6 col-xs-offset-1 col-sm-offset-1" style="padding:10px 60px 0px 0px;">
+                <h3 style="padding: 0px 0px 0px 0px;">
+                <span class="glyphicon glyphicon-object-align-bottom" style="color:blue;"></span> 연금예상액
+                </h3>
+                <h5 style="padding: 0px 0px 0px 30px;">가입내역을 넣으시면 연금예상액을 보실 수 있습니다 </h5>
+                <br>
+
+                {% for result in object_list %}
+                {% if forloop.first %}
+                 <fieldset class="aligned">
+
+                     <div class="form-row" >
+                        <label>성&emsp; 별 :</label>
+                         {{ result.gender}}
+                     </div>
+                     <div class="form-row" >
+                        <label>가 입 일 :</label>
+                         {{ result.start_year}} 년 &emsp;{{ result.start_month}} 월
+                     </div>
+                     <div class="form-row" >
+                        <label>월 보 험 료 : </label>
+                         {{ result.premium|floatformat:"0"|intcomma}} &nbsp;원
+                    </div>
+                    <div class="form-row" >
+                        <label>납 입 기 간 : </label>
+                        {{ result.paying_period}} &nbsp;년납
+                    </div>
+                    <div class="form-row" >
+                        현재/연금개시연령 :&emsp;&emsp;{{ result.present_age}} &nbsp;세 /&nbsp;&nbsp;{{ result.pention_start_age}} 세
+                    </div>
+                    <div class="form-row" >
+                        변액수익률/공시이율 : &emsp;
+                        {{ result.earning_rate|floatformat:"1"}} % &emsp;/&emsp;
+                        {{ result.public_rate|floatformat:"1"}} %
+                    </div>
+                    <div class="form-row" style="border-bottom :0.5px solid #9B959C;">
+                        <label>연금개시후 이자 :</label>
+                        {{ result.pention_start_rate|floatformat:"1"}}&nbsp;%
+                    </div>
+
+
+                 </fieldset>
+                 {% else %}
+                 {% endif %}
+                 {% endfor %}
+
+                 <div class="submit-row">
+                        <a href="{% url 'pentions:ma400' %}" class="btn btn-warning btn-sm" role="button">다시입력</a>
+                 </div>
+                </form>
+
+                <h4>
+                    <span class="glyphicon glyphicon glyphicon-star" style="color:#A54BC9;"></span>
+                    월수령액 비교 <small>종신형 20년보증 기준</small>
+                </h4>
+                  <div id="container2" style="margin: 0px 0px 0px 0px; auto">   <!-- 챠트 시작 -->
+                    <script>
+                        var chart02 = new Highcharts.chart('container2', {
+                            "chart": {
+                                "type": "column",
+                                "polar": false,
+                                "height": 250
+                              },
+                              "title": {
+                                "text": ""
+                              },
+                              "subtitle": {
+                                "text": ""
+                              },
+                              "exporting": {},
+                              "series": [
+                                {
+                                  "name": "변액",
+                                  data: [{% for result in object_list %}
+                                             {{ result.variable_wholelife_annuity_20|monthly_pention|floatformat:"0" }}
+                                         {% endfor %}],
+                                  "turboThreshold": 0,
+                                  "_colorIndex": 0,
+                                  "_symbolIndex": 0,
+                                  "marker": {}
+                                },
+                                {
+                                  "name": "공시",
+                                  data: [{% for result in object_list %}
+                                             {{ result.public_wholelife_annuity_20|monthly_pention|floatformat:"0" }}
+                                         {% endfor %}],
+                                  "turboThreshold": 0,
+                                  "_colorIndex": 1,
+                                  "_symbolIndex": 1
+                                }
+                              ],
+                              "plotOptions": {
+                                "series": {
+                                  "animation": true,
+                                  "dataLabels": {
+                                    "enabled": true,
+                                    "style": {
+                                      "color": "contrast",
+                                      "fontSize": "12px",
+                                      "fontWeight": "bold",
+                                      "textOutline": "1px 1px contrast"
+                                    }
+                                  }
+                                }
+                              },
+                              "data": {
+                                "googleSpreadsheetKey": false,
+                                "googleSpreadsheetWorksheet": false
+                              },
+                              "colors": [
+                                "#f44336",
+                                "#3f51b5",
+                                "#90ed7d",
+                                "#f7a35c",
+                                "#8085e9",
+                                "#f15c80",
+                                "#e4d354",
+                                "#2b908f",
+                                "#f45b5b",
+                                "#91e8e1"
+                              ],
+                              "legend": {
+                                "verticalAlign": "top",
+                                "align": "center"
+                              },
+                              "tooltip": {},
+                              "yAxis": {
+                                "title": {}
+                              }
+                            });
+                   </script>
+                </div>       <!-- 챠트 끝  -->
+
+            </div>
+
+
+            <div class="col-md-4 col-xs-10 col-sm-6">
+                 <h4>
+                    <span class="glyphicon glyphicon-forward" style="color:#A54BC9;"></span> &nbsp;연금액 예시
+                </h4>
+                {% for result in object_list %}
+
+                <br>
+                <h5>♣ 납입금액 : {{ result.total_premium|floatformat:"0"|intcomma}}</h5>
+                <br>
+                <h5>&emsp;변액보험 : {{ result.variable_reserve_money|floatformat:"0"|intcomma}}</h5>
+                <h5>&emsp;공시이율 : {{ result.public_reserve_money|floatformat:"0"|intcomma}}</h5>
+                <br>
+                <br>
+                <h5>
+                    &emsp;&emsp;경험생명표 : {{ result.life_table}}
+                </h5>
+                {% endfor %}
+
+                <table class="table table-bordered table-hover table-condensed" style="font-size:1.0em;">
+                    <thead style="border-top:2px solid #9B959C;">
+                        <tr class="active">
+                            <th class = "text-center" rowspan="2" style="vertical-align:middle;">연금형태</th>
+                            <th class = "text-center" rowspan="2" style="vertical-align:middle;">구분</th>
+                            <th class = "text-center" colspan="2">변액보험</th>
+                            <th class = "text-center" colspan="2">공시이율</th>
+                        </tr>
+                        <tr class="active">
+                            <th class = "text-center">연금연액</th>
+                            <th class = "text-center">월연금액</th>
+                            <th class = "text-center">연금연액</th>
+                            <th class = "text-center">월연금액</th>
+                        </tr>
+                    </thead>
+
+                    {% for pention in object_list %}
+                    <tbody class = "text-center">
+                        <tr>
+                            <td rowspan="3">확정연금형</td>      <!--monthly_pention: 사용자정의필터  -->
+                            <td>10년</td>
+                            <td>{{ pention.variable_annuity_certain_10|floatformat:"0"|intcomma }}</td>
+                            <td>{{ pention.variable_annuity_certain_10|monthly_pention|floatformat:"0"|intcomma }}</td>
+                            <td>{{ pention.public_annuity_certain_10|floatformat:"0"|intcomma }}</td>
+                            <td>{{ pention.public_annuity_certain_10|monthly_pention|floatformat:"0"|intcomma }}</td>
+                        </tr>
+                        <tr>
+                            <td>15년</td>
+                            <td>{{ pention.variable_annuity_certain_15|floatformat:"0"|intcomma }}</td>
+                            <td>{{ pention.variable_annuity_certain_15|monthly_pention|floatformat:"0"|intcomma }}</td>
+                            <td>{{ pention.public_annuity_certain_15|floatformat:"0"|intcomma }}</td>
+                            <td>{{ pention.public_annuity_certain_15|monthly_pention|floatformat:"0"|intcomma }}</td>
+                        </tr>
+                        <tr>
+                            <td>20년</td>
+                            <td>{{ pention.variable_annuity_certain_20|floatformat:"0"|intcomma }}</td>
+                            <td>{{ pention.variable_annuity_certain_20|monthly_pention|floatformat:"0"|intcomma }}</td>
+                            <td>{{ pention.public_annuity_certain_20|floatformat:"0"|intcomma }}</td>
+                            <td>{{ pention.public_annuity_certain_20|monthly_pention|floatformat:"0"|intcomma }}</td>
+                        </tr>
+
+                        <tr>
+                           <td rowspan="3">종신연금형</td>
+                           <td>10년 보증</td>
+                           <td>{{ pention.variable_wholelife_annuity_10|floatformat:"0"|intcomma }}</td>
+                           <td>{{ pention.variable_wholelife_annuity_10|monthly_pention|floatformat:"0"|intcomma }}</td>
+                           <td>{{ pention.public_wholelife_annuity_10|floatformat:"0"|intcomma }}</td>
+                           <td>{{ pention.public_wholelife_annuity_10|monthly_pention|floatformat:"0"|intcomma }}</td>
+                        </tr>
+                        <tr>
+                           <td>20년 보증</td>
+                           <td>{{ pention.variable_wholelife_annuity_20|floatformat:"0"|intcomma }}</td>
+                           <td>{{ pention.variable_wholelife_annuity_20|monthly_pention|floatformat:"0"|intcomma }}</td>
+                           <td>{{ pention.public_wholelife_annuity_20|floatformat:"0"|intcomma }}</td>
+                           <td>{{ pention.public_wholelife_annuity_20|monthly_pention|floatformat:"0"|intcomma }}</td>
+                        </tr>
+                        <tr>
+                           <td>80세 보증</td>
+                           <td>{{ pention.variable_wholelife_annuity_80|floatformat:"0"|intcomma }}</td>
+                           <td>{{ pention.variable_wholelife_annuity_80|monthly_pention|floatformat:"0"|intcomma }}</td>
+                           <td>{{ pention.public_wholelife_annuity_80|floatformat:"0"|intcomma }}</td>
+                           <td>{{ pention.public_wholelife_annuity_80|monthly_pention|floatformat:"0"|intcomma }}</td>
+                        </tr>
+                        <tr>
+                           <td rowspan="2">상속연금형</td>
+                           <td>연금액</td>
+                           <td>{{ pention.variable_annuity_inherit|floatformat:"0"|intcomma }}</td>
+                           <td>{{ pention.variable_annuity_inherit|monthly_pention|floatformat:"0"|intcomma }}</td>
+                           <td>{{ pention.public_annuity_inherit|floatformat:"0"|intcomma }}</td>
+                           <td>{{ pention.public_annuity_inherit|monthly_pention|floatformat:"0"|intcomma }}</td>
+                        </tr>
+                        <tr>
+
+                           <td>사망시일시금</td>
+                           <td colspan="2">{{ pention.variable_lump_sum_of_death|floatformat:"0"|intcomma }}</td>
+                           <td colspan="2">{{ pention.public_lump_sum_of_death|floatformat:"0"|intcomma }}</td>
+                        </tr>
+
+
+                    </tbody>
+                    {% endfor %}
+                </table>
+
+                <H6>회사별 경험생명표 및 이자의 변동 등으로 결과가 약간 상이할 수 있습니다</H6>
+
+
+            </div>   <!--그리드 -->
+
+      </div>  <!-- row -->
+    </div>       <!--    container-fluid  --->
+</div>
+
+
+
+{% endblock %}
+
+
+
+       <table class="table table-bordered table-hover table-condensed" style="font-size:1.0em;">
+            <thead style="border-top:2px solid #9B959C;">
+                <tr class="active">
+                    <th class = "text-center" rowspan="2" style="vertical-align:middle;">연금형태</th>
+                    <th class = "text-center" rowspan="2" style="vertical-align:middle;">구분</th>
+                    <th class = "text-center" colspan="2">변액보험</th>
+
+                </tr>
+                <tr class="active">
+                    <th class = "text-center">연금연액</th>
+                    <th class = "text-center">월연금액</th>
+                    <th class = "text-center">연금연액</th>
+                    <th class = "text-center">월연금액</th>
+                </tr>
+            </thead>
+
+            {% for pention in object_list %}
+            <tbody class = "text-center">
+                <tr>
+                    <td rowspan="3">확정연금형</td>      <!--monthly_pention: 사용자정의필터  -->
+                    <td>10년</td>
+                    <td>{{ pention.annuity_certain_10|floatformat:"0"|intcomma }}</td>
+                    <td>{{ pention.annuity_certain_10|monthly_pention|floatformat:"0"|intcomma }}</td>
+                </tr>
+                <tr>
+                    <td>15년</td>
+                    <td>{{ pention.annuity_certain_15|floatformat:"0"|intcomma }}</td>
+                    <td>{{ pention.annuity_certain_15|monthly_pention|floatformat:"0"|intcomma }}</td>
+                </tr>
+                <tr>
+                    <td>20년</td>
+                    <td>{{ pention.annuity_certain_20|floatformat:"0"|intcomma }}</td>
+                    <td>{{ pention.annuity_certain_20|monthly_pention|floatformat:"0"|intcomma }}</td>
+                </tr>
+
+                <tr>
+                   <td rowspan="3">종신연금형</td>
+                   <td>10년 보증</td>
+                   <td>{{ pention.wholelife_annuity_10|floatformat:"0"|intcomma }}</td>
+                   <td>{{ pention.wholelife_annuity_10|monthly_pention|floatformat:"0"|intcomma }}</td>
+                </tr>
+                <tr>
+                   <td>20년 보증</td>
+                   <td>{{ pention.wholelife_annuity_20|floatformat:"0"|intcomma }}</td>
+                   <td>{{ pention.wholelife_annuity_20|monthly_pention|floatformat:"0"|intcomma }}</td>
+                </tr>
+                <tr>
+                   <td>80세 보증</td>
+                   <td>{{ pention.wholelife_annuity_80|floatformat:"0"|intcomma }}</td>
+                   <td>{{ pention.wholelife_annuity_80|monthly_pention|floatformat:"0"|intcomma }}</td>
+                </tr>
+                <tr>
+                   <td rowspan="2">상속연금형</td>
+                   <td>연금액</td>
+                   <td>{{ pention.annuity_inherit|floatformat:"0"|intcomma }}</td>
+                   <td>{{ pention.annuity_inherit|monthly_pention|floatformat:"0"|intcomma }}</td>
+                </tr>
+                <tr>
+
+                   <td>사망시일시금</td>
+                   <td colspan="2">{{ pention.lump_sum_of_death|floatformat:"0"|intcomma }}</td>
+                </tr>
+
+
+            </tbody>
+            {% endfor %}
+        </table>
+

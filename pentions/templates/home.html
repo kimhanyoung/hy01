@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+
+{% block title %}home.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% endblock %}
+
+{% block content %}
+
+<div id="content">
+     <br>
+
+     <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h3><i>Golden Rule!! Action to Sucess!!</i></h3>
+                <br>
+                <br>
+
+            </div>
+
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 hidden-xs " >
+                <div class="book">
+                    <img src='{% static "img/book/home.jpg" %}' alt="" class="book2 img-responsive">
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-7 col-sm-7 col-xs-12 " >
+                <h4>HY Solution은 </h4>
+                    <div class="panel-group" id="accordion">
+                        <div class="panel">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                <span class="glyphicon glyphicon-star"> </span> 변액펀드에 특화된 관리를 할 수 있습니다
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body" style="color:#70A6B8;">
+                                <ul>
+                                    <li>고객이 보유한 변액상품의 수익률을 확인하고 분석하며</li>
+                                    <li>차별화된 펀드변경관리를 통해 고객의 수익률을 관리합니다</li>
+                                </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                <span class="glyphicon glyphicon-star"> </span> ONE_STOP Solution을 통한 차별화된 고객상담
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="collapseTwo" class="panel-collapse collapse ">
+                            <div class="panel-body" style="color:#70A6B8;">
+                                <div class="ip">
+                                    연금액 계산 등 고객의 어떤 상황에도 대응할 수 있는 다채로운 솔루션이 내장되어 있습니다
+                                    <div class="booklist">
+
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                <span class="glyphicon glyphicon-star"> </span> 금융상품 분석 노하우 및 사례 공유
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body" style="color:#70A6B8;">
+                                 본 프로그램을 활용한 고객의 금융상품을 분석하고 클로징할 수 있는 다양한 사례가 있습니다
+                            </div>
+                          </div>
+                        </div>
+                       <div class="panel">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapsefour">
+                                <span class="glyphicon glyphicon-star"> </span> 시뮬레이션을 통한 고객의 신뢰도 향상
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="collapsefour" class="panel-collapse collapse ">
+                            <div class="panel-body" style="color:#70A6B8;">
+                                 상담시 고객 보유 펀드 등을 확인하면서 고객의 신뢰도 증대 및 계약체결률을 높일 수 있습니다
+                            </div>
+                          </div>
+                        </div>
+                    </div>    <!-- 아코디언  -->
+            </div>    <!-- 그리드  -->
+        </div>   <!-- low  -->
+    </div>
+</div>
+<br>
+<br>
+
+
+<p style="padding : 0px 0px 0px 10px; ">HY금융상품연구소가 제공하는 Enhancing Kit</p>
+
+<br>
+
+<br>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src='{% static "js/bootstrap.min.js" %}'></script>
+    <script src='{% static "js/jquery.fancybox.js" %}'></script>
+    <script>
+      $('.carousel').carousel()
+      $('.carousel2').carousel({interval: 3000 })
+      //*  fancybox  실행 스크립트 */
+      $(document).ready(function() {
+        $(".fancybox").fancybox({
+          openEffect  : 'none',
+          closeEffect : 'none'
+        });
+      });
+    </script>
+
+
+
+
+{% endblock content %}
+
+
+
+
+

@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+
+{% block title %}ma100in_form.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/form01.css" %}{% endblock %}
+
+{% load humanize %}   <!-- 세자리 콤마 찍기위해 로드함- settings.py에 앱추가함  -->
+{% load widget_tweaks %}
+
+{% block content %}
+
+<style>
+/* TABLE */
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    line-height: 18px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+    padding: 5px 15px;
+    font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+}
+
+table.change-list, table.change-list th, table.change-list td {
+    border: 1px solid #ccc;
+}
+
+</style>
+
+<div id="content">
+
+    <br>
+    <br>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-xs-10 col-sm-6 col-xs-offset-1 col-sm-offset-1" style="padding:10px 60px 0px 0px;">
+
+                <h3 style="padding: 0px 0px 0px 0px;">
+                <span class="glyphicon glyphicon-object-align-bottom" style="color:blue;"></span> 변액
+                </h3>
+                <h5 style="padding: 0px 0px 0px 30px;">...............</h5>
+                <br>
+            <BR>
+
+            <br>
+            </div>   <!--그리드 -->
+
+
+            <div class="col-md-6 col-xs-10 col-sm-6" >
+
+                {% if form.is_multipart or formset.is_multipart %}
+                <form enctype="multipart/form-data" method="post" action=".">
+                {% else %}
+                <form method="post" action=".">
+                    {% endif %}
+                    {% csrf_token %}
+
+
+                    {% if form.errors %}
+                    <p class="errornote">Wrong! Please correct the FORM error(s) below.</p>
+                    {% endif %}
+
+                    {% if formset.errors %}
+                    <p class="errornote">Wrong! Please correct the FORMSET error(s) below.</p>
+                    {% endif %}
+
+                    <p>You can see the profit rate by entering the subscription history.</p>
+
+                    <fieldset class="aligned">
+                        <div class="form-row" >
+                            <label for="name">가입 보험명 : </label>
+                            <input id="name" name="insu_name" style="text-align:left; border: 0px solid " type="text" size="38" value={{ form.insu_name.value}} readonly>&nbsp;
+                        </div>
+                        <div class="form-row">
+                            <label for="company">보 험 사 : </label>
+                            <input id="company" name="company" style="text-align:left; border: 0px solid " type="text" size="5" value={{ form.company.value}} readonly>&nbsp;
+
+                        </div>
+                        <br>
+                        <br>
+
+                        <h5 style="color:#1A7491;"><b>▶ 보험가입정보 입력</b></h5>
+                        <div class="form-row">
+                            <label class="radio-inline" for="gen" style="font-weight: bold;font-size: 15px;">성&nbsp;&nbsp; 별 : </label>
+                            <lable><input  id="gen" type="radio" name="gender" value="남자"> 남자</lable>
+                            <lable><input  id="gen" type="radio" name="gender" value="여자"> 여자</lable>
+                        </div>
+                        <div class="form-row">
+                            <span>
+                                <label for="date">가 입 일 : </label>
+                                <input id="date" name="entry_date" type="date" value='2010-01-10' >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            </span>
+                            <span>
+                                이 체 일 :&nbsp;&nbsp;
+                                <input id="DAY" name="transfer_date" type="number" min="0" max="9999" step="1" value={{ form.transfer_date.value|floatformat:"0"}} >&nbsp;일
+                            </span>
+
+                        </div>
+                         <div class="form-row">
+                             <span>
+                                <label for="period">납입기간 : </label>
+                                <input id="period" name="paying_period" type="number" min="0" max="999" step="1" value={{ form.paying_period.value|floatformat:"0"}} >&nbsp;년납&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             </span>
+                             <span>
+                                 월 보 험 료 :&nbsp;&nbsp;
+                                 <input id="money" name="premium" type="number" min="0" max="999999999" step="100000" value={{ form.premium.value|floatformat:"0"}} >&nbsp;원
+                             </span>
+
+                        </div>
+
+                        <div class="form-row">
+                             <label class="radio-inline" for="method" style="font-weight: bold;font-size: 15px;">납입방법 : </label>
+                             <lable><input  id="method" type="radio" name="entry_method" value="적립"> 적립식</lable>
+                             <lable><input  id="method" type="radio" name="entry_method" value="거치"> 거치식</lable>
+                        </div>
+                        <div class="form-row" >
+
+                            <label for="risk">위험보험료 : </label>
+                            <input id="risk" name="risk_premium" type="number" min="0" max="999999" step="100" value={{ form.risk_premium.value|floatformat:"0"}} >&nbsp;만원&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <div class="form-row" >
+                            <label for="age">현재연령 :&nbsp;&nbsp;</label>
+                            <input id="age" name="present_age" type="number" min="0" max="999" step="1" value="45" >&nbsp;세
+                        </div>
+                    </fieldset>
+
+                     <br>
+
+                    <h5 style="color:#1A7491;"><b>▶ 펀드 선택정보 (투입비율 입력)</b></h5>
+
+                    {{ formset.management_form }}
+
+                    <table class="table table-bordered table-hover table-condensed" style="font-size:1.0em;"
+                        <thead style="border-top:2px solid #9B959C;">
+                            <tr class="active text-center">
+                                <th class = "text-center">펀드명</th>
+                                <th class = "text-center">설정일</th>
+                                <th class = "text-center">펀드코드</th>
+                                <th class = "text-center">펀드유형</th>
+
+                                <th class = "text-center">투입비율</th>
+                            </tr>
+                        </thead>
+                        <tbody class = "text-center">
+                            {% for form in formset %}
+                            {{ form.id }}
+                            <tr>
+                                <td> {% render_field form.fund_name rows="10" cols="2" %} </td>
+
+
+                                <!--  <td> {{ form.fund_name}}</td>  -->
+                                <td> {{ form.create_date}} </td>
+                                <td> {{ form.fund_code}} </td>
+                                <td> {{ form.fund_type02}} </td>
+
+                                <td> {{ form.input_percent}} </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+
+                    <div class="submit-row">
+
+                        <input type="submit" class="btn btn-primary btn-sm"  value="계산 ">
+                    </div>
+
+                </form>
+
+
+                </div>      <!-- 그리드  -->
+                <br>
+        </div>   <!-- raw  -->
+    </div>   <!-- container  -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+
+{% endblock %}

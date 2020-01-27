@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}register_on.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+
+
+
+<div id="content">
+    <br>
+    <br>
+    <br>
+
+    <div class = "container">
+        <div class = "law">
+            <div class="aa col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1" style="text-align:center; padding:130px 0px 0px 0px; position:relative; max-width : 100%; height : 550px; background-image: url('/static/img/bt/register_on02.jpg'); background-size: cover;">
+
+                <br>
+
+
+                <h3>Registration Completed Successfully</h3>
+                <br>
+                <h5>Thank you for registering.</h5>
+                <br>
+                <h4><a href="{% url 'login' %}">Log in again</a></h4>
+
+
+
+
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}
+

@@ -1,0 +1,269 @@
+{% extends "pentions/base_pentions.html" %}
+
+
+{% block title %}mh200in_form.html{% endblock %}
+{% block content %}
+{{ block.super }}
+
+{% load staticfiles %}
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+
+
+<style>
+
+
+.ab {
+    color:#AEAEAF;
+    float:right;
+    padding: 4px 15px 0px 0px;
+    vertical-align:middle;
+}
+
+.panel {
+    border-color:#767879;
+}
+.panel-title{
+    text-align:center;
+}
+
+
+
+</style>
+
+<div id="content">
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-xs-12 col-sm-12">
+
+                <h5 style="color:#EF9365; text-align:right; padding:0px 40px 0px 0px;">One-Stop</h5>
+
+            </div>   <!--그리드 -->
+
+            <div class="col-lg-12 col-lg-offset-1 col-md-12 col-xs-12 col-sm-12">
+                <div class="col-lg-2 col-md-3 col-xs-4 col-sm-4" style="padding:0px 10px 0px 40px;">
+
+                    <img src={% static "img/book/pen502.jpg" %} class="sideToSide" width="40px" />
+                    <div class="panel-group" id="accordion" >
+                        <div class="panel">
+                          <div class="panel-heading" >
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+
+                                 <img src={% static "img/book/pen100.jpg" %} alt="..." style="padding :10px 0px 10px 0px;">
+                                 <p><b>투자의 원칙</b></p>
+                                  <i class="fas fa-chevron-down"></i>
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="collapseOne" class="panel-collapse collapse" style="background-color:#FDFEFD;">
+                            <div class="panel-body">
+                                <h5>
+                                    <a href="{% url 'pentions01:ma100' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 투자의 원칙 (1) 시간</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentions01:ma200' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 투자의 원칙 (2) 수익률</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentions01:ma300' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 투자의 원칙 (3) 세금</b>
+                                    </a>
+                                </h5>
+                            </div>  <!-- fanal-body -->
+                          </div>  <!-- collapseOne -->
+                        </div>  <!-- fanal -->
+                        <div class="panel">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                  <img src={% static "img/book/pen120.jpg" %} alt="..." style="padding :10px 0px 10px 0px;">
+                                  <p><b>연금예상액</b></p>
+                                  <i class="fas fa-chevron-down"></i>
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="collapseTwo" class="panel-collapse collapse in" style="background-color:#F8FBFF;">
+                            <div class="panel-body">
+                                <h5>
+                                    <a href="{% url 'pentionsto:ma400' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 변액 연금예상액</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentionsto:ma600' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 공시이율 연금예상액</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentions01:mc100' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 즉시연금 연금예상액</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentions01:mh200' %}">
+                                        <b style="color:#DE781F" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#DE781F'">- 수익률별 연금예상액</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentions01:mc300' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 연금개시후 공시이율별</b>
+                                    </a>
+                                </h5>
+
+                            </div>
+                          </div> <!-- collapsetwo -->
+                        </div>    <!-- fanal -->
+                        <div class="panel">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                      <img src={% static "img/book/pen130.jpg" %} alt="..." style="padding :10px 0px 10px 0px;">
+                                      <p><b>재무설계 PLAN</b></p>
+                                      <i class="fas fa-chevron-down"></i>
+                                  </a>
+                                </h4>
+                              </div>
+                              <div id="collapseThree" class="panel-collapse collapse" style="background-color:#FCFAF9;">
+                                <div class="panel-body">
+                                    <h5>
+                                        <a style="color:#6D6C6B;" href="{% url 'pentions01:mc200' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 연금목표 월납입액</b></a>
+                                    </h5>
+                                    <h5>
+                                        <a style="color:#6D6C6B;" href="{% url 'pentions01:md100' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 변액연금비용</b></a>
+                                    </h5>
+                                    <h5>
+                                        <a style="color:#6D6C6B;" href="{% url 'pentions01:md200' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 위험보험료</b></a>
+                                    </h5>
+                                    <h5>
+                                        <a style="color:#6D6C6B;" href="{% url 'pentions01:mg100' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 적금의 비밀</b></a>
+                                    </h5>
+                                </div>
+                              </div> <!-- collapsethree -->
+                        </div>    <!-- fanal -->
+                    </div>  <!-- fanal-group -->
+                </div>
+                <div class="col-lg-7 col-lg-offset-0 col-md-9 col-md-offset-0 col-sm-8 col-sm-offset-0" style="padding:15px 0px 0px 40px;">
+                    <h4>수익률별 연금예상액&emsp;&emsp;
+                        <small>수익률의 차이에 따른 연금액 비교 </small>
+                        <i class='fas fa-feather-alt' style='font-size:22px;color:red'></i>
+
+                    </h4>
+                    <hr style=" border: 0; height:1.5px; background:#333332;">
+
+
+                    <div class="col-lg-11 col-sm-11 col-md-12">
+                        <a href="#" data-toggle="collapse" data-target="#demo1" >
+                            <table class="table table-bordered table-responsive" style="font-size:1.4em; border-spacing: 2px; border-collapse: separate;">
+                                <th class = "text-center" width="15%" style="vertical-align:middle; border-color:#AEAEAF; padding:0px;">
+                                    <img src={% static "img/bt/pee01.jpg" %} alt="..." style="max-width: 85%; height: auto;">
+                                </th>
+                                <th class = "text-center" style="border-color:#AEAEAF; vertical-align:middle; color:#5E5F5F;">조건 입력 및 결과확인</th>
+                                <th class = "text-center" width="15%" style="border-color:#AEAEAF; vertical-align:middle; background-color:#5CAAEF; color:white;">
+                                    <i class='fas fa-angle-down' style='font-size:40px'></i>
+                                </th>
+                            </table>
+                        </a>
+
+                        <div id="demo1" class="collapse">
+                            <div class="thumbnail" style="padding:20px 40px 20px 30px; background-color:#F9FBFD; border-color:#AEAEAF; border-radius: 4px; box-shadow: 3px 3px 1px 0px rgba(163, 174, 184, 0.7);" onMouseOver="this.style.backgroundColor='#DFEFFC'" onMouseOut="this.style.backgroundColor='#FDF8F8'">
+                                <form action="." method="post"> {% csrf_token %}
+                                    {% if form.errors %}
+                                        <p class="errornote">아래 항목을 빠짐없이 입력하셔야 합니다</p>
+                                    {% endif %}
+                                    <h5 style="padding:10px; 10px 20px 10px;">수익률에 따라 받을 수 있는 연금액의 차이를 보실 수 있습니다. </h5>
+                                    <fieldset class="aligned">
+                                        <div class="form-row" style="padding:13px 0px 10px 8px;">
+                                            <label for="variable">수익률 (A)  </label>
+                                            <input id="variable" name="a_earning_rate" type="number" step="0.1" min="0" max=999 value={{ form.a_earning_rate.value}}>&nbsp;%
+
+                                        </div>
+                                        <div class="form-row" style="padding:13px 0px 10px 8px;">
+                                            <label for="variable01">수익률 (B) :</label>
+                                            <input id="variable01" name="b_earning_rate" type="number" step="0.1" min="0" max=999 value={{ form.b_earning_rate.value}}>&nbsp;%
+                                        </div>
+                                        <div class="form-row" style="padding:13px 0px 10px 8px;">
+                                            <label class="radio-inline" for="gen" style="font-weight: bold;font-size: 15px;">성 별 : </label>
+                                            <lable><input  id="gen" type="radio" name="gender" checked="checked" value="남자"> 남자</lable>
+                                            <lable><input  id="gen" type="radio" name="gender" value="여자"> 여자</lable>
+                                        </div>
+                                        <div class="form-row" style="padding:13px 0px 10px 8px">
+                                            <label for="year">가입일 : </label>
+                                            <input id="year" name="start_year" type="number" min="0" max="99999" value={{ form.start_year.value}} >&nbsp;년
+                                            <input id="year" name="start_month" type="number" min="0" max="12" value={{ form.start_month.value}}> 월
+                                        </div>
+
+                                        <div class="form-row" style="padding:13px 0px 10px 8px;" >
+                                            <label for="money">월 보 험 료 : </label>
+                                            <input id="money" name="premium" type="number" min="0" max="99999999999" step="100000" value={{ form.premium.value}} >&nbsp;원
+                                        </div>
+                                        <div class="form-row" style="padding:13px 0px 10px 8px" >
+                                             <span>
+                                                <label class="radio-inline" for="period" style="font-weight: bold;font-size: 15px;">납입기간 :&nbsp;&nbsp; </label>
+                                                <lable><input  id="period" type="radio" name="paying_period" value="5"> 5년납</lable>
+                                                <lable><input  id="period" type="radio" name="paying_period" value="7"> 7년납</lable>
+                                                <lable><input  id="period" type="radio" name="paying_period" checked="checked" value="10"> 10년납</lable>
+                                                <lable><input  id="period" type="radio" name="paying_period" value="12"> 12년납</lable>
+                                                <lable><input  id="period" type="radio" name="paying_period" value="15"> 15년납</lable>
+                                                <lable><input  id="period" type="radio" name="paying_period" value="20"> 20년납</lable>
+
+                                             </span>
+                                        </div>
+                                        <div class="form-row" style="padding:13px 0px 10px 8px;" >
+                                            <label for="age">현재연령 : </label>
+                                            <input id="age" name="present_age" type="number" min="45" max="80"  value={{ form.present_age.value}}>&nbsp;세
+
+                                        </div>
+                                        <div class="form-row" style="padding:13px 0px 10px 8px;" >
+                                            <label for="age">연금개시연령 : </label>
+                                            <input id="age02" name="pention_start_age" type="number" min="45" max="80" value={{ form.pention_start_age.value}}>&nbsp;세
+                                        </div>
+
+                                        <div class="form-row" style="border-bottom :0.5px solid #9B959C;padding:13px 0px 10px 8px;">
+                                            <label for="rate">연금개시후 이자 : </label>
+                                            <input id="rate" name="pention_start_rate" type="number" step="0.1" min="0" max=999 value={{ form.pention_start_rate.value}}>&nbsp;%
+                                        </div>
+
+
+                                    </fieldset>
+
+
+                                    <div class="submit-row">
+
+                                        <input type="submit" class="btn btn-primary btn-sm"  value="결과 ">
+                                    </div>
+
+                                </form>
+                            </div>    <!-- thumbnail -->
+                        </div>   <!-- collapse -->
+
+                     </div>  <!-- 그리드 -->
+                </div>
+            </div>
+        </div>   <!-- low -->
+    </div>    <!-- container-fluid -->
+    <br>
+    <hr>
+
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script>
+    // show the modal onload
+        $('#mymodal').modal({
+            show: true
+        });
+    </script>
+
+
+
+</div>    <!-- content -->
+
+
+{% endblock %}
+

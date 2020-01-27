@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}ma100in_form.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/form01.css" %}{% endblock %}
+
+{% load humanize %}   <!-- 세자리 콤마 찍기위해 로드함- settings.py에 앱추가함  -->
+
+
+{% block content %}
+
+<div id="content">
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-xs-10 col-sm-6 col-xs-offset-1 col-sm-offset-1" style="padding:10px 60px 0px 0px;">
+
+                <h3 style="padding: 0px 0px 0px 0px;">
+                <span class="glyphicon glyphicon-object-align-bottom" style="color:blue;"></span> 펀드
+                </h3>
+                <h5 style="padding: 0px 0px 0px 30px;">...............</h5>
+                <br>
+                {% for result in object_list %}
+                {% if forloop.first %}
+                 <fieldset class="aligned">
+
+                    <div class="form-row" >
+                        <label>펀드유형 : </label>
+                        {{ result.fund_type}} &nbsp;
+                    </div>
+                    <div class="form-row" >
+                        <label>운용사 : </label>
+                        {{ result.company}} &nbsp;
+                    </div>
+                    <div class="form-row" >
+                        <label>국내/해외 : </label>
+                        {{ result.area_section}} &nbsp;
+                    </div>
+                    <div class="form-row" style="border-bottom :0.5px solid #9B959C;" >
+                        <label>펀드명 검색어 :</label>
+                        {{ result.fund_name}}&nbsp;
+                    </div>
+
+
+                 </fieldset>
+                 {% else %}
+                 {% endif %}
+                 {% endfor %}
+
+                 <div class="submit-row">
+                        <a href="{% url 'pentions:ma100' %}" class="btn btn-warning btn-sm" role="button">다시입력</a>
+                 </div>
+
+
+                <BR>
+
+                <br>
+
+
+
+
+                <H6>가입시기 외 사업비 등은 동일한 조건을 적용하여 산출하였습니다</H6>
+            </div>   <!--그리드 -->
+
+
+
+
+        </div>  <!-- row -->
+    </div>       <!--    container-fluid  --->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 col-xs-10 col-sm-4 col-md-offset-1">
+
+            </div>
+
+            <div class="col-md-6 col-xs-10 col-sm-6" >
+
+                <table class="table table-bordered table-hover table-condensed" style="font-size:1.0em;">
+                    <thead style="border-top:2px solid #9B959C;">
+                        <tr class="active text-center">
+                            <th class = "text-center">펀드명</th>
+                            <th class = "text-center">운용사</th>
+                            <th class = "text-center">펀드유형</th>
+                            <th class = "text-center">국내/해외</th>
+                            <th class = "text-center">설정일</th>
+                        </tr>
+                    </thead>
+
+                    {% for result in object_list %}
+                    <tbody class = "text-center">
+                        <tr>
+                            <td>{{ result.fund_name_list}}</td>
+                            <td>{{ result.company_list}}</td>
+                            <td>{{ result.fund_type_list}}</td>
+                            <td>{{ result.area_section_list }}</td>
+                            <td>{{ result.create_date }}</td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>
+            </div>
+        <br>
+        </div>
+    </div>
+    <br>
+    <hr>
+</div>
+
+
+
+{% endblock %}
+

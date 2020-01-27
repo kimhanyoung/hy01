@@ -1,0 +1,248 @@
+{% extends "base.html" %}
+
+
+{% block title %}pentions.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/pention.css" %}{% endblock %}
+
+{% block content %}
+
+<style>
+
+table > thead > tr > th {
+    text-align:center;
+    padding :0px 0px 20px 0px;
+}
+
+table > tbody > tr > td > a > b {
+    color:#303132;
+    text-align:left;
+    padding :0px 0px 0px 25px;
+    vertical-align:middle;
+}
+
+.ab {
+    color:#AEAEAF;
+    float:right;
+    padding: 4px 15px 0px 0px;
+    vertical-align:middle;
+}
+
+
+</style>
+
+
+
+<div id="content" >
+    <div class="ONE container-fluid" style="background-color:#C8D5E0;">
+        <div class="raw">
+            <div class="col-lg-9 col-lg-offset-1 col-md-12 col-xs-12 col-sm-12">
+
+                <br><br><br>
+                <h2 style="text-align:center; color:white; padding:0px 0px 8px 0px;"><b>One-Stop Solution</b></h2>
+
+                <h4 style="text-align:center; color:white;">
+                    고객의 어떤 상황에도 대응할 수 있는 다양한 솔류션을 보실 수 있습니다
+                </h4>
+
+                <br><br>
+                <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+                    <table class="table table-bordered table-responsive" style="font-size:1.2em;">
+                        <thead style="padding:0px 100px 0px 0px; background-color:white;">
+                           <tr>
+                               <th width="20%">
+                                   <img src={% static "img/book/pen10.jpg" %} alt="..." style="padding :15px 0px 15px 0px;">
+                                   <h3 style="color:#3E4041;" ><b>투자의 원칙</b></h3>
+                                   <h5 style="padding:10px 0px 8px 0px;">투자의 기본원칙에 따른 투자결과 확인<br></h5>
+                                   <br>
+                               </th>
+
+                           </tr>
+                        </thead>
+                        <tbody style="font-size:16px; background-color:#F5F6F6;">
+
+                            <tr>
+                                <td onMouseOver="this.style.backgroundColor='#1F85DE'" onMouseOut="this.style.backgroundColor=''" >
+                                    <a href="{% url 'pentions01:ma100' %}">
+                                        <b onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#303132'">● 투자의 원칙 (1) 시간
+                                        <span class="ab fa fa-chevron-circle-right" onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#838384'"></span></b>
+                                    </a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td onMouseOver="this.style.backgroundColor='#1F85DE'" onMouseOut="this.style.backgroundColor=''" >
+                                    <a href="{% url 'pentions01:ma200' %}">
+                                        <b onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#303132'">● 투자의 원칙 (2) 수익률
+                                        <span class="ab fa fa-chevron-circle-right" onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#838384'"></span></b>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td onMouseOver="this.style.backgroundColor='#1F85DE'" onMouseOut="this.style.backgroundColor=''" >
+                                    <a href="{% url 'pentions01:ma300' %}">
+                                        <b onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#303132'">● 투자의 원칙 (3) 세금
+                                        <span class="ab fa fa-chevron-circle-right" onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#838384'"></span></b>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b style="color:#F5F6F6;">● 빈칸</b>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b style="color:#F5F6F6;">● 빈칸</b>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+                    <table class="table table-bordered table-responsive" style="font-size:1.4em;">
+                        <thead style="padding:0px 100px 0px 0px; background-color:white;">
+                           <tr>
+                               <th width="20%">
+                                   <img src={% static "img/book/pen12.jpg" %} alt="..." style="padding :15px 0px 15px 0px;">
+                                   <h3 style="color:#3E4041;" ><b>연금예상액</b></h3>
+                                   <h5>상황별 연금예상액 차이 확인을 통해<br>효율적인 연금상품 운영전략 수립</h5>
+                                   <br>
+                               </th>
+                           </tr>
+                        </thead>
+                        <tbody style="font-size:16px; background-color:#F5F6F6;">
+
+                            <tr>
+                                <td onMouseOver="this.style.backgroundColor='#FC6E5F'" onMouseOut="this.style.backgroundColor=''" >
+                                    <a href="{% url 'pentionsto:ma400' %}">
+                                        <b onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#303132'">변액 연금예상액
+                                        <span class="ab fa fa-chevron-circle-right" onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#838384'"></span></b>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td onMouseOver="this.style.backgroundColor='#FC6E5F'" onMouseOut="this.style.backgroundColor=''" >
+                                    <a href="{% url 'pentionsto:ma600' %}">
+                                        <b onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#303132'">공시이율 연금예상액
+                                        <span class="ab fa fa-chevron-circle-right" onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#838384'"></span></b>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td onMouseOver="this.style.backgroundColor='#FC6E5F'" onMouseOut="this.style.backgroundColor=''" >
+                                    <a href="{% url 'pentions01:mc100' %}">
+                                        <b onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#303132'">즉시연금 연금예상액
+                                        <span class="ab fa fa-chevron-circle-right" onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#838384'"></span></b>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td onMouseOver="this.style.backgroundColor='#FC6E5F'" onMouseOut="this.style.backgroundColor=''" >
+                                    <a href="{% url 'pentions01:mh200' %}">
+                                        <b onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#303132'">수익률별 연금예상액
+                                        <span class="ab fa fa-chevron-circle-right" onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#838384'"></span></b>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                 <td onMouseOver="this.style.backgroundColor='#FC6E5F'" onMouseOut="this.style.backgroundColor=''" >
+                                    <a href="{% url 'pentions01:mc300' %}">
+                                        <b onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#303132'">연금개시후 공시이율별
+                                        <span class="ab fa fa-chevron-circle-right" onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#838384'"></span></b>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+                    <table class="table table-bordered table-responsive" style="font-size:1.4em;">
+                        <thead style="padding:0px 100px 0px 0px; background-color:white;">
+                           <tr>
+                               <th width="20%">
+                                   <img src={% static "img/book/pen13.jpg" %} alt="..." style="padding :15px 0px 15px 0px;">
+                                   <h3 style="color:#3E4041;" ><b>재무설계 PLAN</b></h3>
+                                    <h5>고객닙의 재무설계에 도움이<br> 되는 내용들 </h5>
+                                   <br>
+                               </th>
+                           </tr>
+                        </thead>
+                        <tbody style="font-size:16px; background-color:#F5F6F6;">
+
+                            <tr>
+                                <td onMouseOver="this.style.backgroundColor='#24AD4D'" onMouseOut="this.style.backgroundColor=''" >
+                                    <a href="{% url 'pentions01:mc200' %}">
+                                        <b onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#303132'">연금목표 월납입액
+                                        <span class="ab fa fa-chevron-circle-right" onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#838384'"></span></b>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td onMouseOver="this.style.backgroundColor='#24AD4D'" onMouseOut="this.style.backgroundColor=''" >
+                                    <a href="{% url 'pentions01:md100' %}">
+                                        <b onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#303132'">변액연금비용
+                                        <span class="ab fa fa-chevron-circle-right" onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#838384'"></span></b>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td onMouseOver="this.style.backgroundColor='#24AD4D'" onMouseOut="this.style.backgroundColor=''" >
+                                    <a href="{% url 'pentions01:md200' %}">
+                                        <b onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#303132'">위험보험료
+                                        <span class="ab fa fa-chevron-circle-right" onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#838384'"></span></b>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td onMouseOver="this.style.backgroundColor='#24AD4D'" onMouseOut="this.style.backgroundColor=''" >
+                                    <a href="{% url 'pentions01:mg100' %}">
+                                        <b onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#303132'">적금의 비밀
+                                        <span class="ab fa fa-chevron-circle-right" onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#838384'"></span></b>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b style="color:#F5F6F6;">● 빈칸</b>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br><br><br>
+                </div>
+
+
+            </div>  <!--큰그리드드 -->
+        </div>  <!-- raw -->
+    </div>   <!-- container-fluid --->
+
+    <br>
+    <div class="thumbnail text-left" style="padding: 0px 0px 0px 160px; border-color:white; border-radius: 0px;">
+        <div class="caption" style="margin: 20px 0px 1px 0px;">
+            <br><br>
+            <img src={% static "img/book/sorce.jpg" %} style="max-width: 90%; height: auto;" alt="...">
+            <h6 style="padding: 0px 15px 0px 10px;">
+                【자료출처】본 프로그램의 모든 자료는 위 출처에서 공시된 내용을 기반으로
+                고객의 이해의 돕기 위하여 작성된 자료입니다
+            </h6>
+            <br><br>
+       </div>
+    </div>   <!-- thumbnail   -->
+
+    <br><br>
+
+
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="../js/bootstrap.min.js"></script>
+
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+<head>
+{% extends "register_done.html" %}
+
+{% block title %}logged_out.html{% endblock %}
+
+
+</head>
+
+<body>
+{% block content %}
+<div id="content">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class = "container">
+        <div class = "law">
+            <div class="col-lg-8 col-lg-offset=4">
+
+                <h3>Registration Completed Successfully</h3>
+                <br>
+                <h5>Thank you for registering.</h5>
+                <br>
+                <h4><a href="{% url 'login' %}">Log in again</a></h4>
+
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</div>
+{% endblock %}
+
+</body>
+
+

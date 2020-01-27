@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}ma100in_form.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/form01.css" %}{% endblock %}
+
+{% load humanize %}   <!-- 세자리 콤마 찍기위해 로드함- settings.py에 앱추가함  -->
+
+
+{% block content %}
+
+<div id="content">
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-xs-10 col-sm-6 col-xs-offset-1 col-sm-offset-1" style="padding:10px 60px 0px 0px;">
+
+                <h3 style="padding: 0px 0px 0px 0px;">
+                <span class="glyphicon glyphicon-object-align-bottom" style="color:blue;"></span> 펀드
+                </h3>
+                <h5 style="padding: 0px 0px 0px 30px;">...............</h5>
+                <br>
+            <BR>
+
+            <br>
+        </div>   <!--그리드 -->
+        </div>  <!-- row -->
+    </div>       <!--    container-fluid  --->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 col-xs-10 col-sm-4 col-md-offset-1">
+
+            </div>
+
+            <div class="col-md-6 col-xs-10 col-sm-6" >
+                <form action="." method="post">{% csrf_token %}
+
+                    {% if form.errors %}
+                    <p class="errornote">Wrong! Please correct the error(s) below.</p>
+                    {% endif %}
+
+                    <p>You can see the profit rate by entering the subscription history.</p>
+
+                    <fieldset class="aligned">
+                        <div class="form-row" >
+                            <label for="name">펀드명(가입펀드) : </label>
+                            <input id="name" name="fund_name" style="text-align:left; border: 0px solid " type="text" size="58" value={{ form.fund_name.value}} readonly>&nbsp;
+                        </div>
+                        <br>
+                        <br>
+
+                        <h5 style="color:#1A7491;"><b>▶ 펀드가입정보 입력</b></h5>
+
+
+                        <div class="form-row">
+                             <label class="radio-inline" for="method" style="font-weight: bold;font-size: 15px;">납입방법 : </label>
+                             <lable><input  id="method" type="radio" name="entry_method" value="적립"> 적립식</lable>
+                             <lable><input  id="method" type="radio" name="entry_method" value="거치"> 거치식</lable>
+                        </div>
+
+                        <div class="form-row">
+                            <label>가 입 일 : </label>
+
+                            {{ form.entry_date }}
+                        </div>
+
+                        <div class="form-row">
+                            <label for="DAY">이 체 일 : </label>
+                            <input id="DAY" name="transfer_date" type="number" min="0" max="9999" step="1" value={{ form.transfer_date.value|floatformat:"0"}} >&nbsp;일
+
+                        </div>
+
+                        <div class="form-row" >
+                            <label for="money">납 입 금 액 : </label>
+                            <input id="money" name="entry_money" type="number" min="0" max="999999999" step="100000" value={{ form.entry_money.value|floatformat:"0"}} >&nbsp;원
+                        </div>
+
+                    </fieldset>
+
+                    <div class="submit-row">
+
+                        <input type="submit" class="btn btn-primary btn-sm"  value="계산 ">
+                    </div>
+
+
+                    <script type="text/javascript">document.getElementById('id_title').focus();</script>    <!--커서위치 -->
+                </form>
+
+
+            </div>
+        <br>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+</div>
+
+
+
+{% endblock %}

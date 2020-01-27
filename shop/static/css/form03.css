@@ -1,0 +1,28 @@
+.form-row,
+.form-row.p {
+    padding: 8px;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+}
+
+.aligned input,
+
+.aligned input[type="text"],
+.aligned input[type="checkbox"],
+.aligned input[type="number"] {
+    padding: .1em .2em;           /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */
+    text-align: center;
+ }
+
+.submit-row {
+    margin: 5px 10px;
+    text-align: right;
+}
+
+.submit-row input,
+.submit-row a {
+    margin: 5px 50px 0px 0px ;
+}
+
+

@@ -1,0 +1,213 @@
+{% extends "base.html" %}
+
+{% block title %}metfund_list.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/form03.css" %}{% endblock %}
+
+{% load humanize %}   <!-- 세자리 콤마 찍기위해 로드함- settings.py에 앱추가함  -->
+
+{% block content %}
+
+<style>
+
+.active > th {
+    text-align:center;
+    padding :0px 0px 0px 0px;
+}
+
+</style>
+
+
+
+
+<div id="content">
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-lg-10 col-md-12 col-xs-12 col-sm-12">
+
+                <h5 style="color:#EF9365; text-align:right; padding:0px 40px 0px 0px;">Variable Insurance</h5>
+
+            </div>   <!--그리드 -->
+
+            <div class="col-lg-12 col-lg-offset-1 col-md-12 col-xs-12 col-sm-12">
+                <div class="col-lg-2 col-md-3 col-xs-2 col-sm-3" style="padding:0px 10px 0px 0px;">
+                    <br>
+                    <table class="table table-bordered">
+                          <thead>
+                           <tr>
+                             <th>
+                                <div class="panel-group" id="accordion" >
+                                    <div class="panel" style="border-color:white;">
+                                      <div class="panel-heading" >
+                                        <h4 class="panel-title">
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                             <p><b>Ⅰ. 변액수익률 확인</b></p>
+                                          </a>
+                                        </h4>
+                                      </div>
+                                      <div id="collapseOne" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                             <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp; <b>보험명 입력</b>
+                                                <a style="color:#529599; font-size:11px;" href="{% url 'shop:product_all' %}">&ensp; &ensp; >>다시 입력</a>
+                                            </h5>
+                                            <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp; <b>펀드 편입비율 입력</b>
+                                            </h5>
+                                            <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp;
+                                                <b>보험 가입정보 입력</b>
+                                            </h5>
+                                            <h5 style="color:#565656; padding:0px 0px 3px 0px;">
+                                                <span class="badge" style="background-color:#D46658; padding:6px 20px 6px 15px; font-size:12px;">
+                                                    <span class="fas fa-caret-right"></span>&ensp;&nbsp;<b>투자현황 확인</b>
+                                                </span>
+                                            </h5>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="panel">
+                                      <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                            <p><b>Ⅱ. 변액관리</b></p>
+                                          </a>
+                                        </h4>
+                                      </div>
+                                      <div id="collapseTwo" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders03:input' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 펀드변경</b></a>
+                                            </h5>
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders06:hungbu' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 흥부와 놀부</b></a>
+                                            </h5>
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders:fund' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 일반 적립식펀드</b></a>
+                                            </h5>
+                                            <span class="badge" style="background-color:white; color:white; padding:5px 20px 5px 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이것은 안나타남</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                             </th>
+                           </tr>
+                       </thead>
+                    </table>
+                    <br><br><br><br><br><br><br><br><br><br><br>
+                </div>   <!--그리드 -->
+
+                <div class="col-lg-7 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-8 col-sm-offset-0" style="padding:0px 0px 0px 40px;">
+                <br>
+                    <h4 style="padding:0px 0px 10px 0px; color:#343535;">
+                        <b><span class="fas fa-arrow-alt-circle-right"></span>&ensp; 투자현황  확인</b>
+                    </h4>
+                    <ul class="nav nav-tabs" style="font-size:14px;">
+                        <li><a style="color:#0C2031;" href="{% url 'orders:basic' %}">가입 상세현황</a></li>
+                        <li><a style="color:#0C2031;" href="{% url 'orders:earning' %}">보유 펀드현황</a></li>
+                        <li><a style="color:#0C2031;" href="{% url 'orders:return' %}">예상 해지환급금</a></li>
+                        <li><a style="color:#0C2031;" href="{% url 'orders:pention' %}" >예상 연금액</a></li>
+                        <li class="active"><a style="color:#0C2031;" href="#" %><b>펀드선택 (BM)</b></a></li>
+                     </ul>
+                    <br>
+                </div>
+
+                <div class="col-lg-7 col-lg-offset-0 col-md-9 col-md-offset-0 col-sm-9 col-sm-offset-0" style="padding:0px 20px 0px 40px;">
+                    <br>
+                    <h5>
+                        <b style="color:#396A94;"><span class="fa fa-dot-circle"></span>&nbsp;펀드선택(BM)</b>&nbsp;&nbsp;&nbsp; : 동일한 조건에서 아래 펀드로 운영했을 때의 투자결과를 비교하기 위한 것입니다
+                    </h5>
+
+                    <br>
+
+                    <h5>
+                        <b style="text-align:left;"> 선택펀드 List 및 편입비율 </b> <small style="float:right;">아래 ">>수정"을 눌러 펀드 및 편입비율을 수정할 수 있습니다.</small>
+                    </h5>
+
+                    <table class="table table-bordered table-hover table-condensed table-responsive" style="font-size:1.1em;">
+                        <thead style="border-top:2px solid #9B959C; text-align:center;">
+                            <tr class="active">
+
+                                <th>펀드명</th>
+                                <th>선 택</th>
+                                <th>출범일자</th>
+                                <th>펀드유형</th>
+                                <th>투자지역</th>
+                                <th>주식비중</th>
+                                <th>편입비율</th>
+
+                                <th>수 정</th>
+                            </tr>
+                        </thead>
+
+                        {% for item in object_list03 %}
+                        <tbody class = "text-center">
+                            <tr>
+
+                                <td>{{ item.fund_name }}</td>
+                                <td>{% if item.count > 0 %} <span class="fas fa-chevron-circle-down"></span></td> {% endif %}</td>
+                                <td>{{ item.create_date|date:'Y-m-d'}}</td>
+                                <td>{{ item.fund_type01 }}</td>
+                                <td>{{ item.fund_type02 }}</td>
+                                <td>{{ item.stock_percent|floatformat:"0" }}</td>
+                                <td style="background-color:#F5FBFD;">{{ item.count|floatformat:"0" }}</td>
+                                <td><a href="{% url 'orders07:update' item.id %}">>>수정</a></td>
+                            </tr>
+                        </tbody>
+                        {% endfor %}
+                    </table>
+                    {% for item in object_list01 %}
+                        <h5>
+                            <span class="fas fa-caret-right" style="color:#3A78AD;"></span>&nbsp;&nbsp;현재 편입비율 합계: <b>{{ item.total_count|floatformat:"0" }}%</b>
+                            &nbsp;&nbsp;|&nbsp;&nbsp;현재 선택펀드 : <b>{{ item.amount}}개</b>&nbsp;&nbsp;<small>(5개 이내로 선택해 주세요)</small><br>
+                        </h5>
+                        <h5>
+                            {% for result in object_list02 %}
+                              <span class="fas fa-caret-right" style="color:#3A78AD;"></span>&nbsp; 가입일 " {{ result.entry_date|date:'Y-m-d' }}" 이후에 설정된 펀드만 선택
+                            {% endfor %}
+
+                       </h5>
+                        <h5>
+                            {% if item.total_count != 100 %}
+                                <b style="color:red;">&nbsp;&nbsp;&nbsp;&nbsp;☞ 주의 : 편입비율 합계가 100% 이어야 합니다. 다시 조정하여 주시기 바랍니다.</b>
+                            {% endif %}
+                        </h5>
+                        <h5>
+                            {% if item.amount > 5 %}
+                                <b style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;☞ 주의 : 펀드를 5개 이내로 선택해 주세요.</b>
+                            {% endif %}
+                        </h5>
+
+                        <br>
+                        {% if item.total_count != 100 %}
+                            <p class="text-right">
+                                 <a href="#" class="btn btn-primary btn-sm" disabled="disabled">결과보기</a>
+                            </p>
+                        {% elif item.amount > 5 %}
+                            <p class="text-right">
+                                 <a href="#" class="btn btn-primary btn-sm" disabled="disabled">결과보기</a>
+                            </p>
+                        {% elif item.amount < 5 %}
+                            <p class="text-right">
+                                 <a href="#" class="btn btn-primary btn-sm" disabled="disabled">결과보기</a>
+                            </p>
+
+                         {% else %}
+                            <p class="text-right">
+                                 <a href="{% url 'orders07:return' %}" class="btn btn-primary btn-sm">결과보기</a>
+                            </p>
+
+                        {% endif %}
+                    {% endfor %}
+
+                    <br><br>
+                </div>
+            </div>
+        </div>  <!-- raw -->
+    </div>  <!-- container -->
+</div>
+
+{% endblock %}

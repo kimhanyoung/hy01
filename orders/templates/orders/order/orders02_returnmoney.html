@@ -1,0 +1,285 @@
+{% extends "base.html" %}
+
+{% block title %}orders02_returnmoney.html{% endblock %}
+
+{% load staticfiles %}
+{% load mathfilters %}    /* 빼기 곱하기 나누기 를 위해 설치*/
+{% block extrastyle %}{% static "css/form03.css" %}{% endblock %}
+
+{% load humanize %}   <!-- 세자리 콤마 찍기위해 로드함- settings.py에 앱추가함  -->
+
+{% block content %}
+
+<style>
+
+ul {
+    font-size:15px;
+    color:#6F7071;
+}
+
+
+
+</style>
+
+
+
+
+
+<div id="content">
+    <br>
+
+   <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-xs-12 col-sm-12">
+
+                <h5 style="color:#EF9365; text-align:right; padding:0px 40px 0px 0px;">Variable Insurance</h5>
+
+            </div>   <!--그리드 -->
+
+            <div class="col-lg-12 col-lg-offset-1 col-md-12 col-xs-12 col-sm-12">
+                <div class="col-lg-2 col-md-3 col-xs-2 col-sm-3" style="padding:0px 10px 0px 0px;">
+                    <br>
+                    <table class="table table-bordered">
+                          <thead>
+                           <tr>
+                             <th>
+                                <div class="panel-group" id="accordion" >
+                                    <div class="panel" style="border-color:white;">
+                                      <div class="panel-heading" >
+                                        <h4 class="panel-title">
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                             <p><b>Ⅰ. 변액수익률 확인</b></p>
+                                          </a>
+                                        </h4>
+                                      </div>
+                                      <div id="collapseOne" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp;
+                                                <b>보험명 입력</b>
+                                                 <a style="color:#529599; font-size:11px;" href="{% url 'shop:product_all' %}">&ensp; &ensp; >>다시 입력</a>
+                                            </h5>
+                                            <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp; <b>펀드 편입비율 입력</b>
+                                            </h5>
+                                            <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp; <b>보험 가입정보 입력</b>
+                                            </h5>
+
+                                            <h5>
+                                                <span class="badge" style="background-color:#DD6340;  padding:5px 20px 5px 13px;">
+                                                    <span class="fas fa-caret-right"></span>&ensp; <b>투자현황 확인</b>
+                                                </span>
+                                            </h5>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="panel">
+                                      <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                            <p><b>Ⅱ. 변액관리</b></p>
+                                          </a>
+                                        </h4>
+                                      </div>
+                                      <div id="collapseTwo" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders03:input' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 펀드변경</b></a>
+                                            </h5>
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders06:hungbu' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 흥부와 놀부</b></a>
+                                            </h5>
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders:fund' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 일반 적립식펀드</b></a>
+                                            </h5>
+                                            <span class="badge" style="background-color:white; color:white; padding:5px 20px 5px 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이것은 안나타남</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                             </th>
+                           </tr>
+                       </thead>
+                    </table>
+                    <br><br><br><br><br><br><br><br><br><br><br>
+                </div>   <!--그리드 -->
+
+                <div class="col-lg-7 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-8 col-sm-offset-0" style="padding:0px 0px 0px 40px;">
+                    <br>
+                    <h4 style="padding:0px 0px 10px 0px; color:#343535;">
+                        <b><span class="fas fa-arrow-alt-circle-right"></span>&ensp; 투자현황  확인</b>
+                    </h4>
+                    <ul class="nav nav-tabs" style="font-size:14px;">
+                        <li><a style="color:#0C2031;" href="{% url 'orders:basic' %}">가입 상세현황</a></li>
+                        <li><a style="color:#0C2031;" href="{% url 'orders:earning' %}">보유 펀드현황</a></li>
+                        <li class="active"><a href="#"><b>예상 해지환급금</b></a></li>
+                        <li><a style="color:#0C2031;" href="{% url 'orders:pention' %}" >예상 연금액</a></li>
+                        <li><a style="color:#0C2031;" href="{% url 'orders07:list' %}" %>펀드선택 (BM)</a></li>
+                     </ul>
+                </div>
+
+                <div class="col-lg-7 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-8 col-sm-offset-0" style="padding:0px 0px 0px 40px;">
+
+                    <br>
+                    <div style="background-color:#FBFCFE;">
+
+                        <h4 style="text-align:center; padding:10px 0px 0px 0px;">
+                            <b>예상 <span style="color:#E96437;">해지환급금표</span> 예시</b>
+                            <i class='fas fa-feather' style='font-size:26px;color:red'></i>
+                        </h4>
+
+                        <h6 style="text-align:center; padding:0px 0px 0px 0px;">납입기간내 정상 완납하고 현재까지 예상수익률로   </h6>
+                        <h6 style="text-align:center; padding:0px 0px 0px 0px;">지속적으로 운용되었을 경우의 예시표입니다.  </h6>
+                        <hr>
+                        {% for result in object_list20 %}
+                        <h5 style="text-align:center;">
+                            ● 총 납입금액 : {{ result.total_premium|floatformat:"0"|intcomma }} 원&nbsp;&nbsp;&nbsp;
+                            ● 계약자적립금 : {{ result.payment|floatformat:"0"|intcomma }} 원
+                            (환급률 :
+                            {% if result.return_rate > 100 %}
+                            <b style="color:red;">▲{{ result.return_rate|floatformat:"1"|intcomma }}</b>
+                            {% else %}
+                            <b style="color:blue;">▼{{ result.return_rate|floatformat:"1"|intcomma }}</b>
+                            {% endif %}
+                            )
+                        </h5>
+                        {% endfor %}
+                        <h5 style="text-align:center; padding:30px 0px 20px 0px">
+                            <span style="border: 1px solid #565856; padding:10px 50px 10px 50px; box-shadow: 2px 2px 0px 0px rgba(163, 174, 184, 0.7);">
+                                예상수익률 :
+                                {% for result in object_list01 %}
+                                {% if forloop.counter == 1 %}
+                                <b style="color:#D3711B;"> {{ result.expect_rate|floatformat:"1" }}% </b>
+                                {% endif %}
+                            </span>
+
+                        </h5>
+                        {% endfor %}
+
+                        <hr style=" border: 0; height:1px; background:#333332;">
+                    </div>
+                    <br>
+
+                    <br>
+                     <h5>
+                        <b>해지환급금 예시</b>
+                     </h5>
+
+                     <table class="table table-bordered table-hover table-condensed table-responsive" style="font-size:1.0em;">
+                        <thead style="border-top:2px solid #9B959C;">
+                            <tr class="active text-center">
+                                <th class = "text-center" style="vertical-align:middle;">경과년</th>
+                                <th class = "text-center" style="vertical-align:middle;">연령</th>
+                                <th class = "text-center" style="vertical-align:middle;">납입보험료누계</th>
+                                <th class = "text-center" style="vertical-align:middle;">계약자적립금</th>
+                                <th class = "text-center" style="vertical-align:middle;">해지환급금</th>
+                                <th class = "text-center" style="vertical-align:middle;">환급률(%)</th>
+                            </tr>
+                        </thead>
+
+                        {% for result in object_list01 %}
+                        <tbody class = "text-center">
+                            <tr>
+                                <td width="10%">{{ result.year}}</td>
+                                <td width="10%">{{ result.age|floatformat:"0" }}</td>
+                                <td width="22%">{{ result.total_premium|floatformat:"0"|intcomma }}</td>
+                                <td width="22%">{{ result.payment|floatformat:"0"|intcomma }}</td>
+                                <td width="22%">{{ result.return_money|floatformat:"0"|intcomma }}</td>
+                                <td width="13%">{{ result.return_rate|floatformat:"1" }}</td>
+
+                            </tr>
+                        </tbody>
+                        {% endfor %}
+                    </table>
+
+                    <h6><b style="color:#EA6944;">(주의)  </b>
+                        본 해지환급금은 현재까지의 예상수익률로 향후에도 운영되었을 때를 예시한 것으로 실제 수익률의 변동, 보험료 납입
+                        변동 등으로 변경될 수 있으므로 참고용으로만 사용하시기 바랍니다.
+                    </h6>
+                    <br>
+                    <h6 style="text-align:right; padding-right:15px;">
+                        해지환급금 전체 보기 ☞ <a href="#" class="badge badge-secondary badge-lg" data-toggle="modal" data-target="#myModal">보기</a>
+                    </h6>
+                    <br><br>
+                    <h5><b>(참고) 해지환급금 공시(생보협회)</b></h5>
+
+                    <table class="table table-bordered table-hover table-condensed table-responsive" style="font-size:1.0em;">
+                        <thead style="border-top:2px solid #9B959C;">
+                            <tr class="active text-center">
+                                <th class = "text-center">구분</th>
+                                <th class = "text-center">상품수</th>
+                                <th class = "text-center">연환산수익률(평균)</th>
+                            </tr>
+                        </thead>
+
+                        <tbody class = "text-center">
+                            {% for result in object_list26 %}
+                            <tr style="border-bottom :0.5px solid #9B959C;">
+                                <td width="13%">{{ result.classification }}</td>
+                                <td width="13%">{{ result.count|floatformat:"0" }}</td>
+                                <td width="22%">{{ result.average_rate|floatformat:"1" }}%</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <br>
+
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                  <h4 class="modal-title" id="myModalLabel"> <b>■ 해지환급금 예시표(예상)</b></h4>
+
+                              </div>
+                              <div class="modal-body">
+                                  <br><br>
+                                 <table class="table table-bordered table-hover table-condensed table-responsive" style="font-size:1.0em;">
+                                    <thead style="border-top:2px solid #9B959C;">
+                                        <tr class="active text-center">
+                                            <th class = "text-center">경과년도</th>
+                                            <th class = "text-center">연령</th>
+                                            <th class = "text-center">납입보험료누계</th>
+                                            <th class = "text-center">계약자적립금</th>
+                                            <th class = "text-center">해지환급금</th>
+                                            <th class = "text-center">환급률(%)</th>
+                                        </tr>
+                                    </thead>
+
+                                    {% for result in object_list02 %}
+                                    <tbody class = "text-center">
+                                        <tr>
+                                            <td width="10%">{{ result.year }}</td>
+                                            <td width="10%">{{ result.age|floatformat:"0" }}</td>
+                                            <td width="23%">{{ result.total_premium|floatformat:"0"|intcomma }}</td>
+                                            <td width="23%">{{ result.payment|floatformat:"0"|intcomma }}</td>
+                                            <td width="23%">{{ result.return_money|floatformat:"0"|intcomma }}</td>
+                                            <td width="10%">{{ result.return_rate|floatformat:"1" }}</td>
+
+                                        </tr>
+                                    </tbody>
+                                    {% endfor %}
+                                </table>
+                                  <h6 class="badge badge-secondary badge-sm" style="background-color:#EA6944;">주의</h6>
+                                  &emsp;본 해지환급금은 현재까지의 예상수익률로 향후에도 운영되었을 때를 예시한 것으로 실제 수익률의 변동, 보험료 납입
+                                  변동 등으로 변경될 수 있으므로 참고용으로만 사용하시기 바랍니다.
+                              </div>
+                            </div> <!-- 모달 콘텐츠 -->
+                          </div> <!-- 모달 다이얼로그 -->
+                        </div> <!-- 모달 전체 윈도우 -->
+                    </div>   <!-- 그리드 끝-->
+
+                </div>  <!-- 전체 그리드 끝-->
+
+        </div>  <!-- raw -->
+    </div>  <!-- container -->
+</div>
+<br><br>
+
+
+
+{% endblock %}

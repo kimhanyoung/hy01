@@ -1,0 +1,402 @@
+{% extends "pentions/base_pentions.html" %}
+
+
+{% block title %}ma300in_form.html{% endblock %}
+{% block content %}
+{{ block.super }}
+
+{% load humanize %}   <!-- 세자리 콤마 찍기위해 로드함- settings.py에 앱추가함  -->
+{% load pentions_filter %}   <!-- 내가 만든 사용자정의필터 아래 사용--->
+
+{% load staticfiles %}
+
+
+<style>
+
+
+.ab {
+    color:#AEAEAF;
+    float:right;
+    padding: 4px 15px 0px 0px;
+    vertical-align:middle;
+}
+
+.panel {
+    border-color:#767879;
+}
+.panel-title{
+    text-align:center;
+}
+
+
+
+</style>
+
+<div id="content">
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-xs-12 col-sm-12">
+
+                <h5 style="color:#EF9365; text-align:right; padding:0px 40px 0px 0px;">One-Stop</h5>
+
+            </div>   <!--그리드 -->
+
+            <div class="col-lg-12 col-lg-offset-1 col-md-12 col-xs-12 col-sm-12">
+                <div class="col-lg-2 col-md-3 col-xs-4 col-sm-4" style="padding:0px 10px 0px 40px;">
+
+                    <img src={% static "img/book/pen502.jpg" %} class="sideToSide" width="40px" />
+                    <div class="panel-group" id="accordion" >
+                        <div class="panel">
+                          <div class="panel-heading" >
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+
+                                 <img src={% static "img/book/pen100.jpg" %} alt="..." style="padding :10px 0px 10px 0px;">
+                                 <p><b>투자의 원칙</b></p>
+                                  <i class="fas fa-chevron-down"></i>
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="collapseOne" class="panel-collapse collapse in" style="background-color:#FDFEFD;">
+                            <div class="panel-body">
+                                <h5>
+                                    <a href="{% url 'pentions01:ma100' %}">
+                                        <b style="color:#6D6C6B" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 투자의 원칙 (1) 시간</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentions01:ma200' %}">
+                                        <b style="color:#6D6C6B" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 투자의 원칙 (2) 수익률</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentions01:ma300' %}">
+                                        <b style="color:#DE781F;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#DE781F'">  - 투자의 원칙 (3) 세금</b>
+                                    </a>
+                                </h5>
+                            </div>  <!-- fanal-body -->
+                          </div>  <!-- collapseOne -->
+                        </div>  <!-- fanal -->
+                        <div class="panel">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                  <img src={% static "img/book/pen120.jpg" %} alt="..." style="padding :10px 0px 10px 0px;">
+                                  <p><b>연금예상액</b></p>
+                                  <i class="fas fa-chevron-down"></i>
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="collapseTwo" class="panel-collapse collapse" style="background-color:#F8FBFF;">
+                            <div class="panel-body">
+                                <h5>
+                                    <a href="{% url 'pentionsto:ma400' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 변액 연금예상액</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentionsto:ma600' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 공시이율 연금예상액</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentions01:mc100' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 즉시연금 연금예상액</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentions01:mh200' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 수익률별 연금예상액</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentions01:mc300' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 연금개시후 공시이율별</b>
+                                    </a>
+                                </h5>
+
+                            </div>
+                          </div> <!-- collapsetwo -->
+                        </div>    <!-- fanal -->
+                        <div class="panel">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                      <img src={% static "img/book/pen130.jpg" %} alt="..." style="padding :10px 0px 10px 0px;">
+                                      <p><b>재무설계 PLAN</b></p>
+                                      <i class="fas fa-chevron-down"></i>
+                                  </a>
+                                </h4>
+                              </div>
+                              <div id="collapseThree" class="panel-collapse collapse" style="background-color:#FCFAF9;">
+                                <div class="panel-body">
+                                    <h5>
+                                        <a style="color:#6D6C6B;" href="{% url 'pentions01:mc200' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 연금목표 월납입액</b></a>
+                                    </h5>
+                                    <h5>
+                                        <a style="color:#6D6C6B;" href="{% url 'pentions01:md100' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 변액연금비용</b></a>
+                                    </h5>
+                                    <h5>
+                                        <a style="color:#6D6C6B;" href="{% url 'pentions01:md200' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 위험보험료</b></a>
+                                    </h5>
+                                    <h5>
+                                        <a style="color:#6D6C6B;" href="{% url 'pentions01:mg100' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 적금의 비밀</b></a>
+                                    </h5>
+                                </div>
+                              </div> <!-- collapsethree -->
+                        </div>    <!-- fanal -->
+                    </div>  <!-- fanal-group -->
+                </div>
+                <div class="col-lg-7 col-lg-offset-0 col-md-9 col-md-offset-0 col-sm-8 col-sm-offset-0" style="padding:15px 0px 0px 40px;">
+                    <h4>투자의 원칙 (3) 세 금&emsp;&emsp;
+                        <small>▶ 투자수익률 및 세금에 따른 투자결과 비교 (영희 vs 철수)</small>
+                        <i class='fas fa-feather-alt' style='font-size:22px;color:red'></i>
+                    </h4>
+
+                    <hr style=" border: 0; height:1.5px; background:#333332;">
+                </div>
+                <div class="col-lg-7 col-lg-offset-0 col-md-9 col-md-offset-0 col-sm-8 col-sm-offset-0" style="padding:0px 20px 0px 40px;">
+                    <b style="float:right; padding: 0px 15px 20px 0px;"><a href="{% url 'pentions01:ma300' %}" class="badge badge-secondary badge-sm" >다시입력</a></b>
+
+                    <table class="table table-bordered table-responsive" style="font-size:1.2em; border-spacing: 2px; border-collapse: separate;">
+
+                        <th class = "text-center" width="13%" style="border-color:#AEAEAF; vertical-align:middle; color:#5E5F5F;">
+                            검증조건
+                        </th>
+                        <th class = "text-left" style="border-color:#AEAEAF; vertical-align:middle; color:#5E5F5F; padding:10px 0px 10px 30px;">
+                            {% for result in object_list %}
+                            {% if forloop.first %}
+                            <h5 style="text-align:center; border-bottom: 0px solid #eee;">
+                                <b>영희투자수익률 :
+                                    <span style="color:#CC5746;">{{ result.younghee_earning_rate|floatformat:"1"}} &nbsp;% </span>
+                                    &ensp;&ensp;&ensp;
+                                    <span style='font-size: 16PX; width:50px; height:50px; border-radius:50%; background-color:red; color:white;'>VS</span>&ensp;&ensp;&ensp;
+                                    철수투자수익률 :   <span style="color:#CC5746;">{{ result.chulsu_earning_rate|floatformat:"1"}} &nbsp;%</span>
+                                </b>
+                            </h5>
+                            <hr>
+                            <div class="col-lg-6 col-md-6" style="padding:0px 0px 0px 35px;">
+                                <h5 style="padding:0px 0px 0px 3px;">월보험료 : &nbsp;&nbsp;&nbsp;&nbsp;{{ result.premium|floatformat:"0"|intcomma }} &nbsp;원 </h5>
+                                <h5 style="padding:0px 0px 0px 3px;"><b>결과보기 : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ result.result_year}}&nbsp;년 후 결과</b></h5>
+                            </div>
+                            <div class="col-lg-6 col-md-6" style="padding:0px 0px 0px 35px;">
+                                <h5 style="padding:0px 0px 0px 3px;"> 납입기간 : &nbsp;&nbsp;&nbsp;{{ result.paying_period|floatformat:"0"}} &nbsp;년납 </h5>
+                            </div>
+                             {% endif %}
+                             {% endfor %}
+                        </th>
+                        <th class = "text-center" width="10%" style="vertical-align:middle; border-color:#AEAEAF; padding:0px;">
+                            <img src={% static "img/bt/pee01.jpg" %} alt="..." style="max-width: 85%; height: auto;">
+                        </th>
+
+                    </table>
+                    <br>
+                     <h4 style="text-align:center;">
+                         <b>수익률별 세금</b>
+                            ({% for result in object_list01 %}
+                                {% if result.result_year == result.year %}
+                                    {{ result.year|floatformat:"0" }}년 후)
+                                {% endif %}
+                            {% endfor %}
+                     </h4>
+                     <div class="thumbnail text-left" style="text-align:center; padding : 10px 20px 10px 20px; border-color:#C0C1C2; border-radius: 1px; border-style:groove; box-shadow: 1px 1px 0px 0px rgba(163, 174, 184, 0.7);">
+                        {% for result in object_list02 %}
+                        {% if result.result_year == result.year %}
+                        <h5>
+                            총투자금액 : {{ result.total_premium |floatformat:"0"|intcomma }}원
+                        </h5>
+
+                         <h5>
+                            &emsp;● 영희 (투자수익률 <b style="color:#E36E5B;"> {{ result.younghee_earning_rate|floatformat:"1" }}%</b>)
+                            &emsp;&emsp;평가금액 : {{ result.younghee_surrender_value|floatformat:"0"|intcomma }}원
+                            &emsp;&emsp;세 금 : {{ result.younghee_tax|floatformat:"0"|intcomma }}원
+                        </h5>
+                        <h5>
+                            &emsp;● 철수 (투자수익률 <b style="color:#E36E5B;">{{ result.chulsu_earning_rate|floatformat:"1" }}%</b>)
+                            &emsp;&emsp;평가금액 : {{ result.chulsu_surrender_value|floatformat:"0"|intcomma }}원
+                            &emsp;&emsp;세 금 : {{ result.chulsu_tax|floatformat:"0"|intcomma }}원
+                        </h5>
+                         {% endif %}
+                        {% endfor %}
+
+
+                     </div>   <!-- thumbnail  -->
+
+                    <br>
+                    <br>
+                     <div class="thumbnail text-left" style="padding: 10px 30px 10px 30px; border-color:#C8C9CA; border-radius: 4px;" >
+                         <div class="caption">
+                              <div id="container2" style="margin: 0px 0px 0px 0px; auto">   <!-- 챠트 시작 -->
+                                <script>
+                                    var chart02 = new Highcharts.chart('container2', {
+                                        "chart": {
+                                            "type": "bar",
+                                            "inverted": false,
+                                            "polar": false,
+                                            "height": 280,
+
+                                          },
+                                          "title": {
+                                            "text": ""
+                                          },
+                                          "subtitle": {
+                                            "text": ""
+                                          },
+                                          "exporting": {},
+                                          "series": [
+                                            {
+                                              "name": "영희평가금액",
+                                                     data: [{% for result in object_list02 %}
+                                                                 {% if result.result_year == result.year %}
+                                                                   {{ result.younghee_surrender_value|floatformat:"0" }}
+                                                                 {% endif %}
+                                                            {% endfor %}],
+
+                                              "turboThreshold": 0,
+                                              "_colorIndex": 0,
+                                              "_symbolIndex": 0,
+                                              "marker": {
+                                                "enabled": false
+                                              },
+                                              "colorByPoint": false
+                                            },
+                                            {
+                                              "name": "영희세후",
+                                                     data: [{% for result in object_list02 %}
+                                                             {% if result.result_year == result.year %}
+                                                               {{ result.younghee_tax_after|floatformat:"0" }}
+                                                             {% endif %}
+
+                                                           {% endfor %}],
+
+                                              "turboThreshold": 0,
+                                              "_colorIndex": 1,
+                                              "_symbolIndex": 1
+                                            },
+                                            {
+                                              "name": "철수평가금액",
+                                                     data: [{% for result in object_list02 %}
+                                                             {% if result.result_year == result.year %}
+                                                                {{ result.chulsu_surrender_value|floatformat:"0" }}
+                                                             {% endif %}
+
+                                                            {% endfor %}],
+
+                                              "turboThreshold": 0,
+                                              "_colorIndex": 2,
+                                              "_symbolIndex": 2
+                                            },
+                                            {
+                                              "name": "철수세후",
+                                                     data: [{% for result in object_list02 %}
+                                                             {% if result.result_year == result.year %}
+                                                                {{ result.chulsu_tax_after|floatformat:"0" }}
+                                                             {% endif %}
+                                                           {% endfor %}],
+
+                                              "turboThreshold": 0,
+                                              "_colorIndex": 3,
+                                              "_symbolIndex": 3
+                                            }
+                                          ],
+                                          "plotOptions": {
+                                            "series": {
+                                              "animation": false,
+                                              "dataLabels": {
+                                                "enabled": true
+                                              }
+                                            }
+                                          },
+                                          "data": {
+
+                                            "googleSpreadsheetKey": false,
+                                            "googleSpreadsheetWorksheet": false
+                                          },
+                                          "colors": [
+                                            "#ff1744",
+                                            "#ff8a80",
+                                            "#0d47a1",
+                                            "#00b0ff",
+                                            "#8085e9",
+                                            "#f15c80",
+                                            "#e4d354",
+                                            "#2b908f",
+                                            "#f45b5b",
+                                            "#91e8e1"
+                                          ],
+                                          "legend": {
+                                            "x": 0
+                                          },
+                                          "tooltip": {},
+                                          "lang": {},
+                                          "credits": {},
+                                          "xAxis": {
+                                             categories: [{% for result in object_list02 %}
+                                                             {% if result.result_year == result.year %}
+                                                                {{ result.year|floatformat:"0" }}
+                                                             {% endif %}
+                                                           {% endfor %}],
+                                             "title": {
+                                               "text": "",
+                                             }
+                                          },
+                                          "yAxis": {
+                                            "title": {}
+                                          }
+                                    });
+                               </script>
+                            </div>       <!-- 챠트 끝  -->
+                         </div>
+                     </div>
+                    <br>
+
+
+                    <h5>※ 해지환금급금 및 세금</h5>
+
+                    <table class="table table-bordered table-hover table-condensed" style="font-size:0.9em;">
+                        <thead style="border-top:2px solid #9B959C;">
+                            <tr class="active text-center">
+                                <th class = "text-center">경과년도</th>
+                                <th class = "text-center">영희평가금액</th>
+                                <th class = "text-center">영희세금</th>
+                                <th class = "text-center">영희세후</th>
+                                <th class = "text-center">철수평가금액</th>
+                                <th class = "text-center">철수세금</th>
+                                <th class = "text-center">철수세후</th>
+                            </tr>
+                        </thead>
+
+                        {% for result in object_list01 %}
+                        <tbody class = "text-center">
+                            <tr>
+                                <td>{{ result.year|floatformat:"0"}}</td>
+                                <td>{{ result.younghee_surrender_value|floatformat:"0"|intcomma }}</td>
+                                <td>{{ result.younghee_tax|floatformat:"0"|intcomma }}</td>
+                                <td>{{ result.younghee_tax_after|floatformat:"0"|intcomma }}</td>
+                                <td>{{ result.chulsu_surrender_value|floatformat:"0"|intcomma }}</td>
+                                <td>{{ result.chulsu_tax|floatformat:"0"|intcomma }}</td>
+                                <td>{{ result.chulsu_tax_after|floatformat:"0"|intcomma }}</td>
+                            </tr>
+                        </tbody>
+                        {% endfor %}
+                    </table>
+
+
+                    <H6> 투자수익률 외 사업비 등은 동일한 조건을 적용하여 산출하였습니다</H6>
+                    <br>
+
+                </div>   <!--그리드 -->
+            </div>  <!-- 큰큰 그리드 -->
+
+        </div>  <!-- row -->
+    </div>       <!--    container-fluid  --->
+    <br>
+    <hr>
+</div>
+
+
+
+{% endblock %}
+

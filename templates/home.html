@@ -1,0 +1,374 @@
+{% extends "base.html" %}
+
+
+{% block title %}home.html{% endblock %}
+
+{% load staticfiles %}
+
+{% block extrastyle %}{% static "css/pention.css" %}{% endblock %}
+
+
+{% load static %}
+
+
+{% block content %}
+
+<style>
+.container-fluid {
+
+    background-image: url('/static/img/book/bubble.jpg');
+}
+.container-fluid02 {
+
+    background-image: url('/static/img/book/bubble07.jpg');
+}
+
+.img-circle {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transition: all 0.3s ease-in-out;   /* 부드러운 모션을 위해 추가*/
+}
+.img-circle:hover {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+.img {width:325px; height:280px; overflow:hidden }   /* 부모를 벗어나지 않고 내부 이미지만 확대 */
+
+
+.aa {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transition: all 0.3s ease-in-out;   /* 부드러운 모션을 위해 추가*/
+}
+.aa:hover {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+}
+
+.ab {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transition: all 0.3s ease-in-out;   /* 부드러운 모션을 위해 추가*/
+}
+.ab:hover {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+}
+
+.img {width:325px; height:280px; overflow:hidden }   /* 부모를 벗어나지 않고 내부 이미지만 확대 */
+
+
+.aa {                                               /* 페이지 오픈시 fade-in 시작 */
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 3s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}                                         /* 페이지 오픈시 fade-in 끝 */
+
+
+
+</style>
+
+<div id="content">
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <br>
+            <div class="col-lg-11 col-md-11 col-xs-12 col-sm-11">
+                <h4 style="color:white; text-align:center;">Golden Rule!! Action to Sucess!</h4>
+                <h1 style="color:white; text-align:center;"><b>고객관리의 새로운 가치 창출</b></h1>
+                <br><br>
+            </div>
+            <div class="col-lg-4 col-lg-offset-1 col-sm-12 col-sm-offset-0 col-md-6 col-md-offset-0" col-xs-12 style="padding: 0px 0px 0px 30px;">
+                <div class="col-lg-6 col-lg-offset-0 col-sm-5 col-sm-offset-1 col-md-6 col-md-offset-0 col-xs-6" >
+                    <br><br><br>
+                      <a href="{% url 'shop:product_all' %}">
+                        <div class="aa thumbnail text-center" style="border-color:#B9B9BA; padding-top:30px; border-radius:10px;" onMouseOver="this.style.backgroundColor='#B3D2FF'" onMouseOut="this.style.backgroundColor=''">
+                            <span class="fas fa-chart-line" style="font-size: 50px; color:#fff; background-color:#2897f8; border-radius:50%;text-align:center; padding:40px; transition: all 0.3s;" onMouseOver="this.style.backgroundColor='#2897f8;';" onMouseOut="this.style.backgroundColor='#2897f8;'" > </span>
+                            <div class="caption">
+                                <h3><b style="color:#838384;" onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#838384'">Variable Insurance </b></h3>
+                                <h5 style="color:#777777; padding: 20px 0px  10px 0px;"><b>변액상품의 현재 운영 현황<br> 파악 및 변액관리 방안</b></h5>
+                            </div>
+                        </div>
+                      </a>
+                </div>
+
+                <div class="col-lg-6 col-sm-5 col-md-6 col-xs-6">
+                    <br><br><br>
+                      <a href="/pentions/">
+                        <div class="aa thumbnail text-center" style="border-color:#B9B9BA; padding-top:30px; border-radius:10px;" onMouseOver="this.style.backgroundColor='#FBC8FD'" onMouseOut="this.style.backgroundColor=''">
+                            <span class="fas fa-calendar-plus" style="font-size: 50px; color:#fff; background-color:#DE8AB1; border-radius:50%;text-align:center; padding:40px 45px 40px 45px; transition: all 0.3s;" onMouseOver="this.style.backgroundColor='#6794B3';" onMouseOut="this.style.backgroundColor='#DE8AB1'" > </span>
+                            <div class="caption" style="padding: 23px 0px 20px 0px;">
+                                <h3><b style="color:#838384; margin: 20px 0px 20px 0px;" onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#838384'">ONE-Stop</b></h3>
+                                <h5 style="color:#777777; padding: 30px 0px 0px 0px;"><b>고객의 어떤 상황에도 대응<br>할 수 있는 다양한 솔류션</b></h5>
+                            </div>
+                        </div>
+                      </a>
+                </div>
+
+            </div>
+
+            <br>
+            <div class="col-lg-4 col-lg-offset-0 col-sm-12 col-sm-offset-0 col-md-6 col-md-offset-0" style="padding: 0px 30px 0px 60px;">
+                <h4 style="color:#FDFCF6; padding:0px 0px 30px 0px;">
+
+                    <b>&nbsp; HY금융상품연구소</b>는 우수 컨설턴트를 지원합니다.
+                </h4>
+
+                 <div class="ab thumbnail text-left" style="padding-top: 0px 0px 0px 0px; border-color:white; border-radius: 8px;">
+                        <div class="caption">
+                            <h3> &ensp;&ensp;HY Solution은 </h3>
+                            <br>
+                            <div class="panel-group" id="accordion" >
+                                <div class="panel">
+                                  <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                        <span class="fas fa-arrow-alt-circle-right"> </span> &nbsp;변액펀드에 특화된 관리를 할 수 있습니다&nbsp;&nbsp; <span class="fas fa-fas fa-chevron-down"> </span>
+                                      </a>
+                                    </h4>
+                                  </div>
+                                  <div id="collapseOne" class="panel-collapse collapse in">
+                                    <div class="panel-body" style="color:#70A6B8;">
+                                        <ul>
+                                            <li>고객이 보유한 변액상품의 수익률을 확인하고 분석하며</li>
+                                            <li>차별화된 펀드변경관리를 통해 고객의 수익률을 관리합니다</li>
+                                        </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="panel">
+                                  <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                        <span class="fas fa-arrow-alt-circle-right"> </span> &nbsp;ONE_STOP 을 통한 차별화된 고객상담 &nbsp;&nbsp; <span class="fas fa-fas fa-chevron-down"> </span>
+                                      </a>
+                                    </h4>
+                                  </div>
+                                  <div id="collapseTwo" class="panel-collapse collapse ">
+                                    <div class="panel-body" style="color:#70A6B8;">
+                                        <div class="ip">
+                                            연금액 계산 등 고객의 어떤 상황에도 대응할 수 있는 다채로운 솔루션이 내장되어 있습니다
+                                            <div class="booklist">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="panel">
+                                  <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                        <span class="fas fa-arrow-alt-circle-right"> </span> &nbsp;금융상품 분석 노하우 및 사례 공유 &nbsp;&nbsp; <span class="fas fa-fas fa-chevron-down"> </span>
+                                      </a>
+                                    </h4>
+                                  </div>
+                                  <div id="collapseThree" class="panel-collapse collapse">
+                                    <div class="panel-body" style="color:#70A6B8;">
+                                         본 프로그램을 활용한 고객의 금융상품을 분석하고 클로징할 수 있는 다양한 사례가 있습니다 &nbsp;&nbsp; <span class="fas fa-fas fa-chevron-down"> </span>
+                                    </div>
+                                  </div>
+                                </div>
+                               <div class="panel">
+                                  <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapsefour">
+                                        <span class="fas fa-arrow-alt-circle-right"> </span> &nbsp;시뮬레이션을 통한 고객의 신뢰도 향상 &nbsp;&nbsp; <span class="fas fa-fas fa-chevron-down"> </span>
+                                      </a>
+                                    </h4>
+                                  </div>
+                                  <div id="collapsefour" class="panel-collapse collapse ">
+                                    <div class="panel-body" style="color:#70A6B8;">
+                                         상담시 고객 보유 펀드 등을 확인하면서 고객의 신뢰도 증대 및 계약체결률을 높일 수 있습니다
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>   <!-- pannel  끝  -->
+                            <br>
+                        </div>
+                    </div>   <!-- thumbnail   -->
+            <br><br><br><br><br>
+            </div>
+
+        </div>   <!-- low  -->
+     </div>  <!-- container-fluid  -->
+
+     <div class="container-fluid02">
+        <div class="row">
+
+        <br>
+        <br><br><br>
+            <div class="col-lg-4 col-lg-offset-1 col-md-6 col-md-offset-0 col-sm-12" style="padding: 0px 40px 0px 50px;">
+                <div>
+                    <h4 style="color:black; text-align:center;"> <b>_</b></h4>
+                    <h4 style="color:black; text-align:center; padding : 0px 0px 20px 0px;"> <b>자주가는 메뉴</b></h4>
+                </div>
+                <div class="col-lg-3 col-sm-3 col-md-3">
+                      <a href="#">
+                        <img src={% static "img/book/basic02.jpg" %} alt="장미" class="img-circle" style="border:6px solid #FAFCFE;">
+                        <h5 style="padding : 10px 0px 0px 0px; text-align:center;" ><b>펀드변경</b></h5>
+                      </a>
+                </div>
+                 <div class="col-lg-3 col-sm-3 col-md-3">
+                      <a href="#">
+                        <img src={% static "img/book/basic03.jpg" %} alt="장미" class="img-circle" style="border:6px solid #FAFCFE;">
+                        <h5 style="padding : 10px 0px 0px 0px; text-align:center;" ><b>연금예상액</b></h5>
+                      </a>
+                </div>
+                <div class="col-lg-3 col-sm-3 col-md-3">
+                      <a href="#">
+                        <img src={% static "img/book/basic07.jpg" %} alt="장미" class="img-circle" style="border:6px solid #FAFCFE;">
+                        <h5 style="padding : 10px 0px 0px 0px; text-align:center;" ><b>연금목표</b></h5>
+                      </a>
+                </div>
+                <div class="col-lg-3 col-sm-3 col-md-3">
+                      <a href="#">
+                        <img src={% static "img/book/basic06.jpg" %} alt="장미" class="img-circle" style="border:6px solid #FAFCFE;">
+                        <h5 style="padding : 10px 0px 0px 0px; text-align:center;" ><b>적금의 비밀</b></h5>
+                      </a>
+                </div>
+                <br><br><br>
+
+            </div>  <!-- 그리드  -->
+
+            <div class="col-lg-4 col-lg-offset-0 col-sm-12 col-sm-offset-0 col-md-6 col-md-offset-0" style="padding: 0px 30px 0px 60px;">
+                <div class="thumbnail text-left" style="border-color:white; border-radius: 8px;">
+                    <div class="caption" style="margin: 10px 30px 10px 10px;">
+                        <h4><b>&emsp;공지사항</b><a style="float:right; padding: 0px 15px 0px 0px;" href="{% url 'blog01:post_list' %}"><small>MORE +</small></a></h4>
+
+
+                         <table class="table table-hover" style="margin: 20px 0px 0px 20px;">
+                           {% for post in posts %}
+                           <tr>
+                             <td><a href='{{ post.get_absolute_url }}'>{{ post.title|truncatewords:5 }}</a></td>
+                             <td style="text-align:right;">{{ post.modify_date|date:'Y-m-d' }}</td>
+                           </tr>
+                           {% endfor %}
+                         </table>
+
+                   </div>
+                </div>   <!-- thumbnail   -->
+                &ensp;  &ensp;  <i class="fa fa-facebook-square" style="font-size:28px;color:#3C85C5;"></i>&ensp;
+                <i class="fa fa-twitter-square" style="font-size:28px;color:red"></i>&ensp;
+                <i class="fa fa-envelope-square" style="font-size:28px"></i>
+                <br><br><br>
+            </div>
+
+             <div class="col-lg-1 visible-lg" id="myScrollspy">
+                    <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="100" style="border-width:0px; text-align:center;">
+                        <a href="#">
+                            <span class="fas fa-sort" style="font-size: 20px; color:#fff; background-color:#F68F65; border-radius:50%;text-align:center; padding:10px 14px 10px 14px; transition: all 0.3s;"> </span>
+                        </a>
+                    </ul>
+            </div>
+
+        </div>  <!-- low  -->
+     </div>   <!-- container  -->
+    <div class="container-fluid02">
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 col-md-12 hidden-sm">
+                <div class="thumbnail text-left" style="padding: 0px 0px 0px 160px; border-color:white; border-radius: 0px;">
+                    <div class="caption" style="margin: 20px 0px 1px 0px;">
+                        <br><br>
+                        <img src={% static "img/book/sorce.jpg" %} style="max-width: 90%; height: auto;" alt="...">
+                        <h6 style="padding: 0px 15px 0px 10px;">
+                            【자료출처】본 프로그램의 모든 자료는 위 출처에서 공시된 내용을 기반으로
+                            고객의 이해의 돕기 위하여 작성된 자료입니다
+                        </h6>
+                        <br><br>
+                   </div>
+                </div>   <!-- thumbnail   -->
+            </div>
+        </div>
+    </div>
+
+</div>  <!-- content  -->
+
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src='{% static "js/bootstrap.min.js" %}'></script>
+    <script src='{% static "js/jquery.fancybox.js" %}'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <script>
+      $('.carousel').carousel()
+      $('.carousel2').carousel({interval: 3000 })
+      //*  fancybox  실행 스크립트 */
+      $(document).ready(function() {
+        $(".fancybox").fancybox({
+          openEffect  : 'none',
+          closeEffect : 'none'
+        });
+      });
+    </script>
+
+
+
+
+{% endblock content %}
+
+
+
+
+
+
+
+

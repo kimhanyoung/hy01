@@ -1,0 +1,387 @@
+{% extends "base.html" %}
+
+
+{% block title %}pentions.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/pention.css" %}{% endblock %}
+
+{% block content %}
+<div id="content">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container-fluid">
+        <div class="raw">
+            <div class="col-xs-12 col-sm-5 col-md-4 col-md-offset-1">
+                <h3>
+                 <span class="glyphicon glyphicon-king" ></span> &nbsp;ONE-STOP Solution<h4><small style="color:#094A6B">(Custom-built Consulting)</small></h4>
+                </h3>
+            </div>
+            <div class="col-md-4 hidden-sm hidden-xs" style="margin: 0px 0px 0px 40px;">
+                <br>
+
+                <h5 style="text-align:right">각 제목을 클릭하시면 다양한 솔루션를 만나실 수 있습니다</h5>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div data-spy="scroll" data-target="#myScrollspy">
+        <div class="container-fluid">
+            <div class="raw">
+                <div class="col-md-2 hidden-sm hidden-xs col-md-offset-1" id="myScrollspy">
+                    <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="100">
+                        <li class="active"><a href="#collapseOne" data-toggle="collapse" data-parent="#accordion">1. 투자의 원리</a></li>
+                        <li class="active"><a href="#collapseTwo" data-toggle="collapse" data-parent="#accordion">2. 연금예상액</a></li>
+                        <li><a href="#collapseThree" data-toggle="collapse" data-parent="#accordion">3. 연금운영전략</a></li>
+                        <li><a href="#collapseFour" data-toggle="collapse" data-parent="#accordion">4. 재무설계플랜</a></li>
+                        <li><a href="#collapseFive" data-toggle="collapse" data-parent="#accordion">5. 재무설계플랜</a></li>
+                    </ul>
+
+                </div>
+
+                <div class="col-xs-11 col-sm-11 col-md-7" style="margin: 0px 0px 0px 40px;">   <!-- 본문 시작-->
+
+                    <div class="panel-group" id="accordion">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                        <h4 style="text-align:left;">
+                                            <span class="glyphicon glyphicon-stop" ></span> &nbsp;투자의 원리
+                                            <small><i>&nbsp;&nbsp;투자의 기본원리와 투자모형별 시뮬레이션을 통한 수익률 검증</i></small>
+                                        </h4>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in">
+                                <div class="panel-body" style="color:#70A6B8;">
+
+                                    <div class="col-sm-6 col-md-3">
+                                          <a href="{% url 'pentions:ma100' %}">
+                                            <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                <span class="fa fa-swatchbook" style="font-size: 30px; color:#fff; background-color:#62706A; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                <div class="caption">
+                                                    <h5>투자의 원칙 (1) 시간 </h5>
+                                                </div>
+                                            </div>
+                                          </a>
+                                    </div>
+                                    <div class="col-sm-6 col-md-3">
+                                          <a href="{% url 'pentions:ma200' %}">
+                                            <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                <span class="fa fa-chart-line" style="font-size: 30px; color:#fff; background-color:#DE8AB1; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                <div class="caption">
+                                                    <h5>투자의 원칙 (2) 수익률 </h5>
+                                                </div>
+                                            </div>
+                                          </a>
+                                    </div>
+                                    <div class="col-sm-6 col-md-3">
+                                          <a href="{% url 'pentions:ma300' %}">
+                                            <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                <span class="fa fa-balance-scale" style="font-size: 30px; color:#fff; background-color:#5DBA93; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                <div class="caption">
+                                                    <h5 class="text-primary">투자의 원칙 (3) 세금 </h5>
+                                                </div>
+                                            </div>
+                                          </a>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>      <!-- 본문 첫단락 끝 -->
+                            <div class="panel">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                      <h4 style="text-align:left;">
+                                          <span class="glyphicon glyphicon-stop" ></span> &nbsp;연금예상액
+                                          <small><i>&nbsp;&nbsp;고객보유 상품 및 상황별 연금예상액</i></small>
+                                      </h4>
+                                    </a>
+                                </h4>
+                              </div>
+                              <div id="collapseTwo" class="panel-collapse collapse ">
+                                <div class="panel-body" style="color:#70A6B8;">
+                                    <div class="col-sm-6 col-md-3">
+                                          <a href="{% url 'pentions:ma400' %}">
+                                            <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                <span class="fa fa-hand-holding-usd" style="font-size: 30px; color:#fff; background-color:#5F9E8D; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                <div class="caption">
+                                                    <h5>연금예상액 </h5>
+                                                </div>
+                                            </div>
+                                          </a>
+                                    </div>
+                                    <div class="col-sm-6 col-md-3">
+                                          <a href="{% url 'pentions:mc100' %}">
+                                            <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                <span class="fa fa-bug" style="font-size: 30px; color:#fff; background-color:#C8D649; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                <div class="caption">
+                                                    <h5>연금예상액(즉시연금) </h5>
+                                                </div>
+                                            </div>
+                                          </a>
+                                    </div>
+                                    <div class="col-sm-6 col-md-3">
+                                          <a href="#">
+                                            <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                <span class="fa fa-bezier-curve" style="font-size: 30px; color:#fff; background-color:#82A9ED; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                <div class="caption">
+                                                    <h5>수익률별 연금예상액 </h5>
+                                                </div>
+                                            </div>
+                                          </a>
+                                    </div>
+                                    <div class="col-sm-6 col-md-3">
+                                          <a href="#">
+                                            <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                <span class="fa fa-file-signature" style="font-size: 30px; color:#fff; background-color:#F59AE9; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                <div class="caption">
+                                                    <h5>내 변액 연금예상액 </h5>
+                                                </div>
+                                            </div>
+                                          </a>
+                                    </div>
+
+                                </div>
+                              </div>
+                            </div>            <!-- 본문 두번째단락 끝 -->
+                             <div class="panel">          <!-- 세번째 단락 시작-->
+                                  <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                        <h4 style="text-align:left;">
+                                            <span class="glyphicon glyphicon-stop" ></span> &nbsp;연금 운영전략
+                                            <small><i>&nbsp;&nbsp;연금 극대화를 위한 연금상품 보유 및 조정</i></small>
+                                        </h4>
+                                      </a>
+                                    </h4>
+                                  </div>
+                                  <div id="collapseThree" class="panel-collapse collapse">
+                                      <div class="panel-body" style="color:#70A6B8;">
+                                          <div class="row">                          <!-- 첫번째줄-->
+                                            <div class="col-sm-6 col-md-3">
+                                                  <a href="{% url 'pentions:mc200' %}">
+                                                    <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                        <span class="fa fa-briefcase" style="font-size: 30px; color:#fff; background-color:#2A4727; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                        <div class="caption">
+                                                            <h5>연금목표 월납입액 </h5>
+                                                        </div>
+                                                    </div>
+                                                  </a>
+                                            </div>
+                                            <div class="col-sm-6 col-md-3">
+                                              <a href="{% url 'pentions:ma500' %}">
+                                                <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                    <span class="fa fa-sun" style="font-size: 30px; color:#fff; background-color:#9E8F5F; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                    <div class="caption">
+                                                        <h5>경험생명표별 연금액 </h5>
+                                                    </div>
+                                                </div>
+                                              </a>
+                                            </div>
+                                            <div class="col-sm-6 col-md-3">
+                                              <a href="{% url 'pentions:mc300' %}">
+                                                <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                    <span class="fa fa-cogs" style="font-size: 30px; color:#fff; background-color:#918ADE; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                    <div class="caption">
+                                                        <h5>연금개시후 공시이율 </h5>
+                                                    </div>
+                                                </div>
+                                              </a>
+                                            </div>
+                                            <div class="col-sm-6 col-md-3">
+                                              <a href="{% url 'pentions:md100' %}">
+                                                <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                    <span class="fa fa-donate" style="font-size: 30px; color:#fff; background-color:#B2BA5D; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                    <div class="caption">
+                                                        <h5>변액연금비용 </h5>
+                                                    </div>
+                                                </div>
+                                              </a>
+                                            </div>
+                                          </div>                       <!-- 첫번째줄 끝 -->
+                                          <hr>
+                                          <div class="row">          <!-- 두번째 줄 -->
+                                            <div class="col-sm-6 col-md-3">
+                                              <a href="#">
+                                                <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                    <span class="fa fa-file-signature" style="font-size: 30px; color:#fff; background-color:#BA5D84; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                    <div class="caption">
+                                                        <h5>채권형수익률 </h5>
+                                                    </div>
+                                                </div>
+                                              </a>
+                                            </div>
+                                              <div class="col-sm-6 col-md-3">
+                                                  <a href="#">
+                                                    <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                        <span class="fa fa-boxes" style="font-size: 30px; color:#fff; background-color:#77AB54; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                        <div class="caption">
+                                                            <h5>변액 vs 공시이율 vs 적금 </h5>
+                                                        </div>
+                                                    </div>
+                                                  </a>
+                                              </div>
+                                              <div class="col-sm-6 col-md-3">
+                                                  <a href="{% url 'pentions:md300' %}">
+                                                    <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                        <span class="fa fa-calendar-alt" style="font-size: 30px; color:#fff; background-color:#C282ED; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                        <div class="caption">
+                                                            <h5>흥부와 놀부 </h5>
+                                                        </div>
+                                                    </div>
+                                                  </a>
+                                              </div>
+                                              <div class="col-sm-6 col-md-3">
+                                                  <a href="#">
+                                                    <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                        <span class="fa fa-cart-arrow-down" style="font-size: 30px; color:#fff; background-color:#65735C; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                        <div class="caption">
+                                                            <h5>추가납입의 효과</h5>
+                                                        </div>
+                                                    </div>
+                                                  </a>
+                                              </div>
+                                          </div>    <!-- 두번째 줄 끝-->
+
+                                    </div>
+                                  </div>
+                                </div>    <!-- 본문 세번재단락 끝 -->
+                                <div class="panel">
+                                  <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                                        <h4 style="text-align:left;">
+                                            <span class="glyphicon glyphicon-stop" ></span> &nbsp;재무설계플랜
+                                            <small><i>&nbsp;&nbsp;재무설계를 위한 각종 시뮬레이션</i></small>
+                                        </h4>
+                                      </a>
+                                    </h4>
+                                  </div>
+
+                                  <div id="collapseFour" class="panel-collapse collapse ">
+                                    <div class="panel-body" style="color:#70A6B8;">
+                                       <div class="row">                          <!-- 첫번째줄-->
+                                           <div class="col-sm-6 col-md-3">
+                                                  <a href="{% url 'pentions:mf100' %}">
+                                                    <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                        <span class="fa fa-chart-area" style="font-size: 30px; color:#fff; background-color:#2A4727; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                        <div class="caption">
+                                                            <h5>해약환급금계산(변액)  </h5>
+                                                        </div>
+                                                    </div>
+                                                  </a>
+
+                                            </div>
+                                           <div class="col-sm-6 col-md-3">
+                                                  <a href="{% url 'pentions:mf200' %}">
+                                                    <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                        <span class="fa fa-chess-queen" style="font-size: 30px; color:#fff; background-color:#5C7173; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                        <div class="caption">
+                                                            <h5>해약환급금계산(공시이율) </h5>
+                                                        </div>
+                                                    </div>
+                                                  </a>
+                                            </div>
+                                            <div class="col-sm-6 col-md-3">
+                                                  <a href="{% url 'pentions:md200' %}">
+                                                    <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                        <span class="fa fa-briefcase-medical" style="font-size: 30px; color:#fff; background-color:#B87872; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                        <div class="caption">
+                                                            <h5>위험보험료 </h5>
+                                                        </div>
+                                                    </div>
+                                                  </a>
+                                            </div>
+                                           <div class="col-sm-6 col-md-3">
+                                                  <a href="{% url 'pentions:mg100' %}">
+                                                    <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                        <span class="fa fa-images" style="font-size: 30px; color:#fff; background-color:#9B72B8; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                        <div class="caption">
+                                                            <h5>적금의 비밀</h5>
+                                                        </div>
+                                                    </div>
+                                                  </a>
+                                            </div>
+                                       </div>                 <!--첫번째 줄 끝 -->
+                                        <div class="row">          <!-- 두번째 줄 -->
+                                            <div class="col-sm-6 col-md-3">
+                                                  <a href="#">
+                                                    <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                        <span class="fa fa-cogs" style="font-size: 30px; color:#fff; background-color:#545B6E; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                        <div class="caption">
+                                                            <h5>평생재무설계플랜</h5>
+                                                        </div>
+                                                    </div>
+                                                  </a>
+                                            </div>
+                                            <div class="col-sm-6 col-md-3">
+                                                  <a href="#">
+                                                    <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                        <span class="fa fa-luggage-cart" style="font-size: 30px; color:#fff; background-color:#5DBA93; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                        <div class="caption">
+                                                            <h5>달러연금</h5>
+                                                        </div>
+                                                    </div>
+                                                  </a>
+                                            </div>
+                                            <div class="col-sm-6 col-md-3">
+                                                  <a href="#">
+                                                    <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                        <span class="fa fa-life-ring" style="font-size: 30px; color:#fff; background-color:#6080D6; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                        <div class="caption">
+                                                            <h5>적립식 vs 거치식 비교</h5>
+                                                        </div>
+                                                    </div>
+                                                  </a>
+                                            </div>
+                                            <div class="col-sm-6 col-md-3">
+                                                  <a href="#">
+                                                    <div class="thumbnail text-center" style="border-color:#B1B4B5; padding-top:10px;">
+                                                        <span class="fa fa-dice" style="font-size: 30px; color:#fff; background-color:#75B86C; border-radius:50%;text-align:center;padding:20px; transition: all 0.3s;" > </span>
+                                                        <div class="caption">
+                                                            <h5>Dream Scale</h5>
+                                                        </div>
+                                                    </div>
+                                                  </a>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <br>
+
+                                    </div>    <!-- 본문 다섯번째  끝 -->
+                                  </div>
+                                </div>
+
+
+                </div>    <!--그리드 -->
+            </div>  <!-- raw -->
+        </div>   <!-- container-fluid --->
+    </div>   <!-- Scrollspy  -->
+    <br>
+    <br>
+
+    <p style="padding: 0px 0px 0px 140px;">HY 금융상품연구소에서 제공하는 Enhencing kit 02 실전활용 kit </p>
+    <div style="background-color:#DAD9DE;">
+        <br>
+
+        <br>
+
+    </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="../js/bootstrap.min.js"></script>
+
+</div>
+{% endblock %}

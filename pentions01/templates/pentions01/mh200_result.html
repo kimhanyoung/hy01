@@ -1,0 +1,364 @@
+{% extends "pentions/base_pentions.html" %}
+
+
+{% block title %}mh200_result.html{% endblock %}
+{% block content %}
+{{ block.super }}
+
+{% load humanize %}   <!-- 세자리 콤마 찍기위해 로드함- settings.py에 앱추가함  -->
+{% load pentions_filter %}   <!-- 내가 만든 사용자정의필터 아래 사용--->
+{% load mathfilters %}    <!-- 사칙연산을 위해--->
+{% load staticfiles %}
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+
+
+<style>
+
+
+.ab {
+    color:#AEAEAF;
+    float:right;
+    padding: 4px 15px 0px 0px;
+    vertical-align:middle;
+}
+
+.panel {
+    border-color:#767879;
+}
+.panel-title{
+    text-align:center;
+}
+
+
+.image {
+    position:relative;
+    max-width : 100%;
+    height : 280px;
+    background-image: url('/static/img/bt/memo02.jpg');
+    background-size: cover;
+}
+
+</style>
+
+<div id="content">
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-xs-12 col-sm-12">
+
+                <h5 style="color:#EF9365; text-align:right; padding:0px 40px 0px 0px;">One-Stop</h5>
+
+            </div>   <!--그리드 -->
+
+            <div class="col-lg-12 col-lg-offset-1 col-md-12 col-xs-12 col-sm-12">
+                <div class="col-lg-2 col-md-3 col-xs-4 col-sm-4" style="padding:0px 10px 0px 40px;">
+
+                    <img src={% static "img/book/pen502.jpg" %} class="sideToSide" width="40px" />
+                    <div class="panel-group" id="accordion" >
+                        <div class="panel">
+                          <div class="panel-heading" >
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+
+                                 <img src={% static "img/book/pen100.jpg" %} alt="..." style="padding :10px 0px 10px 0px;">
+                                 <p><b>투자의 원칙</b></p>
+                                  <i class="fas fa-chevron-down"></i>
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="collapseOne" class="panel-collapse collapse" style="background-color:#FDFEFD;">
+                            <div class="panel-body">
+                                <h5>
+                                    <a href="{% url 'pentions01:ma100' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 투자의 원칙 (1) 시간</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentions01:ma200' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 투자의 원칙 (2) 수익률</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentions01:ma300' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 투자의 원칙 (3) 세금</b>
+                                    </a>
+                                </h5>
+                            </div>  <!-- fanal-body -->
+                          </div>  <!-- collapseOne -->
+                        </div>  <!-- fanal -->
+                        <div class="panel">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                  <img src={% static "img/book/pen120.jpg" %} alt="..." style="padding :10px 0px 10px 0px;">
+                                  <p><b>연금예상액</b></p>
+                                  <i class="fas fa-chevron-down"></i>
+                              </a>
+                            </h4>
+                          </div>
+                          <div id="collapseTwo" class="panel-collapse collapse in" style="background-color:#F8FBFF;">
+                            <div class="panel-body">
+                                <h5>
+                                    <a href="{% url 'pentionsto:ma400' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 변액 연금예상액</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentionsto:ma600' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 공시이율 연금예상액</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentions01:mc100' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 즉시연금 연금예상액</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentions01:mh200' %}">
+                                        <b style="color:#DE781F" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#DE781F'"> - 수익률별 연금예상액</b>
+                                    </a>
+                                </h5>
+                                <h5>
+                                    <a href="{% url 'pentions01:mc300' %}">
+                                        <b style="color:#6D6C6B;" onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 연금개시후 공시이율별</b>
+                                    </a>
+                                </h5>
+
+                            </div>
+                          </div> <!-- collapsetwo -->
+                        </div>    <!-- fanal -->
+                        <div class="panel">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                      <img src={% static "img/book/pen130.jpg" %} alt="..." style="padding :10px 0px 10px 0px;">
+                                      <p><b>재무설계 PLAN</b></p>
+                                      <i class="fas fa-chevron-down"></i>
+                                  </a>
+                                </h4>
+                              </div>
+                              <div id="collapseThree" class="panel-collapse collapse" style="background-color:#FCFAF9;">
+                                <div class="panel-body">
+                                    <h5>
+                                        <a style="color:#6D6C6B;" href="{% url 'pentions01:mc200' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 연금목표 월납입액</b></a>
+                                    </h5>
+                                    <h5>
+                                        <a style="color:#6D6C6B;" href="{% url 'pentions01:md100' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 변액연금비용</b></a>
+                                    </h5>
+                                    <h5>
+                                        <a style="color:#6D6C6B;" href="{% url 'pentions01:md200' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 위험보험료</b></a>
+                                    </h5>
+                                    <h5>
+                                        <a style="color:#6D6C6B;" href="{% url 'pentions01:mg100' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color='#6D6C6B'"> - 적금의 비밀</b></a>
+                                    </h5>
+                                </div>
+                              </div> <!-- collapsethree -->
+                        </div>    <!-- fanal -->
+                    </div>  <!-- fanal-group -->
+
+                </div>
+                <div class="col-lg-7 col-lg-offset-0 col-md-9 col-md-offset-0 col-sm-8 col-sm-offset-0" style="padding:15px 0px 0px 40px;">
+                    <h4>수익률별 연금예상액&emsp;&emsp;
+                        <small>수익률의 차이에 따른 연금액 비교 </small>
+                        <i class='fas fa-feather-alt' style='font-size:22px;color:red'></i>
+
+                    </h4>
+                    <hr style=" border: 0; height:1.5px; background:#333332;">
+                </div>
+                <div class="col-lg-7 col-lg-offset-0 col-md-9 col-md-offset-0 col-sm-8 col-sm-offset-0" style="padding:0px 20px 0px 40px;">
+                    <b style="float:right; padding: 0px 15px 20px 0px;"><a href="{% url 'pentions01:mh200' %}" class="badge badge-secondary badge-sm" >다시입력</a></b>
+
+                    <table class="table table-bordered table-responsive" style="font-size:1.2em; border-spacing: 2px; border-collapse: separate;">
+
+                        <th class = "text-center" width="13%" style="border-color:#AEAEAF; vertical-align:middle; color:#5E5F5F;">
+                            검증조건
+                        </th>
+                        <th class = "text-left" style="border-color:#AEAEAF; vertical-align:middle; color:#5E5F5F; padding:15px 0px 15px 0px;">
+                            {% for result in object_list %}
+                            {% if forloop.first %}
+                            <h5 style="text-align:center; border-bottom: 0px solid #eee;">
+                                <b>변액수익률 A :
+                                    <span style="color:#CC5746;">{{ result.a_earning_rate|floatformat:"1"}}% </span>
+                                    &ensp;&ensp;&ensp;
+                                    <span style='font-size: 16PX; width:50px; height:50px; border-radius:50%; background-color:red; color:white;'>VS</span>&ensp;&ensp;&ensp;
+                                    변액수익률 B :  <span style="color:#CC5746;">{{ result.b_earning_rate|floatformat:"1"}}%</span>
+                                </b>
+                            </h5>
+                            <hr>
+                            <div class="col-lg-6 col-md-6" style="padding:0px 0px 0px 35px;">
+                                <h5 style="padding:0px 0px 0px 3px;">
+                                    성 별 : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ result.gender}}
+                                </h5>
+                                <h5 style="padding:0px 0px 0px 3px;">
+                                    월보험료 : &nbsp;&nbsp;{{ result.premium|floatformat:"0"|intcomma}} 원
+                                </h5>
+                                <h5 style="padding:0px 0px 0px 3px;">
+                                    납입기간 : &nbsp;&nbsp;{{ result.paying_period}} &nbsp;년납
+                                </h5>
+                                <h5 style="padding:0px 0px 0px 3px;">
+                                    연금개시후 이자 : &nbsp;&nbsp;{{ result.pention_start_rate|floatformat:"1"}} %
+                                </h5>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <h5 style="padding:0px 0px 0px 3px;">
+                                    가입일 : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ result.start_year}} 년 &emsp;{{ result.start_month}} 월
+                                </h5>
+                                <h5 style="padding:0px 0px 0px 3px;">
+                                    현재연령 : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ result.present_age}} &nbsp;세
+                                </h5>
+                                <h5 style="padding:0px 0px 0px 3px;">
+                                    연금개시연령 :&emsp;{{ result.pention_start_age}} 세
+                                </h5>
+                            </div>
+
+
+                            {% else %}
+                            {% endif %}
+                            {% endfor %}
+                        </th>
+                        <th class = "text-center" width="13%" style="vertical-align:middle; border-color:#AEAEAF; padding:0px;">
+                            <img src={% static "img/bt/pee01.jpg" %} alt="..." style="max-width: 85%; height: auto;">
+                        </th>
+
+                    </table>
+                    <br>
+                    <br>
+                     <h4 style="font-size:17px; text-align:center; padding: 0px 0px 5px 0px;">
+                         <b>변액수익률별 연금개시시점 계약자적립금</b>
+                     </h4>
+
+
+                     <div class="thumbnail text-left" style="text-align:center; padding : 10px 50px 10px 50px; border-color:#C0C1C2; border-radius: 1px; border-style:groove; box-shadow: 1px 1px 0px 0px rgba(163, 174, 184, 0.7);">
+                        {% for pention in object_list01 %}
+                         <h5 style="text-align:center; font-size:1.1em; padding:0px 0px 0px 12px;">
+                            <b>납입금액 : {{ pention.total_premium|floatformat:"0"|intcomma}}원</b>
+                         </h5>
+                         <hr>
+                         <p style="font-size:1.2em; padding:0px 0px 0px 12px;">
+                            <b>연금개시시점 계약자적립금</b>
+                        </p>
+                         <table class="table table-bordered table-hover" style="font-size:1.1em; padding:0px 30px 0px 50px;">
+                            <thead style="border-top:2px solid #9B959C;">
+                                <tr class="active">
+                                    <th class = "text-center" style="">수익률 A</th>
+                                    <th class = "text-center" style="">수익률 B</th>
+                                    <th class = "text-center" style="background-color:#5CB1FB; color:white;">수익률 B 대비</th>
+                                </tr>
+                                <tr>
+                                    <th class = "text-center" style="">{{ pention.a_reserve_money|floatformat:"0"|intcomma}}원</th>
+                                    <th class = "text-center" style="">{{ pention.b_reserve_money|floatformat:"0"|intcomma}}원</th>
+                                    <th class = "text-center" style="background-color:#E3F0FC;">
+                                        <b style="color:#DC7C66;">
+                                        &emsp;▲ {{ pention.a_reserve_money|sub:pention.b_reserve_money|floatformat:"0"|intcomma }}
+                                        </b>
+                                    </th>
+                                 </tr>
+                            </thead>
+
+                        </table>
+                        {% endfor %}
+                     </div>   <!-- thumbnail  -->
+                    <br>
+                    <h5>
+                        <b><span class='fas fa-arrow-alt-circle-right'></span> &nbsp;연금액 예시</b>
+                    </h5>
+                    <table class="table table-bordered table-hover table-condensed" style="font-size:1.0em;">
+                        {% for pention in object_list01 %}
+                        <thead style="border-top:2px solid #9B959C;">
+                            <tr class="active">
+                                <th class = "text-center" rowspan="2" style="vertical-align:middle;">연금형태</th>
+                                <th class = "text-center" rowspan="2" style="vertical-align:middle;">구분</th>
+                                <th class = "text-center" colspan="2">수익률 A : {{ pention.a_earning_rate|floatformat:"1"}} %</th>
+                                <th class = "text-center" colspan="2">수익률 B : {{ pention.b_earning_rate|floatformat:"1"}} %</th>
+                            </tr>
+                            <tr class="active">
+                                <th class = "text-center">연금연액</th>
+                                <th class = "text-center">월연금액</th>
+                                <th class = "text-center">연금연액</th>
+                                <th class = "text-center">월연금액</th>
+                            </tr>
+                        </thead>
+
+
+                        <tbody class = "text-center">
+                            <tr>
+                                <td rowspan="3">확정연금형</td>      <!--monthly_pention: 사용자정의필터  -->
+                                <td>10년</td>
+                                <td>{{ pention.a_annuity_certain_10|floatformat:"0"|intcomma }}</td>
+                                <td>{{ pention.a_annuity_certain_10|monthly_pention|floatformat:"0"|intcomma }}</td>
+                                <td>{{ pention.b_annuity_certain_10|floatformat:"0"|intcomma }}</td>
+                                <td>{{ pention.b_annuity_certain_10|monthly_pention|floatformat:"0"|intcomma }}</td>
+                            </tr>
+                            <tr>
+                                <td>15년</td>
+                                <td>{{ pention.a_annuity_certain_15|floatformat:"0"|intcomma }}</td>
+                                <td>{{ pention.a_annuity_certain_15|monthly_pention|floatformat:"0"|intcomma }}</td>
+                                <td>{{ pention.b_annuity_certain_15|floatformat:"0"|intcomma }}</td>
+                                <td>{{ pention.b_annuity_certain_15|monthly_pention|floatformat:"0"|intcomma }}</td>
+                            </tr>
+                            <tr>
+                                <td>20년</td>
+                                <td>{{ pention.a_annuity_certain_20|floatformat:"0"|intcomma }}</td>
+                                <td>{{ pention.a_annuity_certain_20|monthly_pention|floatformat:"0"|intcomma }}</td>
+                                <td>{{ pention.b_annuity_certain_20|floatformat:"0"|intcomma }}</td>
+                                <td>{{ pention.b_annuity_certain_20|monthly_pention|floatformat:"0"|intcomma }}</td>
+                            </tr>
+
+                            <tr>
+                               <td rowspan="3">종신연금형</td>
+                               <td>10년 보증</td>
+                               <td>{{ pention.a_wholelife_annuity_10|floatformat:"0"|intcomma }}</td>
+                               <td>{{ pention.a_wholelife_annuity_10|monthly_pention|floatformat:"0"|intcomma }}</td>
+                               <td>{{ pention.b_wholelife_annuity_10|floatformat:"0"|intcomma }}</td>
+                               <td>{{ pention.b_wholelife_annuity_10|monthly_pention|floatformat:"0"|intcomma }}</td>
+                            </tr>
+                            <tr>
+                               <td>20년 보증</td>
+                               <td>{{ pention.a_wholelife_annuity_20|floatformat:"0"|intcomma }}</td>
+                               <td>{{ pention.a_wholelife_annuity_20|monthly_pention|floatformat:"0"|intcomma }}</td>
+                               <td>{{ pention.b_wholelife_annuity_20|floatformat:"0"|intcomma }}</td>
+                               <td>{{ pention.b_wholelife_annuity_20|monthly_pention|floatformat:"0"|intcomma }}</td>
+                            </tr>
+                            <tr>
+                               <td>80세 보증</td>
+                               <td>{{ pention.a_wholelife_annuity_80|floatformat:"0"|intcomma }}</td>
+                               <td>{{ pention.a_wholelife_annuity_80|monthly_pention|floatformat:"0"|intcomma }}</td>
+                               <td>{{ pention.b_wholelife_annuity_80|floatformat:"0"|intcomma }}</td>
+                               <td>{{ pention.b_wholelife_annuity_80|monthly_pention|floatformat:"0"|intcomma }}</td>
+                            </tr>
+                            <tr>
+                               <td rowspan="2">상속연금형</td>
+                               <td>연금액</td>
+                               <td>{{ pention.a_annuity_inherit|floatformat:"0"|intcomma }}</td>
+                               <td>{{ pention.a_annuity_inherit|monthly_pention|floatformat:"0"|intcomma }}</td>
+                               <td>{{ pention.b_annuity_inherit|floatformat:"0"|intcomma }}</td>
+                               <td>{{ pention.b_annuity_inherit|monthly_pention|floatformat:"0"|intcomma }}</td>
+                            </tr>
+                            <tr>
+
+                               <td>사망시일시금</td>
+                               <td colspan="2">{{ pention.a_lump_sum_of_death|floatformat:"0"|intcomma }}</td>
+                               <td colspan="2">{{ pention.b_lump_sum_of_death|floatformat:"0"|intcomma }}</td>
+                            </tr>
+
+
+                        </tbody>
+
+                        {% endfor %}
+                    </table>
+
+                    <H6>회사별 경험생명표 및 이자의 변동 등으로 결과가 약간 상이할 수 있습니다</H6>
+                    <br><br><br><br><br>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+{% endblock %}
+

@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}ma100in_form.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/form03.css" %}{% endblock %}
+
+{% load humanize %}   <!-- 세자리 콤마 찍기위해 로드함- settings.py에 앱추가함  -->
+
+{% block content %}
+
+
+<div id="content">
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12" style="padding:10px 0px 0px 0px;">
+
+                <h3 style="padding: 0px 0px 0px 0px;">
+                <span class="glyphicon glyphicon-object-align-bottom" style="color:blue;"></span> 변액
+                </h3>
+                <h5 style="padding: 0px 0px 0px 30px;">...............</h5>
+                <br>
+            </div>   <!--그리드 -->
+
+            <div class="col-lg-9 col-md-9 col-xs-12 col-sm-12" style="padding:0px 10px 0px 20px;">
+                <br><br>
+                <form action="." method="post"> {% csrf_token %}
+                    <div class="form-row" >
+                     {{ form.search_word.label_tag }}&nbsp;&nbsp; {{ form.search_word }}
+                    &nbsp;&nbsp;<input type="submit" class="btn btn-primary btn-sm"  value="검색 ">
+                    </div>
+
+
+                </form>
+                <br><br>
+                <p style="text-align:right;">보험명을 더블 클릭하시면 상세 입력페이지로 이동합니다</p>
+
+
+                <table class="table table-bordered table-hover table-condensed header-fixed" style="font-size:1.0em;">
+                    <thead style="border-top:2px solid #9B959C;">
+                        <tr class="active text-center">
+                            <th class = "text-center">변액명</th>
+                            <th class = "text-center">보험사</th>
+                            <th class = "text-center">판매개시</th>
+                            <th class = "text-center">판매종료</th>
+
+                        </tr>
+                    </thead>
+
+                    {% for result in object_list %}
+                    <tbody class = "text-center">
+                        <tr>
+                            <td><a href="{% url 'vund:vund_update' result.id %}">{{ result.insu_name}}</a></td>
+                            <td>{{ result.company}}</td>
+                            <td>{{ result.sell_start}}</td>
+                            <td>{{ result.sell_end}}</td>
+
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>
+
+            </div>   <!--그리드 -->
+
+            <div class="col-lg-1 col-md-1 col-xs-0 col-sm-0" style="padding:10px 0px 650px 0px;">
+
+
+            </div>   <!--그리드 -->
+
+        </div>            <!-- law  -->
+    </div>          <!-- container  -->
+    <br>
+    <hr>
+</div>       <!-- content  -->
+
+
+
+
+{% endblock %}
+
+
+
+

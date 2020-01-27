@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+
+{% block title %}ae00input.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/form03.css" %}{% endblock %}
+
+{% load humanize %}   <!-- 세자리 콤마 찍기위해 로드함- settings.py에 앱추가함  -->
+
+{% block content %}
+
+<style>
+
+.aa {                        /* 좌측 마우스오버시 */
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transition: all 0.3s ease-in-out;   /* 부드러운 모션을 위해 추가*/
+}
+.aa:hover {
+  transform: scale(1.01);
+  -webkit-transform: scale(1.01);
+  -moz-transform: scale(1.01);
+  -ms-transform: scale(1.01);
+  -o-transform: scale(1.01);
+}
+
+</style>
+
+<div id="content">
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-lg-10 col-md-12 col-xs-12 col-sm-12">
+
+                <h5 style="color:#EF9365; text-align:right; padding:0px 40px 0px 0px;">Variable Insurance</h5>
+
+            </div>   <!--그리드 -->
+
+
+
+            <div class="col-lg-12 col-lg-offset-1 col-md-12 col-xs-12 col-sm-12">
+                <div class="col-lg-2 col-md-3 col-xs-2 col-sm-3" style="padding:0px 10px 0px 0px;">
+                    <br>
+                    <table class="table table-bordered">
+                          <thead>
+                           <tr>
+                             <th>
+                                <div class="panel-group" id="accordion" >
+                                    <div class="panel" style="border-color:white;">
+                                      <div class="panel-heading" >
+                                        <h4 class="panel-title">
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                             <p><b>Ⅰ. 변액수익률 확인</b></p>
+                                          </a>
+                                        </h4>
+                                      </div>
+                                      <div id="collapseOne" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                             <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp; <b>보험명 입력</b>
+                                                <a style="color:#529599; font-size:11px;" href="{% url 'shop:product_all' %}">&ensp; &ensp; >>다시 입력</a>
+                                            </h5>
+                                            <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp; <b>펀드 편입비율 입력</b>
+                                            </h5>
+                                            <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp;
+                                                <b>보험 가입정보 입력</b>
+                                            </h5>
+                                             <h5 style="color:#565656; padding:0px 0px 3px 10px;">
+                                                <span class="fas fa-caret-down"></span>&ensp; <b>투자현황 확인</b>
+                                            </h5>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="panel">
+                                      <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                            <p><b>Ⅱ. 변액관리</b></p>
+                                          </a>
+                                        </h4>
+                                      </div>
+                                      <div id="collapseTwo" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <h5>
+                                                <span class="badge" style="background-color:#71C42F;  padding:5px 60px 5px 20px;">
+                                                    <b>● 펀드변경</b>
+                                                </span>
+                                            </h5>
+
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders06:hungbu' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 흥부와 놀부</b></a>
+                                            </h5>
+                                            <h5>&emsp;
+                                                <a href="{% url 'orders:fund' %}"><b onMouseOver="this.style.color='#DE781F';" onMouseOut="this.style.color=''"> ● 일반 적립식펀드</b></a>
+                                            </h5>
+                                            <span class="badge" style="background-color:white; color:white; padding:5px 20px 5px 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이것은 안나타남</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                             </th>
+                           </tr>
+                       </thead>
+                    </table>
+                    <br><br><br><br><br><br><br><br><br><br><br>
+                </div>   <!--그리드 -->
+
+                <div class="col-lg-6 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-8 col-sm-offset-0" style="padding:0px 0px 0px 40px;">
+                    <br>
+                    <h4 style="padding:0px 0px 0px 0px; color:#343535;">
+                        <b><span class="fas fa-arrow-alt-circle-right"></span>&ensp; 펀드변경 검증</b>
+                    </h4>
+                    <hr>
+
+                    <br>
+                    <div class="thumbnail" style="padding:30px 0px 10px 30px; border-color:#BBBDBF; border-radius: 8px;" onMouseOver="this.style.backgroundColor='#DFEFFC'" onMouseOut="this.style.backgroundColor=''">
+                        <h4>
+                            <b>▶ 펀드변경 검증구간 선택...</b>&nbsp;
+                            <i class='fas fa-pen-alt' style='font-size:30px;color:red'></i>
+                        </h4>
+                        <hr>
+                        <br>
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <div class="aligned">
+                                <div class="form-row">
+                                     <span>
+                                        <label class="radio-inline" for="classification" style="font-weight: bold;font-size: 15px;">구 분 :&emsp;&emsp;&nbsp;&nbsp; </label>
+                                        <lable><input  id="classification" type="radio" name="classification" checked="checked" value="종합주가"> 종합주가지수&emsp;&emsp;</lable>
+                                        <lable><input  id="classification01" type="radio" name="classification" value="역종합"> 역종합</lable>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="aligned">
+                                <div class="form-row">
+                                    <span>
+                                        <label for="start_date">&emsp;검증구간 :&nbsp;&nbsp; </label>
+                                        <input id="start_date" name="start_date" type="date" value={{ form.start_date.value}} >&nbsp;&nbsp;~
+                                        <label for="end_date">&emsp;</label>
+                                        <input id="end_date" name="end_date" type="date" value={{ form.end_date.value}} >
+                                    </span>
+                                </div>
+                            </div>
+                            <br>
+                            <h5 style="padding:10px; 10px 10px 10px;">
+                                <i class='fas fa-arrow-circle-right' style='font-size:16px'></i>
+                                검증조건 : 검증구간에서 주식형으로 운영시와 <b style="color:#E17930;">펀드변경시 </b>를 비교(주식형 : 종합주가지수)
+                            </h5>
+                            <div class="submit-row">
+
+                                <input type="submit" class="btn btn-primary btn-sm"  value="계산">
+                            </div>
+                            <br><br>
+                        </form>
+
+                    </div>    <!-- thumbnail -->
+
+                    <br>
+                    <h5><b>
+                           &nbsp; ※ 펀드변경 관련 수수료, 절차 및 방식
+                        </b>
+                    </h5>
+                    <h5>
+                       &nbsp;&nbsp;&nbsp;● 수수료 : 연 4회까지 펀드변경 수수료가 면제되며, 추가 수수료 면제는 회사마다 차이가 있을 수 있어
+                                             <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;해당 회사에서 확인하면 됩니다.
+                    </h5>
+                     <h5>
+                       &nbsp;&nbsp;&nbsp;● 변경절차 : 회사 홈페이지에서 직접변경, 회사에 전화요청, 지점을 통해 변경 가능합니다.
+                                                    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;상세절차는 회사에 문의하시면 됩니다
+                    </h5>
+                     <h5>
+                       &nbsp;&nbsp;&nbsp;● 변경방식 : 펀드변경은 기전 적립금을 다른 펀드로 이동하거나, 향후 납입되는 보험료를
+                                                    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;다른 펀드로 교체할 수 있습니다.
+                    </h5>
+
+                    <br>
+                </div>   <!-- 그리드 -->
+            </div>  <!-- raw -->
+                <hr>
+    </div>  <!-- container -->
+</div>
+
+{% endblock %}

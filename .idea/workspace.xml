@@ -1,0 +1,1655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="09c00cda-99f2-45ea-9472-b4e662317a05" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.config/nginx-app.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.config/uwsgi.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.config/uwsgi.service" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/hy01.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/migrations/0002_profile_is_auth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts02/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts02/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts02/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts02/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts02/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts02/templates/accounts02/account_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts02/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts02/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts02/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/fields.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/templates/blog/post_all.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/templates/blog/post_change_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/templates/blog/post_confirm_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/templates/blog/post_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/templates/blog/post_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog01/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog01/migrations/0002_remove_post_slug.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog01/templates/blog01/post_all.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog01/templates/blog01/post_change_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog01/templates/blog01/post_confirm_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog01/templates/blog01/post_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog01/templates/blog01/post_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog01/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bookmark/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bookmark/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bookmark/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bookmark/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bookmark/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bookmark/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bookmark/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/cart.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/context_processors.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/templates/cart/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coupon/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coupon/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coupon/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coupon/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coupon/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coupon/migrations/0002_auto_20181110_0015.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coupon/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coupon/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coupon/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coupon/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coupon/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/default" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/funds/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/funds/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/funds/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/funds/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/funds/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/funds/migrations/0002_order_orderitem_ordertransaction.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/funds/migrations/0003_auto_20190423_1043.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/funds/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/funds/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/funds/templates/funds.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/funds/templates/funds/fa100_result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/funds/templates/funds/fa100in_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/funds/templates/funds/fund_search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/funds/templates/funds/ma000fund_list_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/funds/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/funds/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/funds/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/get-pip.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hysolution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/photo/2020/01/basic04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/photo/2020/01/bloghome.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/photo/2020/01/created01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/asset_storage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ngrok.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/iamport.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/migrations/0002_auto_20190425_1314.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/migrations/0003_auto_20190430_1020.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/templates/order/admin/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/templates/order/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/templates/order/created.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0002_auto_20200106_1354.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0003_fund10entry_fund_made_date.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/0004_auto_20200107_1151.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/css/form04.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/img/accum001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/img/accum002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/img/accum003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/img/created.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/img/created01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/img/created02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/img/created04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/img/created05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/img/fundchangeexplain01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/img/fundlaw.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/img/fundlaw01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/img/fundlaw_enplain.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/img/fundtax.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/img/fundtax02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/img/fundtax03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/img/hungbu00.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/img/hungbu10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/img/pention30.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/img/variable01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/img/variable02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/img/variable03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/static/img/variable04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/templates/orders/order/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/templates/orders/order/create_backup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/templates/orders/order/created.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/templates/orders/order/orders01_basic.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/templates/orders/order/orders01_basicfundform.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/templates/orders/order/orders01_basicfundresult.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/templates/orders/order/orders01_earningrate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/templates/orders/order/orders02_returnmoney.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/templates/orders/order/orders03_pention.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/templates/orders/order/orders_fund01in.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/templates/orders/order/orders_fund02out.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders02/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders02/__계약알때해지연금" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders02/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders02/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders02/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders02/migrations/0002_ad03returnmoneyout_ad04pentionmoney_ad05pentionout.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders02/migrations/0003_ad06enterout.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders02/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders02/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders02/static/img/pention30.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders02/templates/orders02/ad00input_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders02/templates/orders02/ad01returnmoney.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders02/templates/orders02/ad02pention.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders02/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders02/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders02/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/__펀드변경" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/migrations/0002_ae10graph.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/migrations/0003_auto_20191107_1856.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/migrations/0004_ae01out.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/migrations/0005_auto_20191108_1350.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/migrations/0006_auto_20191109_1401.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/migrations/0007_auto_20191109_1423.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/migrations/0008_auto_20191121_1731.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/migrations/0009_auto_20191121_1752.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/migrations/0010_af01input.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/migrations/0011_af07result.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/migrations/0012_af07result_total_count.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/migrations/0013_af14graph.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/migrations/0014_auto_20191127_1305.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/migrations/0015_remove_af14graph_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/migrations/0016_af14graph_zero.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/migrations/0017_auto_20191202_1730.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/migrations/0018_auto_20200104_1130.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/migrations/0019_auto_20200104_1916.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/templates/orders03/ae00input_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/templates/orders03/ae01fundchange.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/templates/orders03/ae02stats.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/templates/orders03/ae02stats_back.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/templates/orders03/af01fundchange.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders03/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders04/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders04/__경과월구하기" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders04/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders04/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders04/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders04/migrations/0002_aa01pathmonth_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders04/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders04/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders04/templates/orders04/aa00input_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders04/templates/orders04/aa01result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders04/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders04/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders04/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders05/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders05/__보험나이" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders05/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders05/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders05/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders05/migrations/0002_aa02insuage_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders05/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders05/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders05/templates/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders05/templates/orders05/aa01input_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders05/templates/orders05/aa02result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders05/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders05/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders05/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders06/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders06/__흥부놀부" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders06/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders06/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders06/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders06/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders06/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders06/templates/orders06/created02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders06/templates/orders06/md300.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders06/templates/orders06/md300_result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders06/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders06/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders06/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders07/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders07/__펀드선택" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders07/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders07/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders07/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders07/migrations/0002_auto_20191104_1529.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders07/migrations/0003_ab03fund01price_ab03fund02price_ab03fund03price_ab03fund04price_ab03fund05price_ab03fund06price_ab03.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders07/migrations/0004_auto_20191106_1139.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders07/migrations/0005_ac03fundrate_ac06metrate.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders07/migrations/0006_ab02fund01price_ab02fund02price_ab02fund03price_ab02fund04price_ab02fund05price.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders07/migrations/0007_auto_20200108_1243.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders07/migrations/0008_ac06metrate_fund_no.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders07/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders07/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders07/templates/orders07/metfund_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders07/templates/orders07/metfund_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders07/templates/orders07/metfund_return.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders07/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders07/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders07/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders07/펀드선택" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders08/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders08/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders08/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders08/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders08/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders08/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders08/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders08/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/models_back.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/animate.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/creative.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/custom1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/custom2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/doc.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/form.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/form01.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/form02.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/form03.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/kfonts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/kfonts2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/menubarcolor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/navsample.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/nomalize.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/non-responsive.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/css/pention.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/less/animated.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/less/bordered-pulled.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/less/core.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/less/fixed-width.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/less/font-awesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/less/icons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/less/larger.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/less/list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/less/path.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/less/rotated-flipped.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/less/stacked.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/scss/_animated.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/scss/_bordered-pulled.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/scss/_core.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/scss/_fixed-width.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/scss/_icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/scss/_larger.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/scss/_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/scss/_path.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/scss/_rotated-flipped.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/scss/_stacked.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/font-awesome/scss/font-awesome.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/DSC_2830.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/biglogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/age.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/basic01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/basic02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/basic03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/basic04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/basic06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/basic07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/basic22.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/basic23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/basic24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/bubble.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/bubble07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/fundtax.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/gmab.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/home11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/pen10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/pen100.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/pen12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/pen120.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/pen13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/pen130.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/pen502.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/pen59.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/pen60.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/book/sorce.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/9PIXEL.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/9pixel.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/DSC_0374.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/DSC_4999.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/DSC_5041.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/DSC_6305.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/DSC_9139.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/DSC_9170.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/about1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/color_pattern.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/login.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/login01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/logout04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/memo01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/memo02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/memo03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/memo04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/memo05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/memo06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/memo07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/memo08.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/memo09.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/moon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/para1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/para2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/password02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pattern.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pee01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pee02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pee11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pee14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pee15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pee16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pee17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pee18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pee19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pee20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pention01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pention02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pention03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pention_method02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pentions_001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pentions_003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pentions_004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pentions_005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pentions_007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pentions_008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pentions_009.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pentions_010.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/pic.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/puppy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/register01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/register_on01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/register_on02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/required.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/rose.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/slide1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/slide1_bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/slide2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/bt/slide3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/header.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/design1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/design2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/design3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/design4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/site1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/site10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/site11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/site12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/site13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/site14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/site15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/site2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/site3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/site4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/site5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/site6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/site7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/portfolio/site8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/img/smalllogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/js/Highcharts-6.1.0.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/js/cbpAnimatedHeader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/js/classie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/js/creative.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/js/jquery-1.8.3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/js/jquery.easing.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/js/jquery.fittext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/js/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/js/waypoints.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/js/wow.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/less/creative.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/static/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/templates/pentions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/templates/pentions/base_pentions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/templates/pentions/ma500_a경험생명표별연금액" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/templates/pentions/ma500_result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/templates/pentions/ma500in_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/templates/pentions/md300_result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/templates/pentions/mf100_result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/templates/pentions/mf100in_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/templates/pentions/mf100out_search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/templates/pentions/mf200_result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/templates/pentions/mf200in_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/templates/pentions_back.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/templatetags/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/templatetags/pentions_filter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/urls_back.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions/views_back.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/migrations/0002_mc100in_mc100out_mc300in_mc300out01_mc300out02_mh200in_mh200out.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/migrations/0003_mc200in_mc200out_md100in_md100out_md100out01_md200in_md200out_mg100in_mg100out.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/ma1000_a투자의원칙(시간)" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/ma1000_result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/ma1000in_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/ma2000_a투자의원칙(수익률)" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/ma2000_result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/ma2000in_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/ma3000_a투자의원칙(세금)" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/ma3000_result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/ma3000in_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/mc100_a연금예상액(즉시연금)" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/mc100_result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/mc100in_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/mc200_a월목표연금액" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/mc200_result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/mc200in_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/mc300_a연금개시후공시이율" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/mc300_result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/mc300in_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/md100_a변액연금비용" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/md100_result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/md100in_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/md200_a위험보험료" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/md200_result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/md200in_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/mg100_a적금의 비밀" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/mg100_result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/mg100in_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/mh200_a수익률별 연금예상액" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/mh200_result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/templates/pentions01/mh200in_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentions01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentionsto/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentionsto/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentionsto/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentionsto/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentionsto/migrations/0002_ma400out01.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentionsto/migrations/0003_auto_20200114_1708.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentionsto/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentionsto/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentionsto/templates/pentionsto/ma400_a연금액계산(변액)" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentionsto/templates/pentionsto/ma400_result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentionsto/templates/pentionsto/ma400_result_back.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentionsto/templates/pentionsto/ma400in_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentionsto/templates/pentionsto/ma600_a연금액계산(공시이율)" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentionsto/templates/pentionsto/ma600_result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentionsto/templates/pentionsto/ma600in_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentionsto/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentionsto/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pentionsto/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0002_auto_20190422_2004.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0003_auto_20190422_2005.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0004_remove_product_image.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0005_order_orderitem.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0006_auto_20190422_2158.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0007_order_orderitem.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0008_auto_20190423_0925.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0009_auto_20190423_0932.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0010_auto_20190429_1222.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0011_auto_20190429_1251.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0012_auto_20190429_1518.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0013_auto_20190429_1624.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0014_auto_20190429_1643.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0015_auto_20190429_1706.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0016_auto_20190429_1908.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0017_auto_20190429_1928.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0018_auto_20190506_1811.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0019_auto_20190506_1837.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0020_product_insu_name.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0021_product02.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0022_auto_20190507_1002.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0023_auto_20190507_1003.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0024_auto_20190612_1442.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0025_product_stock_percent.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/0026_delete_product05.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/static/css/form03.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/templates/shop/base_shop.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/templates/shop/category_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/templates/shop/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/templates/shop/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/autocomplete.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/changelists.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/fonts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/forms.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/responsive.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/responsive_rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/vendor/select2/LICENSE-SELECT2.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/vendor/select2/select2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/vendor/select2/select2.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/css/widgets.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/fonts/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/fonts/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/fonts/Roboto-Bold-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/fonts/Roboto-Light-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/fonts/Roboto-Regular-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/calendar-icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_off.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_on.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-addlink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-alert.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-calendar.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-changelink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-clock.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-deletelink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-no.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-unknown-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-unknown.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/icon-yes.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/inline-delete.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/selector-icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/sorting-icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/tooltag-add.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/img/tooltag-arrowright.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/SelectBox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/SelectFilter2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/actions.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/admin/DateTimeShortcuts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/admin/RelatedObjectLookups.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/autocomplete.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/calendar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/cancel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/change_form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/collapse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/collapse.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/inlines.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/inlines.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/jquery.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/popup_response.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/prepopulate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/prepopulate.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/prepopulate_init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/timeparse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/urlify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/jquery/LICENSE-JQUERY.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/LICENSE-SELECT2.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/az.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/bg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ca.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/cs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/da.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/de.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/el.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/et.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/eu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/gl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/he.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/id.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/is.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/it.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ja.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/km.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ko.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/lt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/lv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/mk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ms.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/nb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/nl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pt-BR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ru.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sr-Cyrl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/th.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/tr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/uk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/vi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/zh-TW.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/select2.full.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/select2.full.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/LICENSE-XREGEXP.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/chartit/js/chartloader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/animate.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/creative.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/custom1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/custom2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/doc.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/form.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/form01.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/form02.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/form03.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/form04.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/kfonts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/kfonts2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/menubarcolor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/navsample.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/nomalize.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/non-responsive.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/pention.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/vund01.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/less/animated.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/less/bordered-pulled.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/less/core.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/less/fixed-width.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/less/font-awesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/less/icons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/less/larger.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/less/list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/less/path.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/less/rotated-flipped.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/less/stacked.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/scss/_animated.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/scss/_bordered-pulled.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/scss/_core.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/scss/_fixed-width.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/scss/_icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/scss/_larger.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/scss/_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/scss/_path.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/scss/_rotated-flipped.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/scss/_stacked.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font-awesome/scss/font-awesome.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/DSC_2830.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/accum001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/accum002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/accum003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/biglogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/age.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/basic01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/basic02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/basic03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/basic04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/basic06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/basic07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/basic22.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/basic23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/basic24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/bubble.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/bubble07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/fundtax.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/gmab.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/home11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/pen10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/pen100.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/pen12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/pen120.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/pen13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/pen130.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/pen502.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/pen59.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/pen60.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/book/sorce.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/9PIXEL.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/9pixel.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/DSC_0374.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/DSC_4999.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/DSC_5041.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/DSC_6305.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/DSC_9139.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/DSC_9170.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/K-32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/K-33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/K-34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/about1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/color_pattern.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/login.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/login01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/logout04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/memo01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/memo02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/memo03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/memo04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/memo05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/memo06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/memo07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/memo08.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/memo09.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/moon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/para1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/para2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/password02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pattern.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pee01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pee02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pee11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pee14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pee15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pee16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pee17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pee18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pee19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pee20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pention01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pention02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pention03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pention_method02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pentions_001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pentions_003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pentions_004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pentions_005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pentions_007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pentions_008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pentions_009.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pentions_010.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/pic.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/puppy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/register01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/register_on01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/register_on02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/required.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/rose.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/slide1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/slide1_bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/slide2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/bt/slide3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/created.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/created01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/created02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/created04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/created05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/fundchangeexplain01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/fundlaw.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/fundlaw01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/fundlaw_enplain.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/fundtax.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/fundtax02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/fundtax03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/header.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/hungbu00.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/hungbu10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/pention30.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/design1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/design2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/design3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/design4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/site1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/site10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/site11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/site12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/site13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/site14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/site15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/site2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/site3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/site4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/site5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/site6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/site7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/site8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/smalllogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/variable01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/variable02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/variable03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/variable04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/Highcharts-6.1.0.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/cbpAnimatedHeader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/checkout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/classie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/creative.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/jquery-1.8.3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/jquery.easing.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/jquery.fittext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/waypoints.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/wow.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/less/creative.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base(backup).html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home(backup).html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/images/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/logged_out.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/login-back.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/password_change_done.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/password_change_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/register_done.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/register_on.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uwsgi.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/migrations/0002_ma000insu_list_insu_name02.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/migrations/0003_ma001fund_list_insu_name02.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/migrations/0004_auto_20190409_1844.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/migrations/0005_auto_20190410_1939.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/migrations/0006_ma001fund_list.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/migrations/0007_auto_20190410_1956.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/migrations/0008_auto_20190420_1131.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/migrations/0009_ma001fund_list_insu_name.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/migrations/0010_auto_20190420_1157.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/migrations/0011_auto_20190422_1232.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/migrations/0012_auto_20190422_1829.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/migrations/0013_auto_20190422_1838.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/migrations/0014_remove_ma001fund_list_stock_percent.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/migrations/0015_ma001fund_list_stock_percent.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/static/css/vund01.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/templates/vund.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/templates/vund/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/templates/vund/fund_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/templates/vund/ma000insu_list_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/templates/vund/ma001out.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/templates/vund/vund_search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vund/views.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mysite/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="680">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../hyweds/Lib/site-packages/pip/_internal/exceptions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog01/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="31" column="20" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#53#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog01/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog01/templates/blog01/post_change_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1751">
+              <caret line="103" column="51" selection-start-line="103" selection-start-column="51" selection-end-line="103" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog01/templates/blog01/post_all.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1938">
+              <caret line="114" column="51" selection-start-line="114" selection-start-column="51" selection-end-line="114" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>back</find>
+      <find>table</find>
+      <find>편입</find>
+      <find>비율</find>
+      <find>expect</find>
+      <find>count</find>
+      <find>insu_name</find>
+      <find>accuma</find>
+      <find>if</find>
+      <find>object_list</find>
+      <find>result.count == 2</find>
+      <find>mh100</find>
+      <find>classi</find>
+      <find>null</find>
+      <find>pentions_filter</find>
+      <find>다시</find>
+      <find>hr</find>
+      <find>with</find>
+      <find>thu</find>
+      <find>thum</find>
+      <find>ma300</find>
+      <find>ma200</find>
+      <find>mc200</find>
+      <find>pentions02</find>
+      <find>pentions01</find>
+      <find>pentions03</find>
+      <find>ma4</find>
+      <find>blog</find>
+      <find>iteritems</find>
+      <find>DependencyWarning</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/pentions01/templates/pentions01/ma1000_result.html" />
+        <option value="$PROJECT_DIR$/pentionsto/templates/pentionsto/ma600in_form.html" />
+        <option value="$PROJECT_DIR$/pentions01/templates/pentions01/mc100in_form.html" />
+        <option value="$PROJECT_DIR$/pentions01/templates/pentions01/mh200in_form.html" />
+        <option value="$PROJECT_DIR$/pentions01/templates/pentions01/mh200_result.html" />
+        <option value="$PROJECT_DIR$/pentions01/templates/pentions01/mc300in_form.html" />
+        <option value="$PROJECT_DIR$/pentions01/templates/pentions01/mc300_result.html" />
+        <option value="$PROJECT_DIR$/pentions01/templates/pentions01/mc200in_form.html" />
+        <option value="$PROJECT_DIR$/pentions01/templates/pentions01/mc200_result.html" />
+        <option value="$PROJECT_DIR$/pentions01/templates/pentions01/md100_result.html" />
+        <option value="$PROJECT_DIR$/pentions01/templates/pentions01/md200in_form.html" />
+        <option value="$PROJECT_DIR$/pentions01/templates/pentions01/md200_result.html" />
+        <option value="$PROJECT_DIR$/pentions01/templates/pentions01/mg100in_form.html" />
+        <option value="$PROJECT_DIR$/pentions01/templates/pentions01/mc100_result.html" />
+        <option value="$PROJECT_DIR$/pentions01/templates/pentions01/md100in_form.html" />
+        <option value="$PROJECT_DIR$/pentions01/templates/pentions01/mg100_result.html" />
+        <option value="$PROJECT_DIR$/pentionsto/templates/pentionsto/ma400_result.html" />
+        <option value="$PROJECT_DIR$/pentionsto/templates/pentionsto/ma400in_form.html" />
+        <option value="$PROJECT_DIR$/pentionsto/templates/pentionsto/ma600_result.html" />
+        <option value="$PROJECT_DIR$/blog/templates/blog/post_detail.html" />
+        <option value="$PROJECT_DIR$/blog/forms.py" />
+        <option value="$PROJECT_DIR$/blog/fields.py" />
+        <option value="$PROJECT_DIR$/blog/templates/blog/post_form.html" />
+        <option value="$PROJECT_DIR$/blog/models.py" />
+        <option value="$PROJECT_DIR$/blog/urls.py" />
+        <option value="$PROJECT_DIR$/blog/views.py" />
+        <option value="$PROJECT_DIR$/mysite/views.py" />
+        <option value="$PROJECT_DIR$/blog/admin.py" />
+        <option value="$PROJECT_DIR$/blog01/admin.py" />
+        <option value="$PROJECT_DIR$/blog01/templates/blog01/post_all.html" />
+        <option value="$PROJECT_DIR$/blog01/templates/blog01/post_confirm_delete.html" />
+        <option value="$PROJECT_DIR$/blog01/templates/blog01/post_change_list.html" />
+        <option value="$PROJECT_DIR$/blog01/urls.py" />
+        <option value="$PROJECT_DIR$/templates/home.html" />
+        <option value="$PROJECT_DIR$/blog01/models.py" />
+        <option value="$PROJECT_DIR$/blog01/views.py" />
+        <option value="$PROJECT_DIR$/blog01/templates/blog01/post_form.html" />
+        <option value="$PROJECT_DIR$/blog01/templates/blog01/post_detail.html" />
+        <option value="$PROJECT_DIR$/../hyweds/Lib/site-packages/pip/_internal/__init__.py" />
+        <option value="$PROJECT_DIR$/../hyweds/Lib/site-packages/pip/_vendor/urllib3/exceptions.py" />
+        <option value="$PROJECT_DIR$/../hyweds/Lib/site-packages/pip/_vendor/requests/packages/urllib3/exceptions.py" />
+        <option value="$PROJECT_DIR$/../hyweds/Lib/site-packages/pip/_vendor/cachecontrol/caches/file_cache.py" />
+        <option value="$PROJECT_DIR$/mysite/asset_storage.py" />
+        <option value="$PROJECT_DIR$/mysite/urls.py" />
+        <option value="$PROJECT_DIR$/uwsgi.service" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/uwsgi.ini.pem" />
+        <option value="$PROJECT_DIR$/mysite/settings.py" />
+        <option value="$PROJECT_DIR$/.config/uwsgi.ini" />
+        <option value="$PROJECT_DIR$/.config/uwsgi.service" />
+        <option value="$PROJECT_DIR$/.config/nginx-app.conf" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-5" />
+    <option name="y" value="40" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="hy01" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hy01" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hy01" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hy01" type="462c0819:PsiDirectoryNode" />
+              <item name=".config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hy01" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\82104\PycharmProjects\hy01" />
+      <recent name="C:\Users\82104\PycharmProjects\hy01\blog01" />
+      <recent name="C:\Users\82104\PycharmProjects\hy01\pentions\templates" />
+      <recent name="C:\Users\82104\PycharmProjects\hy01\pentionsto\templates\pentionsto" />
+      <recent name="C:\Users\82104\PycharmProjects\hy01\pentions01\templates\pentions01" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\82104\PycharmProjects\hy01\templates\images" />
+      <recent name="C:\Users\82104\PycharmProjects\hy01\mysite" />
+      <recent name="C:\Users\82104\PycharmProjects\hy01\shop\templates\shop" />
+      <recent name="C:\Users\82104\PycharmProjects\hy01\static\css" />
+      <recent name="C:\Users\82104\PycharmProjects\hy01\pentions\static\css" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="hyrun" type="PythonConfigurationType" factoryName="Python">
+      <module name="hy01" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\82104\PycharmProjects\hyweds\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="runserver" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="09c00cda-99f2-45ea-9472-b4e662317a05" name="Default Changelist" comment="" />
+      <created>1555489413415</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1555489413415</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33775634" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.31690928" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="5" weight="0.32922733" />
+      <window_info anchor="bottom" id="Version Control" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.22172453" />
+      <window_info anchor="bottom" id="Python Console" order="9" weight="0.32922733" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3180291" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pentions01/templates/pentions01/mg100in_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="n#style#0;n#b#0;n#a#0;n#h5#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#b#0;n#a#0;n#h5#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#b#0;n#a#0;n#h5#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#b#0;n#a#0;n#h5#3;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#b#0;n#a#0;n#h5#4;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#h5#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#h5#1;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#h5#2;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#h5#3;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media/photo/2020/01/created05.jpg" />
+    <entry file="file://$PROJECT_DIR$/media/photo/2020/01/created05.thumb.jpg" />
+    <entry file="file://$PROJECT_DIR$/media/photo/2020/01/hungbu00.jpg" />
+    <entry file="file://$PROJECT_DIR$/media/photo/2020/01/압력.jpg" />
+    <entry file="file://$PROJECT_DIR$/media/photo/2020/01/압력.thumb.jpg" />
+    <entry file="file://$PROJECT_DIR$/blog/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/migrations/0007_post_image.py" />
+    <entry file="file://$PROJECT_DIR$/blog/fields.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108">
+          <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/templates/blog/post_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#2098#2104#0" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog01/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/templates/blog/post_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="77" column="54" selection-start-line="77" selection-start-column="54" selection-end-line="77" selection-end-column="54" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/urls.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/views.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/admin.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog01/templates/blog/post_all.html" />
+    <entry file="file://$PROJECT_DIR$/blog01/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog01/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="288" column="116" selection-start-line="288" selection-start-column="116" selection-end-line="288" selection-end-column="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog01/templates/blog01/post_confirm_delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="96" column="48" lean-forward="true" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog01/templates/blog01/post_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../hyweds/Scripts/pip-script.py" />
+    <entry file="file://$PROJECT_DIR$/../hyweds/Lib/site-packages/pip/_internal/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="23" column="15" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+          <folding>
+            <element signature="e#22#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../hyweds/Lib/site-packages/pip/_vendor/packaging/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#180#244#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../hyweds/Lib/site-packages/pip/_vendor/urllib3/exceptions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../hyweds/Lib/site-packages/pip/_internal/basecommand.py" />
+    <entry file="file://$PROJECT_DIR$/../hyweds/Lib/site-packages/pip/_vendor/requests/packages/urllib3/exceptions.py" />
+    <entry file="file://$PROJECT_DIR$/../hyweds/Lib/site-packages/pip/_internal/download.py" />
+    <entry file="file://$PROJECT_DIR$/../hyweds/Lib/site-packages/pip/_vendor/cachecontrol/caches/file_cache.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="71" column="41" lean-forward="true" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog01/templates/blog01/post_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uwsgi.service" />
+    <entry file="file://$PROJECT_DIR$/../hyweds/Lib/site-packages/pip/_internal/utils/misc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uwsgi.ini.pem" />
+    <entry file="file://$PROJECT_DIR$/mysite/uwsgi" />
+    <entry file="file://$PROJECT_DIR$/mysite/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../hyweds/Lib/site-packages/pip/_internal/exceptions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog01/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog01/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog01/templates/blog01/post_change_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1751">
+          <caret line="103" column="51" selection-start-line="103" selection-start-column="51" selection-end-line="103" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog01/templates/blog01/post_all.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1938">
+          <caret line="114" column="51" selection-start-line="114" selection-start-column="51" selection-end-line="114" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.config/nginx-app.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.config/uwsgi.service">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.config/uwsgi.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/asset_storage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
